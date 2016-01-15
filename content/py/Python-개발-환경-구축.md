@@ -3,7 +3,7 @@ Slug: Python-개발-환경-구축
 Date: 2015-07-27
 Tags: python
 
-# OS X, Python 2 기준
+## OS X, Python 2 기준
 
 1. python
     - OS X에는 python 2가 기본으로 설치되어 있다. (터미널에서 아무데서나 python 명령어를 입력해서 대화형 인터프리터가 뜨면 설치 확인)

@@ -1,5 +1,5 @@
-Title: My super title
-Slug: Alembic-Simple-Guide-SQLAlchemy-Migration-Tool
+Title: Alembic Simple Guide
+Slug: Alembic-Simple-Guide
 Date: 2015-11-25
 Tags: alembic, sqlalchemy
 
