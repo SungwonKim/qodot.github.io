@@ -30,6 +30,10 @@ SOCIAL = (
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
-THEME = '/Users/dw.seo/pelican-themes/pelican-bootstrap3'
+from os.path import expanduser
+home = expanduser("~")
+
+THEME = home + '/pelican-themes/pelican-bootstrap3'
+DISQUS_SITENAME = 'waitingforqodot'
