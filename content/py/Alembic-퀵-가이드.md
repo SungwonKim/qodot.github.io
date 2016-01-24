@@ -1,5 +1,5 @@
-Title: Alembic Simple Guide
-Slug: Alembic-Simple-Guide
+Title: Alembic 퀵 가이드
+Slug: Alembic-퀵-가이드
 Date: 2015-11-25
 Tags: alembic, sqlalchemy
 

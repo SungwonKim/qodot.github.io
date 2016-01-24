@@ -36,4 +36,4 @@ from os.path import expanduser
 home = expanduser("~")
 
 THEME = home + '/pelican-themes/pelican-bootstrap3'
-DISQUS_SITENAME = 'waitingforqodot'
+DISQUS_SITENAME = 'qodot'

@@ -7,6 +7,11 @@ Tags: thebeatles, best10
 
 근데 유튜브에 음원이 없는게 많다 ㅜㅜ 저작권 단속 철저히 하나보다... 데모나 커버 버전으로 링크 놓은 것도 몇개 있음
 
+***
+
+### Best 10
+
+<br>
 #### 1. I'm Only Sleeping `Revolver 1966`
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/38wIuDAq2yg" frameborder="0" allowfullscreen></iframe>
@@ -59,6 +64,7 @@ Tags: thebeatles, best10
 
 ### 아쉽게 순위에 들지 못한 후보들
 
+<br>
 #### Because `Abbey Road 1969`
 
 오리지널 음원이 없다... ㅜㅜ 그나마 괜찮은 커버가 있어서 그걸로...
