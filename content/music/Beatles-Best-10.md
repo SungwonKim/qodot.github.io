@@ -1,11 +1,11 @@
-Title: Beatles Best 10
+Title: The Beatles Best 10
 Slug: Beatles-Best-10
 Date: 2016-01-23
 Tags: thebeatles, best10
 
 요새 이동진의 빨간책방을 듣는데 몇 년 전에 비틀즈 앤솔로지를 다루면서, 출연자들끼리 각자 비틀즈 베스트 10을 선정하더라. 그래서 나도 해보는 베스트 10...
 
-근데 음원이 
+근데 유튜브에 음원이 없는게 많다 ㅜㅜ 저작권 단속 철저히 하나보다... 데모나 커버 버전으로 링크 놓은 것도 몇개 있음
 
 #### 1. I'm Only Sleeping `Revolver 1966`
 
