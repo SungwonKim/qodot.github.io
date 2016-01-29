@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'qodot'
 SITENAME = 'waiting for qodot'
-SITEURL = ''
+SITEURL = 'http://qodot.github.io'
 PATH = 'content'
 
 TIMEZONE = 'Asia/Seoul'
@@ -18,8 +18,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 SOCIAL = (
-    ('Github', 'https://github.com/qodot'),
-    ('Rate your music', 'https://rateyourmusic.com/~qodot'),
+    ('github', 'https://github.com/qodot'),
+    ('rateyourmusic', 'https://rateyourmusic.com/~qodot'),
+    ('lastfm', 'http://www.last.fm/user/qodot'),
 )
 
 # LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -37,3 +38,6 @@ home = expanduser("~")
 
 THEME = home + '/pelican-themes/pelican-bootstrap3'
 DISQUS_SITENAME = 'qodot'
+GOOGLE_ANALYTICS = 'UA-61719953-2'
+GITHUB_URL = 'http://github.com/qodot'
+
