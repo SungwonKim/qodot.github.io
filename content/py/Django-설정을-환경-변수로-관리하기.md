@@ -4,6 +4,7 @@ Date: 2015-07-30
 Tags: django
 
 ### 개요
+
 설정 정보를 다루다 보면 코드에 그대로 적어서는 안되는 정보들이 있다. 예를 들어 Github의 public 계정을 사용할 경우, 불특정 다수가 서비스의 상용 데이터베이스의 접속 정보를 알아서는 안될 것이다.
 
 그래서, 간단하게 django 설정 정보를 환경 변수로 등록해서 repository에 노출되지 않도록 해보자. (SECRET_KEY를 예로 들겠음) 만약 virtualenv를 쓰고 있지 않다면 상당히 간단하다.
@@ -19,8 +20,6 @@ Django의 설정 변수를 다음과 같이 바꾼다.
 
     import os
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
-끝!
 
 <br>
 ### Virtualenv를 사용하는 경우
@@ -53,12 +52,11 @@ Django의 설정 변수를 다음과 같이 바꾼다.
     import os
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
-끝!
-
 <br>
-##### PS
+#### PS
 전에 작성했던 Django 환경 설정 분리에서 `DJANGO_SETTINGS_MODULE`를 사용했었다. 이 값도 `postactivate`와 `postdeactivate`에 등록해서 관리가 가능하다.
 
 <br>
-##### 참고한 페이지
+#### 참고한 페이지
+
 - [Where to store secret keys DJANGO](http://stackoverflow.com/questions/15209978/where-to-store-secret-keys-django)

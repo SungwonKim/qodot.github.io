@@ -4,6 +4,7 @@ Date: 2015-11-25
 Tags: alembic, sqlalchemy
 
 ### 개요
+
 Rails나 Django 같은 모던 웹 프레임워크의 ORM에서는, 반복되는 DB 스키마 변경을 수월하게 진행 할 수 있도록 전용 마이그레이션 툴이 ORM에 내장되어 있다. 그러나 SQLAlchemy에서는 기본적으로 테이블의 생성은 가능하나, 생성된 테이블의 스키마 변경은 지원하지 않는데, 이를 수월하게 만들어 주는 툴이 바로 Alembic이다.
 
 <br>
@@ -31,6 +32,7 @@ Rails나 Django 같은 모던 웹 프레임워크의 ORM에서는, 반복되는 
 
 <br>
 ### 기본 환경 설정
+
 `alembic.ini` 파일을 열어서 `sqlalchemy.url` 변수에 원하는 데이터베이스의 URL을 입력한다. 만약 development, production 등의 환경 분리가 필요하다면 아예 ini 파일을 따로 만들어서 alembic 명령어를 `-c` 옵션과 함께 줄 수 있다.
 
 	alembic -c development.ini upgrade head
@@ -47,6 +49,7 @@ Rails나 Django 같은 모던 웹 프레임워크의 ORM에서는, 반복되는 
 
 <br>
 ### Migration Script 생성
+
 적용을 원하는 Alembic 환경의 root 디렉토리로 이동하고, revision의 이름을 지정하여 생성한다.
 
 	alembic revision -m 'create some table'
@@ -68,6 +71,7 @@ versions 디렉토리에 생성된 스크립트를 보면 `upgrade`와 `downgrad
 
 <br>
 ### 생성된 Migration Script 적용
+
 적용을 원하는 Alembic 환경의 root 디렉토리로 이동하고, 명령어를 입력한다.
 
     # 가장 최신의 마이그레이션 스크립트까지 순차 적용한다
@@ -81,6 +85,7 @@ versions 디렉토리에 생성된 스크립트를 보면 `upgrade`와 `downgrad
 
 <br>
 ### Migrations Script 자동생성
+
 `upgrade`, `downgrade` 메소드를 직접 구현하지 않고, 변경한 SQLAlchemy 모델을 자동으로 감지하여 마이그레이션 스크립트를 생성 할 수 있다.
 
 	alembic revision --autogenerate -m 'some messages'

@@ -58,7 +58,6 @@ shim 바이너리 리빌드 (바이너리 설치 후에 반드시 해줘야 함)
 	* 3.5.0 (set by /Users/user/.pyenv/version)
 	3.5.1
 
-
 <br>
 ### Pyenv-virtualenv
 
@@ -102,6 +101,7 @@ Python 버전과 함께 새로운 가상환경 생성
 디렉토리 기반의 환경 설정 도구. 디렉토리를 이동할 때마다 해당 디렉토리에 `.env`파일 안에 있는 스크립트를 실행한다. 자세한 내용은 [Github](https://github.com/kennethreitz/autoenv)을 참조한다.
 
 #### 설치
+
 	brew install autoenv
 
 	# .zshrc .bashrc .bash_profile 중 하나에
@@ -115,9 +115,9 @@ Python 버전과 함께 새로운 가상환경 생성
 	pyenv activate <virtualenv_name>
 
 <br>
-##### 참조한 사이트
-- [pyenv + virtualenv + autoenv 를 통한 Python 개발 환경 구축하기](https://dobest.io/how-to-set-python-dev-env/)
+#### 참조한 사이트
 
+- [pyenv + virtualenv + autoenv 를 통한 Python 개발 환경 구축하기](https://dobest.io/how-to-set-python-dev-env/)
 
 <br>
 [^1]: rehash를 자동화하고 싶다면 다음 플러그인을 참조한다. https://github.com/yyuu/pyenv-pip-rehash

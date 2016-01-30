@@ -4,6 +4,7 @@ Date: 2015-07-29
 Tags: django
 
 ### 개요
+
 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 `settings.py`가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다.
 
 그래서! 기존의 패키지 구조
@@ -12,7 +13,7 @@ Tags: django
         myproject/
             settings.py
 
-에서
+를
 
     myproject/
         myproject/
@@ -27,6 +28,7 @@ Tags: django
 
 <br>
 ### 설정 파일 분리
+
 일단 모든 환경에 필요한 공통된 설정 정보를 저장할 `base.py`에 기존 `settings.py`의 정보를 모두 복사하고, 다음 `local.py`, `development.py`, `production.py`에 다음과 같이 `base.py`를 import 한다.
 
 	from myproject.settings.base import *
@@ -71,9 +73,8 @@ Tags: django
 
     python manage.py runserver --settings=myproject.settings.local
 
-끝!
-
 <br>
-##### 참고한 페이지
+#### 참고한 페이지
+
 - [Django settings for multiple enviroments](http://morion4000.com/django-settings-for-multiple-environments/)
 - [How to manage local vs production settings in Django?](http://stackoverflow.com/questions/1626326/how-to-manage-local-vs-production-settings-in-django)
