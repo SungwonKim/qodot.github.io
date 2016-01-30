@@ -18,6 +18,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 SOCIAL = (
+    ('facebook', 'https://www.facebook.com/daewon.seo.5'),
     ('github', 'https://github.com/qodot'),
     ('rateyourmusic', 'https://rateyourmusic.com/~qodot'),
     ('lastfm', 'http://www.last.fm/user/qodot'),
@@ -39,5 +40,16 @@ home = expanduser("~")
 THEME = home + '/pelican-themes/pelican-bootstrap3'
 DISQUS_SITENAME = 'qodot'
 GOOGLE_ANALYTICS = 'UA-61719953-2'
-GITHUB_URL = 'http://github.com/qodot'
 
+# pelican-bootstrap3 theme settings
+FAVICON = 'images/favicon.png'
+BOOTSTRAP_NAVBAR_INVERSE = True
+
+DISPLAY_BREADCRUMBS = True
+DISPLAY_CATEGORY_IN_BREADCRUMBS = True
+DISPLAY_ARTICLE_INFO_ON_INDEX = True
+
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+
+ADDTHIS_PROFILE = 'qodot'
