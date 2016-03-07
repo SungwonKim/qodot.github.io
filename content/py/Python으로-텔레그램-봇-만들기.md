@@ -108,5 +108,7 @@ Tags: python, telegrambot
     restaurant = session.query(Restaurant).filter(Restaurant.name==name).first()
     session.delete(restaurant)
     session.commit()
+
+### 개선점
     
-위의 봇 API와 `sqlalchemy`를 이용해서 텔레그램 봇을 만들어보자.
+위의 봇 API와 `sqlalchemy`를 이용해서 텔레그램 봇을 만들 수 있다. 그런데 실제로 봇을 운영하려면 python 스크립트를 리눅스 데몬이나 서비스로 띄우는 방법에 대한 고려가 되어야 한다. 그리고 이벤트 listen을 담당하는 부분이 busy waiting 방식으로 구현되어 있는데 `asyncio`를 이용한 비동기 방식으로 구현하는 것이 더 좋을 것이다. 특히 두 번 째 부분은 공부가 많이 필요한 부분이라... 따로 포스트를 작성하면서 정리해야 겠다.
