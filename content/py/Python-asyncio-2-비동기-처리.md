@@ -1,5 +1,5 @@
-Title: Python asyncio 2: Event-loop
-Slug: Python-asyncio-2-Event-loop
+Title: Python asyncio 2: 비동기 처리
+Slug: Python-asyncio-2-비동기-처리
 Date: 2016-03-27
 Tags: python
 
