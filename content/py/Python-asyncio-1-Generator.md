@@ -28,6 +28,7 @@ python 3.3에 추가된 `asyncio`는, 동시성 문제를 코루틴`coroutine` �
 
 그럼 코루틴은 어떨까? 코루틴도 event-driven으로 동시성 문제를 해결한다. 단순하게 말하자면, 일반적인 절차적인 모양새로 코드를 짜면서(가독성 상승) 비동기를 구현할 수 있다. '코루틴'이라는 단어 자체의 의미는 '상호작용하는 루틴'이라는 뜻인데, 일반적인 함수가 서브루틴`subroutine` 개념인 것과 대조적이다. 이런 코루틴을 이해하려면 먼저 제네레이터`generator` 개념에 대해서 알아야 한다.
 
+<br>
 ## Generator
 
 python에서 제네레이터는 이터레이터`iterator`의 확장 개념이라고 볼 수 있다. 이터레이터는 '순회 가능한`iterable`' 객체로서, 실제로는 `__next__` 함수가 구현되어 있는 객체라고 보면 된다. 예를 들면, `for`문을 수행할 때, 내부적으로 `__next__` 함수를 호출해서 동작한다. 제네레이터는 이터레이터의 확장 개념으로, `__next__` 함수의 리턴값은 `yield` 구문값으로 대신한다. 즉, `yield` 구문이 포함된 함수를 제네레이터라고 한다.
@@ -77,11 +78,13 @@ python에서 제네레이터는 이터레이터`iterator`의 확장 개념이라
 
 다음 포스트에서 `asyncio`가 제네레이터를 이용해서 어떻게 비동기 작업을 처리하는지 알아보도록 하자.
 
+<br>
 ## 참고한 사이트
 
 - [Python 3, asyncio와 놀아보기](http://b.ssut.me/58)
 - [asyncio - Python Tulip](http://www.flowdas.com/blog/asyncio-python-tulip/)
 - [PyCon 2014 - Python 3.4:AsyncIO](http://www.pycon.kr/2014/program/4)
 
+<br>
 [^1]: `GIL`까지 설명하기에는 너무 일이 커지는 느낌이 들어서 링크로 대체한다. 1) [Python에서 thread를 사용하지 마세요?](https://yinjae.wordpress.com/2012/04/02/python-thread/) 2) [파이썬 GIL 깊숙히! (上)](highthroughput.org/wp/cb-1136/) 3) [파이썬 GIL 깊숙히! (상) 에 대한 몇 가지 변명](http://highthroughput.org/wp/cb-1146/)
 [^2]: `promise`패턴을 이용해 극복한 부분도 많다.
