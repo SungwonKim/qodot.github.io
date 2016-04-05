@@ -41,6 +41,8 @@ python에서 제네레이터는 이터레이터`iterator`의 확장 개념이라
             yield c
             c += 1
             
+이 제네레이터를 실행해보면,
+            
     >>> custom_range(5)
     <generator object custom_range at 0x1096d0870>
     >>> for i in custom_range(5):
@@ -59,9 +61,10 @@ python에서 제네레이터는 이터레이터`iterator`의 확장 개념이라
         while True:
             input = yield 'output'
             print(input)
+
+실행해보면,
     
-    g = gene()
-    
+    >>> g = gene()
     >>> next(g)
     'output'
     >>> next(g)
