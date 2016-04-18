@@ -26,7 +26,7 @@ Tags: python, django, celery
 
 	brew update
 	brew install rabbitmq
-	
+
 #### RHEL
 
 무슨 이유인지는 모르겠는데 `erlang`, `rabbitmq` 둘 다 `yum`에 기본적으로 등록이 안 되어있다.
@@ -35,15 +35,15 @@ Tags: python, django, celery
 	wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 	rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 	yum install erlang
-	
+
 	# install rabbitmq-server
 	wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.0/rabbitmq-server-3.6.0-1.noarch.rpm
 	rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
-	
+
 ### RabbitMQ 실행
 
 	rabbitmq-server
-	
+
 브로커가 떴다!
 
 <br>
@@ -54,29 +54,29 @@ Tags: python, django, celery
 ### Celery 설치
 
 	pip install celery
-	
+
 ### Celery 설정
 
 `celery` 애플리케이션을 설정하고 생성하기 위해서 `django`의 설정 디렉토리(최초 `settings.py`가 있는 디렉토리)에 `celery.py` 파일을 만들고 다음 코드를 작성한다.
 
 	from __future__ import absolute_import
 
-	import os	
+	import os
 
 	from celery import Celery
 	from django.conf import settings
-	
+
 	# celery 앱에 django의 settings 값을 주입한다.
 	os.environ.setdefault(
 	    'DJANGO_SETTINGS_MODULE', os.environ.get('DJANGO_SETTINGS_MODULE')
 	)
-	
+
 	app = Celery('your_django_app_name')
 
 같은 디렉토리의 `__init__.py`에 다음과 같이 입력한다.
 
 	from your_django_app_name.celery import app as celery_app
-	
+
 `django`의 `settings.py`에 `celery`가 `rabbitmq`와 연결할 수 있도록 다음과 같은 설정을 추가한다.
 
 	# rabbitmq의 기본 유저, 기본 호스트, 기본포트(5672)로 연결한다.
@@ -95,7 +95,7 @@ Tags: python, django, celery
 	@shared_task
 	def send_email(title, content, fromm, to, html_content=None):
 	    send_mail(title, content, fromm, to, html_message=html_content)
-	    
+
 WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.
 
 ### Django View 작성
@@ -113,7 +113,7 @@ WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.
 `django`의 루트 디렉토리로 이동한 후, 다음 명령어로 메세지 브로커를 통해 받은 작업을 처리할 워커를 띄운다.
 
 	celery worker -A your_django_app_name -l info
-	
+
 콘솔에 이런저런 로그가 뜨면서 `rabbitmq`와 연결되었다는 메세지를 확인하면 성공이다.
 
 <br>
@@ -124,7 +124,7 @@ WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.
 ### Flower 설치
 
 	pip install flower
-	
+
 ### Flower 실행
 
 `django`의 루트 디렉토리로 이동한 후, 다음 명령어로 `flower` 웹 인스턴스를 띄운다.
