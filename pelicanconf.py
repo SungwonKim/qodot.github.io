@@ -6,6 +6,7 @@ AUTHOR = 'qodot'
 SITENAME = 'waiting for qodot'
 SITEURL = 'http://qodot.github.io'
 PATH = 'content'
+STATIC_PATHS = ['images',]
 
 TIMEZONE = 'Asia/Seoul'
 DEFAULT_LANG = 'en'
