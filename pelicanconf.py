@@ -13,8 +13,8 @@ DEFAULT_LANG = 'en'
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 FEED_ALL_RSS = 'feeds/all.rss.xml'
-CATEGORY_FEED_ATOM = 'category/%s/feed/atom.xml'
-CATEGORY_FEED_RSS = 'category/%s/feed/rss.xml'
+CATEGORY_FEED_ATOM = 'category/%s/feeds/atom.xml'
+CATEGORY_FEED_RSS = 'category/%s/feeds/rss.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
