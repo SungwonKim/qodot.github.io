@@ -3,7 +3,7 @@ Slug: [데브옵스-스터디]-02-CPU-RAM-디스크-IO-자원-고갈
 Date: 2016-04-30
 Tags: linux, 데브옵스, 위키북스, 
 
-이 포스트는 `위키북스`가 출판한 [`데브옵스`](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=26451777)의 챕터 02 `왜 서버가 이렇게 느리지? CPU, RAM 그리고 디스크 I/O의 자원 고갈`을 요약한 내용입니다.
+이 포스트는 `위키북스`가 출판한 [데브옵스](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=26451777)의 챕터 02 `왜 서버가 이렇게 느리지? CPU, RAM 그리고 디스크 I/O의 자원 고갈`을 요약한 내용입니다.
 
 <br>
 ## CPU
