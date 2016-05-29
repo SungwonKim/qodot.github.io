@@ -21,21 +21,25 @@ Tags: python, telegrambot
 
 적절히 python 환경을 구성한 뒤, telepot을 설치한다.
 
-    pip install telepot
+``` bash
+pip install telepot
+```
 
 기본적인 사용법은 telepot github 페이지에 잘 정리되어 있다. 그 중에서도 더 기본적인 기능만 소개해보면,
 
-    # 봇 생성
-    bot = telepot.Bot(YOUR_ACCESS_TOKEN)
+``` python
+# 봇 생성
+bot = telepot.Bot(YOUR_ACCESS_TOKEN)
 
-    # 메세지 수신 대기 (busy waiting)
-    import time
-    bot.notifyOnMessage(callback_function_to_handle_message)
-    while True:
-        time.sleep(10)
+# 메세지 수신 대기 (busy waiting)
+import time
+bot.notifyOnMessage(callback_function_to_handle_message)
+while True:
+    time.sleep(10)
 
-    # 메세지 발신
-    bot.sendMessage(target, sending_message)
+# 메세지 발신
+bot.sendMessage(target, sending_message)
+```
 
 메세지 발신시의 `target`은 수신 메세지에 들어있는 `chat_id`이다. (수신된 메세지를 출력해 보면 구조를 자세히 알 수 있다.)
 
@@ -52,34 +56,38 @@ Tags: python, telegrambot
 
 다음 명령어로 설치한다.
 
-    pip install sqlalchemy
+``` bash
+pip install sqlalchemy
+```
 
 ### Scheme 생성
 
 다음은 데이터베이스 연결을 수행하고, 식당의 테이블 정보를 담고있는 `sqlalchemy` 모델 정보가 담겨있는 `db.py` 파일이다.
 
-    from datetime import datetime
+``` python
+from datetime import datetime
 
-    from sqlalchemy import create_engine
-    from sqlalchemy import Column, Integer, String, DateTime
-    from sqlalchemy.orm import sessionmaker
-    from sqlalchemy.ext.declarative import declarative_base
-
-
-    # 데이터베이스 연결 및 세션 취득
-    engine = create_engine('sqlite:///db.sqlite3', echo=True)
-    session = sessionmaker(bind=engine)() #
-    Base = declarative_base()
+from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 
-    # 식당 테이블
-    class Restaurant(Base):
-        __tablename__ = 'restaurants'
+# 데이터베이스 연결 및 세션 취득
+engine = create_engine('sqlite:///db.sqlite3', echo=True)
+session = sessionmaker(bind=engine)() #
+Base = declarative_base()
 
-        id = Column(Integer, primary_key=True)
-        name = Column(String)
-        created_at = Column(DateTime, default=datetime.now)
-        updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
+# 식당 테이블
+class Restaurant(Base):
+    __tablename__ = 'restaurants'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+```
 
 위의 `session` 변수를 통해 데이터베이스에 접속해서 쿼리를 실행할 수 있다.
 
@@ -97,21 +105,23 @@ Tags: python, telegrambot
 
 1, 2, 3번 중 하나를 선택해서 테이블 스키마를 생성했다면, 이제 데이터베이스에 접속해서 쿼리를 날려볼 차례인데, 여기서는 이 프로젝트에서 사용한 기본적인 `select`, `insert`, `delete` 동작의 예시를 소개해 본다.
 
-    # 식당 테이블의 모든 row 조회
-    restaurants = session.query(Restaurant).all()
+``` python
+# 식당 테이블의 모든 row 조회
+restaurants = session.query(Restaurant).all()
 
-    # 식당 테이블의 모든 row 갯수 조회
-    restaurants_count = session.query(Restaurant).count()
+# 식당 테이블의 모든 row 갯수 조회
+restaurants_count = session.query(Restaurant).count()
 
-    # 새 식당 등록
-    restaurant = Restaurant(name=name)
-    session.add(restaurant)
-    session.commit()
+# 새 식당 등록
+restaurant = Restaurant(name=name)
+session.add(restaurant)
+session.commit()
 
-    # 특정 이름을 가진 식당 하나를 제거
-    restaurant = session.query(Restaurant).filter(Restaurant.name==name).first()
-    session.delete(restaurant)
-    session.commit()
+# 특정 이름을 가진 식당 하나를 제거
+restaurant = session.query(Restaurant).filter(Restaurant.name==name).first()
+session.delete(restaurant)
+session.commit()
+```
 
 <br>
 ## 개선점

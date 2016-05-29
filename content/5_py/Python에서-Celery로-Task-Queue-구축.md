@@ -24,25 +24,31 @@ Tags: python, django, celery
 
 #### OS X
 
-	brew update
-	brew install rabbitmq
+``` bash
+brew update
+brew install rabbitmq
+```
 
 #### RHEL
 
 무슨 이유인지는 모르겠는데 `erlang`, `rabbitmq` 둘 다 `yum`에 기본적으로 등록이 안 되어있다.
 
-	# install erlang
-	wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
-	rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
-	yum install erlang
+``` bash
+# install erlang
+wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
+rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
+yum install erlang
 
-	# install rabbitmq-server
-	wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.0/rabbitmq-server-3.6.0-1.noarch.rpm
-	rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
+# install rabbitmq-server
+wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.0/rabbitmq-server-3.6.0-1.noarch.rpm
+rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
+```
 
 ### RabbitMQ 실행
 
-	rabbitmq-server
+``` bash
+rabbitmq-server
+```
 
 브로커가 떴다!
 
@@ -53,34 +59,42 @@ Tags: python, django, celery
 
 ### Celery 설치
 
-	pip install celery
+``` bash
+pip install celery
+```
 
 ### Celery 설정
 
 `celery` 애플리케이션을 설정하고 생성하기 위해서 `django`의 설정 디렉토리(최초 `settings.py`가 있는 디렉토리)에 `celery.py` 파일을 만들고 다음 코드를 작성한다.
 
-	from __future__ import absolute_import
+``` python
+from __future__ import absolute_import
 
-	import os
+import os
 
-	from celery import Celery
-	from django.conf import settings
+from celery import Celery
+from django.conf import settings
 
-	# celery 앱에 django의 settings 값을 주입한다.
-	os.environ.setdefault(
-	    'DJANGO_SETTINGS_MODULE', os.environ.get('DJANGO_SETTINGS_MODULE')
-	)
+# celery 앱에 django의 settings 값을 주입한다.
+os.environ.setdefault(
+    'DJANGO_SETTINGS_MODULE', os.environ.get('DJANGO_SETTINGS_MODULE')
+)
 
-	app = Celery('your_django_app_name')
+app = Celery('your_django_app_name')
+```
 
 같은 디렉토리의 `__init__.py`에 다음과 같이 입력한다.
 
-	from your_django_app_name.celery import app as celery_app
+``` python
+from your_django_app_name.celery import app as celery_app
+```
 
 `django`의 `settings.py`에 `celery`가 `rabbitmq`와 연결할 수 있도록 다음과 같은 설정을 추가한다.
 
-	# rabbitmq의 기본 유저, 기본 호스트, 기본포트(5672)로 연결한다.
-	BROKER_URL = 'amqp://guest:guest@localhost//'
+``` python
+# rabbitmq의 기본 유저, 기본 호스트, 기본포트(5672)로 연결한다.
+BROKER_URL = 'amqp://guest:guest@localhost//'
+```
 
 이제 `django`가 구동되면서 `celery`를 생성하게 되고, 사용할 수 있다.
 
@@ -88,13 +102,15 @@ Tags: python, django, celery
 
 서두에 말했던 것과 같이 이메일을 보내는 간단한 작업을 작성해보자. 간단하게 `django`의 `send_mail` 메소드를 이용하자.
 
-	from celery import shared_task
-	from django.core.mail import send_mail
+``` python
+from celery import shared_task
+from django.core.mail import send_mail
 
-	# shared_task는 하나의 프로젝트에서 여러개의 celery 인스턴스를 생성할 경우, 인스턴스에서 공유가 가능한 작업을 뜻한다
-	@shared_task
-	def send_email(title, content, fromm, to, html_content=None):
-	    send_mail(title, content, fromm, to, html_message=html_content)
+# shared_task는 하나의 프로젝트에서 여러개의 celery 인스턴스를 생성할 경우, 인스턴스에서 공유가 가능한 작업을 뜻한다
+@shared_task
+def send_email(title, content, fromm, to, html_content=None):
+    send_mail(title, content, fromm, to, html_message=html_content)
+```
 
 WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.
 
@@ -102,17 +118,21 @@ WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.
 
 `@shared_task`로 선언된 함수를 실행할 때, `delay()`를 통해 실행하면[^2] 자동으로 메세지 브로커를 통해 작업이 워커로 날아간다! 너무 편하다!
 
-	from your_tasks_path import send_email
-	def some_controller_method(request):
-		# ...
-		send_email.delay('my_title', 'my_content', 'noreply@email.com', ['target@email.com'])
-		# ...
+``` python
+from your_tasks_path import send_email
+def some_controller_method(request):
+    ...
+	send_email.delay('my_title', 'my_content', 'noreply@email.com', ['target@email.com'])
+    ...
+```
 
 ### Celery Worker 프로세스 구동
 
 `django`의 루트 디렉토리로 이동한 후, 다음 명령어로 메세지 브로커를 통해 받은 작업을 처리할 워커를 띄운다.
 
-	celery worker -A your_django_app_name -l info
+``` bash
+celery worker -A your_django_app_name -l info
+```
 
 콘솔에 이런저런 로그가 뜨면서 `rabbitmq`와 연결되었다는 메세지를 확인하면 성공이다.
 
@@ -123,14 +143,18 @@ WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.
 
 ### Flower 설치
 
-	pip install flower
+``` bash
+pip install flower
+```
 
 ### Flower 실행
 
 `django`의 루트 디렉토리로 이동한 후, 다음 명령어로 `flower` 웹 인스턴스를 띄운다.
 
-	# 기본 포트는 5555이다
-	flower -A your_django_app_name
+``` bash
+# 기본 포트는 5555이다
+flower -A your_django_app_name
+```
 
 `rabbitmq`와 `celery` 워커가 실행되어 있다면 정상적으로 인스턴스가 구동된다. `localhost:5555`로 접속하면 [멋진 화면](http://flower.readthedocs.org/en/latest/screenshots.html)을 볼 수 있다. 이렇게 간단하게 괜찮은 모니터링 툴을 이용할 수 있다니 ㅜㅜ
 
