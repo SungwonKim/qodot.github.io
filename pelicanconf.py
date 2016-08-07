@@ -43,6 +43,11 @@ home = expanduser("~")
 THEME = home + '/pelican-themes/Casper2Pelican'
 DISQUS_SITENAME = 'qodot'
 GOOGLE_ANALYTICS = 'UA-61719953-2'
-
 FAVICON = 'images/favicon.png'
-PYGMENTS_STYLE = 'zenburn'
+
+# casper
+AUTHOR_PIC_URL = '/images/profile.png'
+AUTHOR_BIO = 'Python Web Developer'
+AUTHOR_LOCATION = 'Seoul, South Korea'
+DEFAULT_HEADER_IMAGE = '/images/default_header.png'
+ARCHIVE_HEADER_IMAGE = '/images/archive_header.png'
