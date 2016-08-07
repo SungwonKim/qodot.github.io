@@ -40,22 +40,9 @@ DEFAULT_PAGINATION = 10
 from os.path import expanduser
 home = expanduser("~")
 
-THEME = home + '/pelican-themes/pelican-bootstrap3'
+THEME = home + '/pelican-themes/Casper2Pelican'
 DISQUS_SITENAME = 'qodot'
 GOOGLE_ANALYTICS = 'UA-61719953-2'
 
-# pelican-bootstrap3 theme settings
-BOOTSTRAP_THEME = 'sandstone'
 FAVICON = 'images/favicon.png'
-BOOTSTRAP_NAVBAR_INVERSE = False
-
-DISPLAY_BREADCRUMBS = True
-DISPLAY_CATEGORY_IN_BREADCRUMBS = True
-DISPLAY_ARTICLE_INFO_ON_INDEX = True
-
-DISPLAY_TAGS_ON_SIDEBAR = True
-DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
-
-ADDTHIS_PROFILE = 'qodot'
-
 PYGMENTS_STYLE = 'zenburn'
