@@ -40,10 +40,16 @@ DEFAULT_PAGINATION = 10
 from os.path import expanduser
 home = expanduser("~")
 
-THEME = home + '/pelican-themes/Casper2Pelican'
+THEME = home + '/pelican/themes/Casper2Pelican'
 DISQUS_SITENAME = 'qodot'
 GOOGLE_ANALYTICS = 'UA-61719953-2'
 FAVICON = 'images/favicon.png'
+
+PLUGIN_PATHS = [home + '/pelican/plugins']
+PLUGINS = ['neighbors.neighbors', 'multi_neighbors.multi_neighbors']
+
+# multi_neighbors
+MULTI_NEIGHBORS = 4
 
 # casper
 AUTHOR_PIC_URL = '/images/profile.png'
