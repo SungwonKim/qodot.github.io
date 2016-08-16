@@ -6,7 +6,7 @@ AUTHOR = 'qodot'
 SITENAME = 'waiting for qodot'
 SITEURL = 'http://qodot.github.io'
 PATH = 'content'
-STATIC_PATHS = ['images',]
+STATIC_PATHS = ['images']
 
 TIMEZONE = 'Asia/Seoul'
 DEFAULT_LANG = 'en'
@@ -46,7 +46,7 @@ GOOGLE_ANALYTICS = 'UA-61719953-2'
 FAVICON = 'images/favicon.png'
 
 PLUGIN_PATHS = [home + '/pelican/plugins']
-PLUGINS = ['neighbors.neighbors', 'multi_neighbors.multi_neighbors']
+PLUGINS = ['multi_neighbors.multi_neighbors']
 
 # multi_neighbors
 MULTI_NEIGHBORS = 4
