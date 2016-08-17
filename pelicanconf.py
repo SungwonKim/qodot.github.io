@@ -27,11 +27,6 @@ SOCIAL = (
     ('lastfm', 'http://www.last.fm/user/qodot'),
 )
 
-# LINKS = (('Pelican', 'http://getpelican.com/'),
-#          ('Python.org', 'http://python.org/'),
-#          ('Jinja2', 'http://jinja.pocoo.org/'),
-#          ('You can modify those links in your config file', '#'),)
-
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -54,3 +49,12 @@ AUTHOR_BIO = 'Python Web Developer'
 AUTHOR_LOCATION = 'Seoul, South Korea'
 DEFAULT_HEADER_IMAGE = '/images/default_header.png'
 ARCHIVE_HEADER_IMAGE = '/images/archive_header.png'
+
+CATEGORIES = [
+    ('diary', 'category/diary.html'),
+    ('book', 'category/book.html'),
+    ('music', 'category/music.html'),
+    ('py', 'category/py.html'),
+    ('env', 'category/env.html'),
+    ('techbook', 'category/techbook.html'),
+]
