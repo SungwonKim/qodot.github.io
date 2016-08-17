@@ -46,12 +46,9 @@ GOOGLE_ANALYTICS = 'UA-61719953-2'
 FAVICON = 'images/favicon.png'
 
 PLUGIN_PATHS = [home + '/pelican/plugins']
-PLUGINS = ['multi_neighbors.multi_neighbors']
+PLUGINS = ['related_posts.related_posts']
 
-# multi_neighbors
-MULTI_NEIGHBORS = 4
-
-# casper
+# casper theme
 AUTHOR_PIC_URL = '/images/profile.png'
 AUTHOR_BIO = 'Python Web Developer'
 AUTHOR_LOCATION = 'Seoul, South Korea'

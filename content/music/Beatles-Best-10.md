@@ -1,6 +1,7 @@
 Title: The Beatles Best 10
 Slug: Beatles-Best-10
 Date: 2016-01-23
+Category: music
 Tags: thebeatles, best10
 
 요새 이동진의 빨간책방을 듣는데 몇 년 전에 비틀즈 앤솔로지를 다루면서, 출연자들끼리 각자 비틀즈 베스트 10을 선정하더라. 그래서 나도 해보는 베스트 10...
