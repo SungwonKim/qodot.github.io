@@ -43,13 +43,14 @@ FAVICON = 'images/favicon.png'
 PLUGIN_PATHS = [home + '/pelican/plugins']
 PLUGINS = ['related_posts.related_posts']
 
-# casper theme
+# Casper2Pelican theme
 AUTHOR_PIC_URL = '/images/profile.png'
 AUTHOR_BIO = 'Python Web Developer'
 AUTHOR_LOCATION = 'Seoul, South Korea'
 DEFAULT_HEADER_IMAGE = '/images/default_header.png'
 ARCHIVE_HEADER_IMAGE = '/images/archive_header.png'
 
+# custom for Casper2Pelican theme
 CATEGORIES = [
     ('diary', 'category/diary.html'),
     ('book', 'category/book.html'),
