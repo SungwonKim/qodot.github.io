@@ -20,11 +20,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-SOCIAL = (
-    ('facebook', 'https://www.facebook.com/daewon.seo.5'),
-    ('github', 'https://github.com/qodot'),
-    ('rateyourmusic', 'https://rateyourmusic.com/~qodot'),
-    ('lastfm', 'http://www.last.fm/user/qodot'),
+LINKS = (
+    ('* github', 'https://github.com/qodot'),
+    ('* facebook', 'https://www.facebook.com/daewon.seo.5'),
+    ('* rateyourmusic', 'https://rateyourmusic.com/~qodot'),
+    ('* lastfm', 'http://www.last.fm/user/qodot'),
 )
 
 DEFAULT_PAGINATION = 10
@@ -45,17 +45,17 @@ PLUGINS = ['related_posts.related_posts']
 
 # Casper2Pelican theme
 AUTHOR_PIC_URL = '/images/profile.png'
-AUTHOR_BIO = 'Python Web Developer'
+AUTHOR_BIO = 'Python Developer'
 AUTHOR_LOCATION = 'Seoul, South Korea'
 DEFAULT_HEADER_IMAGE = '/images/default_header.png'
 ARCHIVE_HEADER_IMAGE = '/images/archive_header.png'
 
 # custom for Casper2Pelican theme
 CATEGORIES = [
-    ('diary', 'category/diary.html'),
-    ('book', 'category/book.html'),
-    ('music', 'category/music.html'),
-    ('py', 'category/py.html'),
-    ('env', 'category/env.html'),
-    ('techbook', 'category/techbook.html'),
+    ('@ diary', 'category/diary.html'),
+    ('@ book', 'category/book.html'),
+    ('@ music', 'category/music.html'),
+    ('@ py', 'category/py.html'),
+    ('@ env', 'category/env.html'),
+    ('@ techbook', 'category/techbook.html'),
 ]
