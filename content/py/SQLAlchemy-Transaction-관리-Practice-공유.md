@@ -1,6 +1,6 @@
 Title: SQLAlchemy Transaction 관리 Practice 공유
 Slug: SQLAlchemy-Transaction-관리-Practice-공유
-Date: 2018-08-27
+Date: 2016-08-27
 Tags: python, sqlalchemy
 
 

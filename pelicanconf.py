@@ -37,7 +37,7 @@ home = expanduser("~")
 
 THEME = home + '/pelican/themes/Casper2Pelican'
 DISQUS_SITENAME = 'qodot'
-GOOGLE_ANALYTICS = 'UA-61719953-2'
+GOOGLE_ANALYTICS = 'UA-83522208-1'
 FAVICON = 'images/favicon.png'
 
 PLUGIN_PATHS = [home + '/pelican/plugins']
