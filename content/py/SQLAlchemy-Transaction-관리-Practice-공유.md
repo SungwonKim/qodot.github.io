@@ -79,7 +79,9 @@ def opentx(f):
             result = f(cls, session, *args, **kwargs)
 		with gettx() as session:  # 새로운 트랜잭션을 여는 부분
 			result = f(cls, session, *args, **kwargs)
-            session.expunge(result)  # 트랜잭션이 닫혀도 object의 attributes에 접근 할 수 있게 함
+            if hasattr(result, '_sa_instance_state'):
+                # 트랜잭션이 닫혀도 object의 attributes에 접근 할 수 있게 함
+	            session.expunge(result)
 		return result
 	return wrap
 ```
