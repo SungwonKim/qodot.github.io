@@ -3,8 +3,6 @@ Slug: SQLAlchemy-Transaction-관리-Practice-공유
 Date: 2016-08-27
 Tags: python, sqlalchemy
 
-
-
 ## 개요
 
 기본적으로 `SQLAlchemy`에서는 (`autocommit=True` 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다.
