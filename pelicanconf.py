@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'qodot'
 SITENAME = 'waiting for qodot'
-SITEURL = 'http://qodot.github.io'
+SITEURL = 'https://qodot.github.io'
 PATH = 'content'
 STATIC_PATHS = ['images']
 
@@ -57,5 +57,4 @@ CATEGORIES = [
     ('@ music', 'category/music.html'),
     ('@ py', 'category/py.html'),
     ('@ env', 'category/env.html'),
-    ('@ techbook', 'category/techbook.html'),
 ]
