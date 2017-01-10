@@ -52,9 +52,6 @@ ARCHIVE_HEADER_IMAGE = '/images/archive_header.png'
 
 # custom for Casper2Pelican theme
 CATEGORIES = [
-    ('@ diary', 'category/diary.html'),
-    ('@ book', 'category/book.html'),
-    ('@ music', 'category/music.html'),
     ('@ py', 'category/py.html'),
     ('@ env', 'category/env.html'),
 ]
