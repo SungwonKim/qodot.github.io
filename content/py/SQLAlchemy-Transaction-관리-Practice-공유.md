@@ -40,15 +40,15 @@ from contextlib import contextmanager
 
 @contextmanager
 def gettx():
-	session = Session()
-	try:
-		yield session
-		session.commit()
-	except Exception as e:
-		logger.error(e)
-		session.rollback()
-		raise
-	finally:
+    session = Session()
+    try:
+        yield session
+        session.commit()
+    except Exception as e:
+        logger.error(e)
+        session.rollback()
+        raise
+    finally:
 		session.close()
 ```
 
@@ -72,16 +72,16 @@ with gettx() as session:
 
 ```python
 def opentx(f):
-	def wrap(cls, *args, session=None, **kwargs):
+    def wrap(cls, *args, session=None, **kwargs):
         if session:  # 이미 열려있는 트랜잭션을 쓰는 부분
+            return f(cls, session, *args, **kwargs)
+        with gettx() as session:  # 새로운 트랜잭션을 여는 부분
             result = f(cls, session, *args, **kwargs)
-		with gettx() as session:  # 새로운 트랜잭션을 여는 부분
-			result = f(cls, session, *args, **kwargs)
             if hasattr(result, '_sa_instance_state'):
                 # 트랜잭션이 닫혀도 object의 attributes에 접근 할 수 있게 함
-	            session.expunge(result)
-		return result
-	return wrap
+                session.expunge(result)
+            return result
+    return wrap
 ```
 
 서비스 레이어의 코드를 보자.
