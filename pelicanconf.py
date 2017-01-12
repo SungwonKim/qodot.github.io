@@ -35,20 +35,21 @@ DEFAULT_PAGINATION = 10
 from os.path import expanduser
 home = expanduser("~")
 
-THEME = home + '/pelican/themes/Casper2Pelican'
-DISQUS_SITENAME = 'qodot'
-GOOGLE_ANALYTICS = 'UA-83522208-1'
 FAVICON = 'images/favicon.png'
 
-PLUGIN_PATHS = [home + '/pelican/plugins']
-PLUGINS = ['related_posts.related_posts']
-
+THEME = home + '/pelican/themes/Casper2Pelican'
 # Casper2Pelican theme
 AUTHOR_PIC_URL = '/images/profile.png'
 AUTHOR_BIO = 'Python Developer'
 AUTHOR_LOCATION = 'Seoul, South Korea'
 DEFAULT_HEADER_IMAGE = '/images/default_header.png'
 ARCHIVE_HEADER_IMAGE = '/images/archive_header.png'
+
+DISQUS_SITENAME = 'qodot'
+GOOGLE_ANALYTICS = 'UA-83522208-2'
+
+PLUGIN_PATHS = [home + '/pelican/plugins']
+PLUGINS = ['related_posts.related_posts']
 
 # custom for Casper2Pelican theme
 CATEGORIES = [
