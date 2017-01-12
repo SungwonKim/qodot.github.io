@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>waiting for qodot - env</title><link>https://qodot.github.io/</link><description></description><lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0900</lastBuildDate><item><title>Sumblime Text를 OSX Command Line에서 실행</title><link>https://qodot.github.io/Sumblime-Text%EB%A5%BC-OSX-Command-Line%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89.html</link><description>&lt;h3&gt;Sublime Text 설치 확인&lt;/h3&gt;
+&lt;p&gt;아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl .
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3&gt;Symbolic Link 생성&lt;/h3&gt;
+&lt;p&gt;아래 커맨드를 통해 Symbolic link를 생성한다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">qodot</dc:creator><pubDate>Wed, 15 Apr 2015 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:qodot.github.io,2015-04-15:/Sumblime-Text를-OSX-Command-Line에서-실행.html</guid><category>env</category><category>sublimetext</category></item></channel></rss>

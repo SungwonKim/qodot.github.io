@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>waiting for qodot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+        <meta http-equiv="content-style-type" content="text/css">
+        <link rel="dns-prefetch" href="https://qodot.github.io"/>
+        <link rel="dns-prefetch" href="//www.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+        <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/screen.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/custom.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/twemoji-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <link rel="publisher" href="">
+        <link rel="apple-touch-startup-image" href="https://qodot.github.io/theme/images/logo.png">
+        <link type="text/plain" rel="socialmedia" href="https://qodot.github.io/socialmedia.txt">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="application-name" content="waiting for qodot"/>
+        <meta name="msapplication-starturl" content="http:https://qodot.github.io"/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-window" content="width=1024;height=768"/>
+        <meta name="msapplication-task" content="name=waiting for qodot;action-uri=http:https://qodot.github.io;icon-uri=https://qodot.github.io/theme/images/favicon.ico"/>
+        <meta name="msapplication-TileImage" content="https://qodot.github.io/theme/images/apple-touch-icon-144x144.png"/>
+        <meta name="msapplication-TileColor" content="#1F1F21"/>
+        <meta name="application-name" content="waiting for qodot">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="">
+        <meta name="alexaVerifyID" content=""/>
+        <meta name="wot-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="medium" content="mult">
+        <meta name="adblock" content="disable">
+        <meta name="rating" content="General">
+        <meta name="resource-type" content="document">
+        <meta name="revisit-after" content="1 days">
+        <meta name="revisit" content="1">
+        <meta name="robots" content="index,follow">
+        <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta property="og:site_name" content="waiting for qodot">
+        <meta property="og:locale" content="en">
+        <link rel="canonical" href="https://qodot.github.io/SQLAlchemy-Quickstart.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="SQLAlchemy Quickstart">
+        <meta property="og:url" content="SQLAlchemy-Quickstart.html">
+        <meta property="og:description" content="SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다. 설치 그냥 pip으로 설치하면 된다. pip install sqlalchemy 설정 접속 설정 from sqlalchemy import create_engine URL = &#39;postgresql://&lt;username&gt;:&lt;password@&lt;host&gt;:&lt;port&gt;/&lt;dbname&gt;&#39; engine = create_engine(URL, echo=True) 간단하게 engine.execute(&#39;SELECT 1&#39;).scalar() 같은 코드를 실행해보면 접속을 테스트해 볼 수 있다 …">
+        <meta property="article:published_time" content="금요일, 11월 20, 2015">
+        <meta name="twitter:title" content="SQLAlchemy Quickstart">
+        <meta name="twitter:description" content="SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다. 설치 그냥 pip으로 설치하면 된다. pip install sqlalchemy 설정 접속 설정 from sqlalchemy import create_engine URL = &#39;postgresql://&lt;username&gt;:&lt;password@&lt;host&gt;:&lt;port&gt;/&lt;dbname&gt;&#39; engine = create_engine(URL, echo=True) 간단하게 engine.execute(&#39;SELECT 1&#39;).scalar() 같은 코드를 실행해보면 접속을 테스트해 볼 수 있다 …">
+        <meta name="description" content="SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다. 설치 그냥 pip으로 설치하면 된다. pip install sqlalchemy 설정 접속 설정 from sqlalchemy import create_engine URL = &#39;postgresql://&lt;username&gt;:&lt;password@&lt;host&gt;:&lt;port&gt;/&lt;dbname&gt;&#39; engine = create_engine(URL, echo=True) 간단하게 engine.execute(&#39;SELECT 1&#39;).scalar() 같은 코드를 실행해보면 접속을 테스트해 볼 수 있다 …">
+        <meta name="twitter:creator" content="@">
+        <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="article:section" content="py">
+        <meta property="article:tag" content="sqlalchemy">
+        <meta property="article:author" content="qodot">
+    </head>
+    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+        <meta itemprop="name" content="waiting for qodot">
+        <meta itemprop="url" content="https://qodot.github.io">
+        <meta itemprop="headline" content="waiting for qodot || ">
+        <meta itemprop="description about" content="">
+        <meta itemprop="keywords" content="">
+        <meta itemprop="inLanguage" content="en">
+<nav class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul role="menubar">
+        <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
+            <li role="presentation"><a  href="https://github.com/qodot" title="* github" itemprop="name" itemprop="significantLink">* github</a></li>
+            <li role="presentation"><a  href="https://www.facebook.com/daewon.seo.5" title="* facebook" itemprop="name" itemprop="significantLink">* facebook</a></li>
+            <li role="presentation"><a  href="https://rateyourmusic.com/~qodot" title="* rateyourmusic" itemprop="name" itemprop="significantLink">* rateyourmusic</a></li>
+            <li role="presentation"><a  href="http://www.last.fm/user/qodot" title="* lastfm" itemprop="name" itemprop="significantLink">* lastfm</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/archives.html" title="waiting for qodot | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
+    </ul>
+</nav>
+<span class="nav-cover"></span>        <div class="site-wrapper">
+            <header class="main-header post-head" style="background-image: url('/images/default_header.png');" itemscope itemtype="http://schema.org/WPHeader">
+                <nav class="main-nav overlay clearfix">
+                    <a class="menu-button" href="#">
+                        <span class="burger">&#9776;</span>
+                        <span class="word">Menu</span>
+                    </a>
+                </nav>
+                <div class="vertical">
+                    <div class="main-header-content inner">
+                    </div>
+                </div>
+            </header>
+<main id="content" class="content" role="main">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <header class="post-header">
+            <h1 class="post-title" itemprop="headline">SQLAlchemy Quickstart</h1>
+            <section class="post-meta">
+                <time class="post-date" itemprop="datePublished" datetime="2015YYY-00M-%DD">금요일, 11월 20, 2015</time>
+                on <a href="tag/sqlalchemy.html">Sqlalchemy</a>            </section>
+        </header>
+        <section class="post-content">
+            <p>SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다.</p>
+<p><br></p>
+<h2>설치</h2>
+<p>그냥 <code>pip</code>으로 설치하면 된다.</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sqlalchemy</span>
+</pre></div>
+
+
+<p><br></p>
+<h2>설정</h2>
+<h3>접속 설정</h3>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;postgresql://&lt;username&gt;:&lt;password@&lt;host&gt;:&lt;port&gt;/&lt;dbname&gt;&#39;</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>간단하게 <code>engine.execute('SELECT 1').scalar()</code> 같은 코드를 실행해보면 접속을 테스트해 볼 수 있다.</p>
+<h3>세션 팩토리 설정</h3>
+<p>데이터베이스의 커넥션을 필요할 때마다 리턴해 줄 세션 팩토리가 필요하다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">sessionmaker</span>
+
+<span class="n">Session</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+</pre></div>
+
+
+<p>위의 <code>Session</code>이 세션 팩토리이다.</p>
+<p><br></p>
+<h2>ORM 사용</h2>
+<h3>선언</h3>
+<p>raw SQL만 쓸거면 SQLAlchemy를 쓸 이유가 없다. ORM을 사용하는 방법을 알아보자.</p>
+<p>기본적으로 <code>Base</code> 클래스를 상속 받은 클래스가 테이블이 되고, 그 클래스의 필드가 컬럼이 된다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy.ext.declarative</span> <span class="kn">import</span> <span class="n">declarative_base</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span>
+
+<span class="n">Base</span> <span class="o">=</span> <span class="n">declarative_base</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Table1</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;table1&#39;</span>
+
+    <span class="n">column1</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">)</span>
+    <span class="n">column2</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">)</span>
+</pre></div>
+
+
+<p>이건 단순히 선언했을 뿐이고, 실제로 DBMS에 스키마가 생성된건 아니다. <code>Base.metadata.create_all(engine)</code>를 실행해야 선언된 클래스가 DBMS로 반영된다.</p>
+<p><code>create_all</code>의 문제점은 테이블의 생성만 해준다는 것이다. 즉 컬럼의 추가나 삭제, 속성 변경 같은 것은 반영되지 않는다. 이 작업을 쉽게(Django, Rails 같이)하려면 Alembic이라는 프로젝트를 따로 사용해야 한다. 필요하면 다음 페이지를 참조한다.</p>
+<ul>
+<li><a href="https://github.com/qodot/wiki/wiki/Python-Alembic-Quickstart">Alembic Quickstart</a></li>
+</ul>
+<h3>사용</h3>
+<div class="highlight"><pre><span></span><span class="c1"># 조회</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">table1_object</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Table1</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Table1</span><span class="o">.</span><span class="n">column1</span> <span class="o">==</span> <span class="err">‘</span><span class="n">something</span><span class="err">’</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">column2</span> <span class="o">=</span> <span class="n">table1_object</span><span class="o">.</span><span class="n">column2</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># 생성</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">table1_object2</span> <span class="o">=</span> <span class="n">Table1</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">table1_object2</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># 업데이트</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">table1_object</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Table1</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Table1</span><span class="o">.</span><span class="n">column1</span> <span class="o">==</span> <span class="err">‘</span><span class="n">something</span><span class="err">’</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">table1_object</span><span class="o">.</span><span class="n">column2</span> <span class="o">=</span> <span class="s1">&#39;new_value&#39;</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># 삭제</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">table1_object</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Table1</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Table1</span><span class="o">.</span><span class="n">column1</span> <span class="o">==</span> <span class="err">‘</span><span class="n">something</span><span class="err">’</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">table1_object</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+        </section>
+        <footer class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
+            </figure>
+            <section class="author">
+                <h4>
+                    <a href="author/qodot.html">qodot</a>
+                </h4>
+                <p>Python Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+            </section>
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=SQLAlchemy%20Quickstart%20via%20%40&amp;url=https://qodot.github.io/SQLAlchemy-Quickstart.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/SQLAlchemy-Quickstart.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/SQLAlchemy-Quickstart.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+ <section>
+<h2>Comments !</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">var disqus_identifier = "SQLAlchemy-Quickstart.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+</section>         </footer>
+    </article>
+</main>
+<aside class="read-next">
+</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+                <section class="copyright">
+                    <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a itemprop="url" href="https://getpelican.org" target="_blank">Pelican</a>
+                </section>
+            </footer>
+        </div>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/index.min.js"></script>
+    </body>
+</html>

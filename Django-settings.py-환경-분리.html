@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>waiting for qodot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+        <meta http-equiv="content-style-type" content="text/css">
+        <link rel="dns-prefetch" href="https://qodot.github.io"/>
+        <link rel="dns-prefetch" href="//www.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+        <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/screen.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/custom.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/twemoji-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <link rel="publisher" href="">
+        <link rel="apple-touch-startup-image" href="https://qodot.github.io/theme/images/logo.png">
+        <link type="text/plain" rel="socialmedia" href="https://qodot.github.io/socialmedia.txt">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="application-name" content="waiting for qodot"/>
+        <meta name="msapplication-starturl" content="http:https://qodot.github.io"/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-window" content="width=1024;height=768"/>
+        <meta name="msapplication-task" content="name=waiting for qodot;action-uri=http:https://qodot.github.io;icon-uri=https://qodot.github.io/theme/images/favicon.ico"/>
+        <meta name="msapplication-TileImage" content="https://qodot.github.io/theme/images/apple-touch-icon-144x144.png"/>
+        <meta name="msapplication-TileColor" content="#1F1F21"/>
+        <meta name="application-name" content="waiting for qodot">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="">
+        <meta name="alexaVerifyID" content=""/>
+        <meta name="wot-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="medium" content="mult">
+        <meta name="adblock" content="disable">
+        <meta name="rating" content="General">
+        <meta name="resource-type" content="document">
+        <meta name="revisit-after" content="1 days">
+        <meta name="revisit" content="1">
+        <meta name="robots" content="index,follow">
+        <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta property="og:site_name" content="waiting for qodot">
+        <meta property="og:locale" content="en">
+        <link rel="canonical" href="https://qodot.github.io/Django-settings.py-환경-분리.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Django settings.py 환경 분리">
+        <meta property="og:url" content="Django-settings.py-환경-분리.html">
+        <meta property="og:description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …">
+        <meta property="article:published_time" content="수요일, 7월 29, 2015">
+        <meta name="twitter:title" content="Django settings.py 환경 분리">
+        <meta name="twitter:description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …">
+        <meta name="description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …">
+        <meta name="twitter:creator" content="@">
+        <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="article:section" content="py">
+        <meta property="article:tag" content="django">
+        <meta property="article:author" content="qodot">
+    </head>
+    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+        <meta itemprop="name" content="waiting for qodot">
+        <meta itemprop="url" content="https://qodot.github.io">
+        <meta itemprop="headline" content="waiting for qodot || ">
+        <meta itemprop="description about" content="">
+        <meta itemprop="keywords" content="">
+        <meta itemprop="inLanguage" content="en">
+<nav class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul role="menubar">
+        <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
+            <li role="presentation"><a  href="https://github.com/qodot" title="* github" itemprop="name" itemprop="significantLink">* github</a></li>
+            <li role="presentation"><a  href="https://www.facebook.com/daewon.seo.5" title="* facebook" itemprop="name" itemprop="significantLink">* facebook</a></li>
+            <li role="presentation"><a  href="https://rateyourmusic.com/~qodot" title="* rateyourmusic" itemprop="name" itemprop="significantLink">* rateyourmusic</a></li>
+            <li role="presentation"><a  href="http://www.last.fm/user/qodot" title="* lastfm" itemprop="name" itemprop="significantLink">* lastfm</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/archives.html" title="waiting for qodot | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
+    </ul>
+</nav>
+<span class="nav-cover"></span>        <div class="site-wrapper">
+            <header class="main-header post-head" style="background-image: url('/images/default_header.png');" itemscope itemtype="http://schema.org/WPHeader">
+                <nav class="main-nav overlay clearfix">
+                    <a class="menu-button" href="#">
+                        <span class="burger">&#9776;</span>
+                        <span class="word">Menu</span>
+                    </a>
+                </nav>
+                <div class="vertical">
+                    <div class="main-header-content inner">
+                    </div>
+                </div>
+            </header>
+<main id="content" class="content" role="main">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <header class="post-header">
+            <h1 class="post-title" itemprop="headline">Django settings.py 환경 분리</h1>
+            <section class="post-meta">
+                <time class="post-date" itemprop="datePublished" datetime="2015YYY-00M-%DD">수요일, 7월 29, 2015</time>
+                on <a href="tag/django.html">Django</a>            </section>
+        </header>
+        <section class="post-content">
+            <h2>개요</h2>
+<p>애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 <code>settings.py</code>가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다.</p>
+<p>그래서! 기존의 패키지 구조</p>
+<div class="highlight"><pre><span></span>myproject/
+    myproject/
+        settings.py
+</pre></div>
+
+
+<p>를</p>
+<div class="highlight"><pre><span></span>myproject/
+    myproject/
+        settings/
+            __init__.py
+            base.py
+            local.py
+            development.py
+            production.py
+</pre></div>
+
+
+<p>로 분리하는 작업을 진행해보자.</p>
+<p><br></p>
+<h2>설정 파일 분리</h2>
+<p>일단 모든 환경에 필요한 공통된 설정 정보를 저장할 <code>base.py</code>에 기존 <code>settings.py</code>의 정보를 모두 복사하고, 다음 <code>local.py</code>, <code>development.py</code>, <code>production.py</code>에 다음과 같이 <code>base.py</code>를 import 한다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myproject.settings.base</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+
+
+<p>이제 환경마다 다르게 가져갈 설정 정보들을 분리해보자.</p>
+<div class="highlight"><pre><span></span><span class="c1"># local.py</span>
+<span class="kn">from</span> <span class="nn">myproject.settings.base</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># local 환경이니까 디버그 모드를 켜야지!</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="c1"># local 데이터베이스의 정보를 입력한다.</span>
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.postgresql_psycopg2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;LOCAL_DB_NAME&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;LOCAL_DB_USER&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;LOCAL_DB_PASSWORD&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;LOCAL_DB_HOST&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;LOCAL_DB_PORT&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>위와 같이 분리할 정보를 <code>base.py</code>에서 지우고 환경에 맞는 파일에 넣어주면 된다.</p>
+<p>이제 애플리케이션이 구동될 때, 변경된 설정 파일을 읽도록 설정해주어야 한다. 프로젝트의 <code>wsgi.py</code> 파일을 열면 기본 설정 파일을 지정하는 코드가 있다.</p>
+<div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;DJANGO_SETTINGS_MODULE&quot;</span><span class="p">,</span> <span class="s2">&quot;myproject.settings&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>본인 기본 설정을 <code>local</code>로 지정할 것이다.</p>
+<div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;DJANGO_SETTINGS_MODULE&quot;</span><span class="p">,</span> <span class="s2">&quot;myproject.settings.local&quot;</span><span class="p">)</span>
+<span class="sb">``</span><span class="err">`</span> <span class="n">python</span>
+
+<span class="err">그러나</span> <span class="err">이런</span> <span class="err">하드코딩</span> <span class="err">방법</span> <span class="err">말고</span><span class="p">,</span> <span class="err">애플리케이션을</span> <span class="err">구동할</span> <span class="err">때</span> <span class="err">다른</span> <span class="err">설정을</span> <span class="err">주입할</span> <span class="err">수</span> <span class="err">있어야</span> <span class="err">할</span> <span class="err">것이다</span><span class="o">.</span> <span class="err">두</span> <span class="err">가지</span> <span class="err">방법이</span> <span class="err">있다</span><span class="o">.</span>
+
+<span class="err">첫</span> <span class="err">번째는</span> <span class="err">위에서</span> <span class="err">봤던</span> <span class="sb">`DJANGO_SETTINGS_MODULE`</span><span class="err">을</span> <span class="sb">`.bashrc`</span><span class="p">,</span> <span class="sb">`.bash_profile`</span><span class="p">,</span> <span class="sb">`.zshrc`</span><span class="err">에</span> <span class="err">환경</span> <span class="err">변수로</span> <span class="err">등록하는</span> <span class="err">방법이다</span><span class="o">.</span>
+
+<span class="sb">``</span><span class="err">`</span> <span class="n">bash</span>
+<span class="n">export</span> <span class="n">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="n">myproject</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">local</span>
+</pre></div>
+
+
+<p>두 번째는 서버를 띄울 때 설정을 주입하는 방법이다.</p>
+<div class="highlight"><pre><span></span>python manage.py runserver --settings<span class="o">=</span>myproject.settings.local
+</pre></div>
+
+
+<p><br></p>
+<h2>참고한 페이지</h2>
+<ul>
+<li><a href="http://morion4000.com/django-settings-for-multiple-environments/">Django settings for multiple enviroments</a></li>
+<li><a href="http://stackoverflow.com/questions/1626326/how-to-manage-local-vs-production-settings-in-django">How to manage local vs production settings in Django?</a></li>
+</ul>
+        </section>
+        <footer class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
+            </figure>
+            <section class="author">
+                <h4>
+                    <a href="author/qodot.html">qodot</a>
+                </h4>
+                <p>Python Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+            </section>
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Django%20settings.py%20%ED%99%98%EA%B2%BD%20%EB%B6%84%EB%A6%AC%20via%20%40&amp;url=https://qodot.github.io/Django-settings.py-환경-분리.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Django-settings.py-환경-분리.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/Django-settings.py-환경-분리.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+ <section>
+<h2>Comments !</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">var disqus_identifier = "Django-settings.py-환경-분리.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+</section>         </footer>
+    </article>
+</main>
+<aside class="read-next">
+</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+                <section class="copyright">
+                    <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a itemprop="url" href="https://getpelican.org" target="_blank">Pelican</a>
+                </section>
+            </footer>
+        </div>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/index.min.js"></script>
+    </body>
+</html>

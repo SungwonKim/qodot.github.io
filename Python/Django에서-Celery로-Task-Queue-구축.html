@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>waiting for qodot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+        <meta http-equiv="content-style-type" content="text/css">
+        <link rel="dns-prefetch" href="https://qodot.github.io"/>
+        <link rel="dns-prefetch" href="//www.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+        <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/screen.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/custom.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/twemoji-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <link rel="publisher" href="">
+        <link rel="apple-touch-startup-image" href="https://qodot.github.io/theme/images/logo.png">
+        <link type="text/plain" rel="socialmedia" href="https://qodot.github.io/socialmedia.txt">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="application-name" content="waiting for qodot"/>
+        <meta name="msapplication-starturl" content="http:https://qodot.github.io"/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-window" content="width=1024;height=768"/>
+        <meta name="msapplication-task" content="name=waiting for qodot;action-uri=http:https://qodot.github.io;icon-uri=https://qodot.github.io/theme/images/favicon.ico"/>
+        <meta name="msapplication-TileImage" content="https://qodot.github.io/theme/images/apple-touch-icon-144x144.png"/>
+        <meta name="msapplication-TileColor" content="#1F1F21"/>
+        <meta name="application-name" content="waiting for qodot">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="">
+        <meta name="alexaVerifyID" content=""/>
+        <meta name="wot-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="medium" content="mult">
+        <meta name="adblock" content="disable">
+        <meta name="rating" content="General">
+        <meta name="resource-type" content="document">
+        <meta name="revisit-after" content="1 days">
+        <meta name="revisit" content="1">
+        <meta name="robots" content="index,follow">
+        <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta property="og:site_name" content="waiting for qodot">
+        <meta property="og:locale" content="en">
+        <link rel="canonical" href="https://qodot.github.io/Python/Django에서-Celery로-Task-Queue-구축.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Python/Django에서 Celery로 Task Queue 구축">
+        <meta property="og:url" content="Python/Django에서-Celery로-Task-Queue-구축.html">
+        <meta property="og:description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 …">
+        <meta property="article:published_time" content="화요일, 4월 05, 2016">
+        <meta name="twitter:title" content="Python/Django에서 Celery로 Task Queue 구축">
+        <meta name="twitter:description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 …">
+        <meta name="description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 …">
+        <meta name="twitter:creator" content="@">
+        <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="article:section" content="py">
+        <meta property="article:tag" content="python">
+        <meta property="article:tag" content="django">
+        <meta property="article:tag" content="celery">
+        <meta property="article:author" content="qodot">
+    </head>
+    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+        <meta itemprop="name" content="waiting for qodot">
+        <meta itemprop="url" content="https://qodot.github.io">
+        <meta itemprop="headline" content="waiting for qodot || ">
+        <meta itemprop="description about" content="">
+        <meta itemprop="keywords" content="">
+        <meta itemprop="inLanguage" content="en">
+<nav class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul role="menubar">
+        <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
+            <li role="presentation"><a  href="https://github.com/qodot" title="* github" itemprop="name" itemprop="significantLink">* github</a></li>
+            <li role="presentation"><a  href="https://www.facebook.com/daewon.seo.5" title="* facebook" itemprop="name" itemprop="significantLink">* facebook</a></li>
+            <li role="presentation"><a  href="https://rateyourmusic.com/~qodot" title="* rateyourmusic" itemprop="name" itemprop="significantLink">* rateyourmusic</a></li>
+            <li role="presentation"><a  href="http://www.last.fm/user/qodot" title="* lastfm" itemprop="name" itemprop="significantLink">* lastfm</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/archives.html" title="waiting for qodot | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
+    </ul>
+</nav>
+<span class="nav-cover"></span>        <div class="site-wrapper">
+            <header class="main-header post-head" style="background-image: url('/images/default_header.png');" itemscope itemtype="http://schema.org/WPHeader">
+                <nav class="main-nav overlay clearfix">
+                    <a class="menu-button" href="#">
+                        <span class="burger">&#9776;</span>
+                        <span class="word">Menu</span>
+                    </a>
+                </nav>
+                <div class="vertical">
+                    <div class="main-header-content inner">
+                    </div>
+                </div>
+            </header>
+<main id="content" class="content" role="main">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <header class="post-header">
+            <h1 class="post-title" itemprop="headline">Python/Django에서 Celery로 Task Queue 구축</h1>
+            <section class="post-meta">
+                <time class="post-date" itemprop="datePublished" datetime="2016YYY-00M-%DD">화요일, 4월 05, 2016</time>
+                on <a href="tag/python.html">Python, </a><a href="tag/django.html">Django, </a><a href="tag/celery.html">Celery</a>            </section>
+        </header>
+        <section class="post-content">
+            <h2>개요</h2>
+<p>서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지?</p>
+<p>일단 유저에게는 요청이 완료되었다는 응답을 보내고, 이메일을 보내는 과정은 서버가 알아서 기다리고 알아서 처리하게 하는 방법이 있다. 실제로 우리도 어떤 서비스를 가입하면 가입 환영 메일을 받는데, 가입하자마자 오는 경우도 있지만 시간이 꽤 지난 후에 메일을 받는 경우도 많다.</p>
+<p>태스크 큐<code>task queue</code>를 이용하면 이런 비동기 작업을 수월하게 할 수 있다. 이메일을 보내라는 요청이 들어오면 일단 큐에 이메일을 보내는 작업<code>task</code>을 넣어놓고, 결과에 상관없이 유저에게는 응답을 보낸다. python에서는 <a href="http://www.celeryproject.org/"><code>celery</code></a>라는 아주 인기 높은 분산 태스크 큐가 있다. <code>celery</code>와 함께라면 당신도 억울하게 유저를 잃지 않을 수 있다. 추가로 <code>celery</code>의 작업들을 모니터링 할 수 있는 <code>flower</code>까지 알아보자.</p>
+<p><br></p>
+<h2>Message Broker</h2>
+<p><code>celery</code>에서 실제로 작업을 처리하는 프로세스를 워커<code>worker</code>라고 하는데, 이 워커가 일을 하려면 작업을 전달해주는 메세지 브로커<code>message broker</code>가 필요하다. 그리고 이 메세지 브로커는 <code>celery</code> 내부에 있는 것이 아니고 따로 설치를 해줘야 한다.</p>
+<p>대표적으로 <code>rabbitmq</code>와 <code>redis</code>가 있는데, 데이터베이스를 쓸 수도 있고 다른 프로그램을 쓸 수도 있지만, (공식적으로도) <a href="http://docs.celeryproject.org/en/latest/getting-started/brokers/index.html">추천하지 않는다</a>. 그냥 <code>rabbitmq</code>를 쓰자.</p>
+<h3>RabbitMQ 설치</h3>
+<p><a href="https://www.rabbitmq.com/download.html">공식 문서</a>를 참조하는게 좋다. 내가 쓰는 OS만 대표적으로 옮겨 놓겠다.</p>
+<h4>OS X</h4>
+<div class="highlight"><pre><span></span>brew update
+brew install rabbitmq
+</pre></div>
+
+
+<h4>RHEL</h4>
+<p>무슨 이유인지는 모르겠는데 <code>erlang</code>, <code>rabbitmq</code> 둘 다 <code>yum</code>에 기본적으로 등록이 안 되어있다.</p>
+<div class="highlight"><pre><span></span><span class="c1"># install erlang</span>
+wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
+rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
+yum install erlang
+
+<span class="c1"># install rabbitmq-server</span>
+wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.0/rabbitmq-server-3.6.0-1.noarch.rpm
+rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
+</pre></div>
+
+
+<h3>RabbitMQ 실행</h3>
+<div class="highlight"><pre><span></span>rabbitmq-server
+</pre></div>
+
+
+<p>브로커가 떴다!</p>
+<p><br></p>
+<h2>Celery Worker</h2>
+<p>실제로 워커를 띄우기 위해 <code>celery</code>를 적용해보자. 본 포스트에서는 <code>django</code>와 연동하는 예제(<a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html">공식 문서</a>도 같이 참조하면 좋다)을 보여주겠다.<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup></p>
+<h3>Celery 설치</h3>
+<div class="highlight"><pre><span></span>pip install celery
+</pre></div>
+
+
+<h3>Celery 설정</h3>
+<p><code>celery</code> 애플리케이션을 설정하고 생성하기 위해서 <code>django</code>의 설정 디렉토리(최초 <code>settings.py</code>가 있는 디렉토리)에 <code>celery.py</code> 파일을 만들고 다음 코드를 작성한다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+
+<span class="c1"># celery 앱에 django의 settings 값을 주입한다.</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span>
+    <span class="s1">&#39;DJANGO_SETTINGS_MODULE&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DJANGO_SETTINGS_MODULE&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s1">&#39;your_django_app_name&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>같은 디렉토리의 <code>__init__.py</code>에 다음과 같이 입력한다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">your_django_app_name.celery</span> <span class="kn">import</span> <span class="n">app</span> <span class="k">as</span> <span class="n">celery_app</span>
+</pre></div>
+
+
+<p><code>django</code>의 <code>settings.py</code>에 <code>celery</code>가 <code>rabbitmq</code>와 연결할 수 있도록 다음과 같은 설정을 추가한다.</p>
+<div class="highlight"><pre><span></span><span class="c1"># rabbitmq의 기본 유저, 기본 호스트, 기본포트(5672)로 연결한다.</span>
+<span class="n">BROKER_URL</span> <span class="o">=</span> <span class="s1">&#39;amqp://guest:guest@localhost//&#39;</span>
+</pre></div>
+
+
+<p>이제 <code>django</code>가 구동되면서 <code>celery</code>를 생성하게 되고, 사용할 수 있다.</p>
+<h3>Celery Task 작성</h3>
+<p>서두에 말했던 것과 같이 이메일을 보내는 간단한 작업을 작성해보자. 간단하게 <code>django</code>의 <code>send_mail</code> 메소드를 이용하자.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">shared_task</span>
+<span class="kn">from</span> <span class="nn">django.core.mail</span> <span class="kn">import</span> <span class="n">send_mail</span>
+
+<span class="c1"># shared_task는 하나의 프로젝트에서 여러개의 celery 인스턴스를 생성할 경우, 인스턴스에서 공유가 가능한 작업을 뜻한다</span>
+<span class="nd">@shared_task</span>
+<span class="k">def</span> <span class="nf">send_email</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">fromm</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">html_content</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">send_mail</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">fromm</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">html_message</span><span class="o">=</span><span class="n">html_content</span><span class="p">)</span>
+</pre></div>
+
+
+<p>WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.</p>
+<h3>Django View 작성</h3>
+<p><code>@shared_task</code>로 선언된 함수를 실행할 때, <code>delay()</code>를 통해 실행하면<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup> 자동으로 메세지 브로커를 통해 작업이 워커로 날아간다! 너무 편하다!</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">your_tasks_path</span> <span class="kn">import</span> <span class="n">send_email</span>
+<span class="k">def</span> <span class="nf">some_controller_method</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">send_email</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="s1">&#39;my_title&#39;</span><span class="p">,</span> <span class="s1">&#39;my_content&#39;</span><span class="p">,</span> <span class="s1">&#39;noreply@email.com&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;target@email.com&#39;</span><span class="p">])</span>
+    <span class="o">...</span>
+</pre></div>
+
+
+<h3>Celery Worker 프로세스 구동</h3>
+<p><code>django</code>의 루트 디렉토리로 이동한 후, 다음 명령어로 메세지 브로커를 통해 받은 작업을 처리할 워커를 띄운다.</p>
+<div class="highlight"><pre><span></span>celery worker -A your_django_app_name -l info
+</pre></div>
+
+
+<p>콘솔에 이런저런 로그가 뜨면서 <code>rabbitmq</code>와 연결되었다는 메세지를 확인하면 성공이다.</p>
+<p><br></p>
+<h2>Flower를 통한 Celery 모니터링</h2>
+<p>유저의 HTTP 요청은 이메일 전송 성공 여부에 상관없이 성공 응답(200)을 뱉는다. 그럼 실제로 이메일 전송 작업이 성공했는지는 어떻게 알지? 걱정마라. <code>celery</code>를 모니터링 할 수 있는 오픈소스인 <a href="http://flower.readthedocs.org/en/latest/"><code>flower</code></a>가 있다.</p>
+<h3>Flower 설치</h3>
+<div class="highlight"><pre><span></span>pip install flower
+</pre></div>
+
+
+<h3>Flower 실행</h3>
+<p><code>django</code>의 루트 디렉토리로 이동한 후, 다음 명령어로 <code>flower</code> 웹 인스턴스를 띄운다.</p>
+<div class="highlight"><pre><span></span><span class="c1"># 기본 포트는 5555이다</span>
+flower -A your_django_app_name
+</pre></div>
+
+
+<p><code>rabbitmq</code>와 <code>celery</code> 워커가 실행되어 있다면 정상적으로 인스턴스가 구동된다. <code>localhost:5555</code>로 접속하면 <a href="http://flower.readthedocs.org/en/latest/screenshots.html">멋진 화면</a>을 볼 수 있다. 이렇게 간단하게 괜찮은 모니터링 툴을 이용할 수 있다니 ㅜㅜ</p>
+<p><br></p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-1">
+<p><code>django</code>와 상관없이 python에서는 모두 사용 가능하다.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-2">
+<p><code>delay()</code>를 안 붙이면 그냥 평범한 함수처럼 실행된다.&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+        </section>
+        <footer class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
+            </figure>
+            <section class="author">
+                <h4>
+                    <a href="author/qodot.html">qodot</a>
+                </h4>
+                <p>Python Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+            </section>
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Python/Django%EC%97%90%EC%84%9C%20Celery%EB%A1%9C%20Task%...%20via%20%40&amp;url=https://qodot.github.io/Python/Django에서-Celery로-Task-Queue-구축.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Python/Django에서-Celery로-Task-Queue-구축.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/Python/Django에서-Celery로-Task-Queue-구축.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+ <section>
+<h2>Comments !</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">var disqus_identifier = "Python/Django에서-Celery로-Task-Queue-구축.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+</section>         </footer>
+    </article>
+</main>
+<aside class="read-next">
+</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+                <section class="copyright">
+                    <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a itemprop="url" href="https://getpelican.org" target="_blank">Pelican</a>
+                </section>
+            </footer>
+        </div>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/index.min.js"></script>
+    </body>
+</html>

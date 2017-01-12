@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>waiting for qodot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+        <meta http-equiv="content-style-type" content="text/css">
+        <link rel="dns-prefetch" href="https://qodot.github.io"/>
+        <link rel="dns-prefetch" href="//www.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+        <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/screen.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/custom.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/twemoji-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <link rel="publisher" href="">
+        <link rel="apple-touch-startup-image" href="https://qodot.github.io/theme/images/logo.png">
+        <link type="text/plain" rel="socialmedia" href="https://qodot.github.io/socialmedia.txt">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="application-name" content="waiting for qodot"/>
+        <meta name="msapplication-starturl" content="http:https://qodot.github.io"/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-window" content="width=1024;height=768"/>
+        <meta name="msapplication-task" content="name=waiting for qodot;action-uri=http:https://qodot.github.io;icon-uri=https://qodot.github.io/theme/images/favicon.ico"/>
+        <meta name="msapplication-TileImage" content="https://qodot.github.io/theme/images/apple-touch-icon-144x144.png"/>
+        <meta name="msapplication-TileColor" content="#1F1F21"/>
+        <meta name="application-name" content="waiting for qodot">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="">
+        <meta name="alexaVerifyID" content=""/>
+        <meta name="wot-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="medium" content="mult">
+        <meta name="adblock" content="disable">
+        <meta name="rating" content="General">
+        <meta name="resource-type" content="document">
+        <meta name="revisit-after" content="1 days">
+        <meta name="revisit" content="1">
+        <meta name="robots" content="index,follow">
+        <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta property="og:site_name" content="waiting for qodot">
+        <meta property="og:locale" content="en">
+        <link rel="canonical" href="https://qodot.github.io/SQLAlchemy-Transaction-관리-Practice-공유.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="SQLAlchemy Transaction 관리 Practice 공유">
+        <meta property="og:url" content="SQLAlchemy-Transaction-관리-Practice-공유.html">
+        <meta property="og:description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 …">
+        <meta property="article:published_time" content="토요일, 8월 27, 2016">
+        <meta name="twitter:title" content="SQLAlchemy Transaction 관리 Practice 공유">
+        <meta name="twitter:description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 …">
+        <meta name="description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 …">
+        <meta name="twitter:creator" content="@">
+        <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="article:section" content="py">
+        <meta property="article:tag" content="python">
+        <meta property="article:tag" content="sqlalchemy">
+        <meta property="article:author" content="qodot">
+    </head>
+    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+        <meta itemprop="name" content="waiting for qodot">
+        <meta itemprop="url" content="https://qodot.github.io">
+        <meta itemprop="headline" content="waiting for qodot || ">
+        <meta itemprop="description about" content="">
+        <meta itemprop="keywords" content="">
+        <meta itemprop="inLanguage" content="en">
+<nav class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul role="menubar">
+        <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
+            <li role="presentation"><a  href="https://github.com/qodot" title="* github" itemprop="name" itemprop="significantLink">* github</a></li>
+            <li role="presentation"><a  href="https://www.facebook.com/daewon.seo.5" title="* facebook" itemprop="name" itemprop="significantLink">* facebook</a></li>
+            <li role="presentation"><a  href="https://rateyourmusic.com/~qodot" title="* rateyourmusic" itemprop="name" itemprop="significantLink">* rateyourmusic</a></li>
+            <li role="presentation"><a  href="http://www.last.fm/user/qodot" title="* lastfm" itemprop="name" itemprop="significantLink">* lastfm</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/archives.html" title="waiting for qodot | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
+    </ul>
+</nav>
+<span class="nav-cover"></span>        <div class="site-wrapper">
+            <header class="main-header post-head" style="background-image: url('/images/default_header.png');" itemscope itemtype="http://schema.org/WPHeader">
+                <nav class="main-nav overlay clearfix">
+                    <a class="menu-button" href="#">
+                        <span class="burger">&#9776;</span>
+                        <span class="word">Menu</span>
+                    </a>
+                </nav>
+                <div class="vertical">
+                    <div class="main-header-content inner">
+                    </div>
+                </div>
+            </header>
+<main id="content" class="content" role="main">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <header class="post-header">
+            <h1 class="post-title" itemprop="headline">SQLAlchemy Transaction 관리 Practice 공유</h1>
+            <section class="post-meta">
+                <time class="post-date" itemprop="datePublished" datetime="2016YYY-00M-%DD">토요일, 8월 27, 2016</time>
+                on <a href="tag/python.html">Python, </a><a href="tag/sqlalchemy.html">Sqlalchemy</a>            </section>
+        </header>
+        <section class="post-content">
+            <h2>개요</h2>
+<p>기본적으로 SQLAlchemy에서는 (<code>autocommit=True</code> 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다.</p>
+<div class="highlight"><pre><span></span><span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="n">new_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_user</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+
+
+<p>이렇게 항상, <code>session.commit()</code> 혹은 <code>session.rollback()</code>을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 파일을 읽어서 모든 내용을 DB에 저장하는 작업을 하나의 트랜잭션에서 관리해야 한다면?</p>
+<div class="highlight"><pre><span></span><span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="c1"># very complex logic with a huge file...</span>
+<span class="c1"># ...</span>
+<span class="c1"># many lines...</span>
+<span class="c1"># ...</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+
+
+<p>물론 이렇게도 할 수야 있겠지만, 개발자 입장에서 현재 어떤 세션 컨텍스트 안에서 작업을 하는 중인지 헷갈릴 가능성이 높다. 게다가 롤백을 위해 예외 관리를 해야 한다면? 복잡성은 더 늘어날 것이다.</p>
+<p><br></p>
+<h2>Transaction Context 관리</h2>
+<p>이런 문제를 해결하기 위해, Python의 <code>with</code>절을 이용해 트랜잭션 관리의 가독성을 높여보자. (참고: <a href="http://docs.sqlalchemy.org/en/latest/orm/session_basics.html#when-do-i-construct-a-session-when-do-i-commit-it-and-when-do-i-close-it">When do I construct a Session, when do I commit it, and when do I close it?</a>)</p>
+<p>먼저 <code>contextmanager</code>를 이용해 <code>with</code>절 문법을 사용할 수 있게 만든다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">gettx</span><span class="p">():</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">session</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+        <span class="k">raise</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<p>그럼 이 함수를 이용해서 첫 번 째 예제를 다시 작성해보자.</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">gettx</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="n">new_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_user</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>with</code>절을 빠져 나오면서 자동으로 트랜잭션은 닫히고 커넥션 자원도 반환된다.</p>
+<p><br></p>
+<h2>수동 Transaction을 자동으로 관리</h2>
+<p>위 방법을 이용해서 트랜잭션 관리를 편하게 할 수 있었다. 그런데 <code>with</code>을 쓰기도 귀찮다면? 큰 코드 단위를 하나의 트랜잭션으로 관리하려면 어쩔 수 없이 <code>with</code> 등을 이용해 트랜잭션을 관리해야 하겠지만, 매 쿼리마다 트랜잭션이 열리고 닫혀도 상관없는 경우도 많을 것이다.</p>
+<p>SQLAlchemy 코드가 있는 부분을 service layer로 분리해서 사용할 때, Python decorator를 이용하면 자동으로 트랜잭션 관리도 가능하게 할 수 있다. 먼저 데코레이터 부분을 보자.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">opentx</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrap</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">session</span><span class="p">:</span>  <span class="c1"># 이미 열려있는 트랜잭션을 쓰는 부분</span>
+            <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">gettx</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>  <span class="c1"># 새로운 트랜잭션을 여는 부분</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s1">&#39;_sa_instance_state&#39;</span><span class="p">):</span>
+                <span class="c1"># 트랜잭션이 닫혀도 object의 attributes에 접근 할 수 있게 함</span>
+                <span class="n">session</span><span class="o">.</span><span class="n">expunge</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrap</span>
+</pre></div>
+
+
+<p>서비스 레이어의 코드를 보자.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">UserService</span><span class="p">():</span>
+    <span class="nd">@classmethod</span>
+    <span class="nd">@opentx</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">new_user</span><span class="p">):</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_user</span><span class="p">)</span>
+</pre></div>
+
+
+<p>마지막으로 이 서비스 함수를 사용하는 코드를 보자.</p>
+<div class="highlight"><pre><span></span><span class="c1"># 트랜잭션을 수동으로 관리하고 싶은 경우</span>
+<span class="k">with</span> <span class="n">gettx</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="n">new_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">UserService</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">new_user</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
+
+<span class="c1"># 트랜잭션을 자동으로 관리하고 싶은 경우</span>
+<span class="n">new_user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="n">UserService</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">new_user</span><span class="p">)</span>
+</pre></div>
+
+
+<p>이런식으로 하나의 메소드를 원하는 트랜잭션 안에서 자유롭게 사용할 수 있다.</p>
+<p>더 좋은 방법을 아시는 분은 공유해주시면 감사하겠습니다!</p>
+        </section>
+        <footer class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
+            </figure>
+            <section class="author">
+                <h4>
+                    <a href="author/qodot.html">qodot</a>
+                </h4>
+                <p>Python Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+            </section>
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=SQLAlchemy%20Transaction%20%EA%B4%80%EB%A6%AC%20Practice%...%20via%20%40&amp;url=https://qodot.github.io/SQLAlchemy-Transaction-관리-Practice-공유.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/SQLAlchemy-Transaction-관리-Practice-공유.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/SQLAlchemy-Transaction-관리-Practice-공유.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+ <section>
+<h2>Comments !</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">var disqus_identifier = "SQLAlchemy-Transaction-관리-Practice-공유.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+</section>         </footer>
+    </article>
+</main>
+<aside class="read-next">
+</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+                <section class="copyright">
+                    <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a itemprop="url" href="https://getpelican.org" target="_blank">Pelican</a>
+                </section>
+            </footer>
+        </div>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/index.min.js"></script>
+    </body>
+</html>
