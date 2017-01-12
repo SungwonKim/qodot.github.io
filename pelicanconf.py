@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
 AUTHOR = 'qodot'
@@ -12,10 +10,6 @@ TIMEZONE = 'Asia/Seoul'
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-FEED_ALL_RSS = 'feeds/all.rss.xml'
-CATEGORY_FEED_ATOM = 'category/%s/feeds/atom.xml'
-CATEGORY_FEED_RSS = 'category/%s/feeds/rss.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -38,15 +32,13 @@ home = expanduser("~")
 FAVICON = 'images/favicon.png'
 
 THEME = home + '/pelican/themes/Casper2Pelican'
+
 # Casper2Pelican theme
 AUTHOR_PIC_URL = '/images/profile.png'
 AUTHOR_BIO = 'Python Developer'
 AUTHOR_LOCATION = 'Seoul, South Korea'
 DEFAULT_HEADER_IMAGE = '/images/default_header.png'
 ARCHIVE_HEADER_IMAGE = '/images/archive_header.png'
-
-DISQUS_SITENAME = 'qodot'
-GOOGLE_ANALYTICS = 'UA-83522208-2'
 
 PLUGIN_PATHS = [home + '/pelican/plugins']
 PLUGINS = ['related_posts.related_posts']
