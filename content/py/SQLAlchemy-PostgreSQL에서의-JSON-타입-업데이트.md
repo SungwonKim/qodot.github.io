@@ -3,12 +3,12 @@ Slug: SQLAlchemy-PostgreSQL에서의-JSON-타입-업데이트
 Date: 2016-08-26
 Tags: python, sqlalchemy, postgresql
 
-`PostgreSQL 9.3` 과 `SQLAlchemy`를 이용해서 JSON 타입의 컬럼을 업데이트 하려고 했는데 되질 않았다. 찾다보니 한 아티클[Updating PostgreSQL JSON fields via SQLAlchemy](https://bashelton.com/2014/03/updating-postgresql-json-fields-via-sqlalchemy/)을 찾게 되어 내용을 정리해본다.
+PostgreSQL 9.3 과 SQLAlchemy를 이용해서 JSON 타입의 컬럼을 업데이트 하려고 했는데 되질 않았다. 찾다보니 한 아티클[Updating PostgreSQL JSON fields via SQLAlchemy](https://bashelton.com/2014/03/updating-postgresql-json-fields-via-sqlalchemy/)을 찾게 되어 내용을 정리해본다.
 
 <br>
 ## 기본적인 업데이트 방법
 
-아마 다들 알다시피, `SQLAlchemy`에서는 다음과 같은 방법으로 간단하게 update 쿼리를 날릴 수 있다.
+아마 다들 알다시피, SQLAlchemy에서는 다음과 같은 방법으로 간단하게 update 쿼리를 날릴 수 있다.
 
 ```python
 session = Session()
@@ -29,7 +29,7 @@ session.commit()
 
 안된다.
 
-왜? `PostgreSQL` 9.3을 `SQLAlchemy`로 이용할 때 생기는 문제라고 한다. 9.5에서는 JSONB 타입 컬럼의 경우 자동으로 업데이트가 되도록 변경 되었지만, 여전히 JSON 타입 컬럼에 대해서는 지원하지 않는다고 한다.
+왜? PostgreSQL 9.3을 SQLAlchemy로 이용할 때 생기는 문제라고 한다. 9.5에서는 `JSONB` 타입 컬럼의 경우 자동으로 업데이트가 되도록 변경 되었지만, 여전히 `JSON` 타입 컬럼에 대해서는 지원하지 않는다고 한다.
 
 <br>
 ## 그럼 어떻게 하지?

@@ -50,9 +50,9 @@ bot.sendMessage(target, sending_message)
 
 ### 설치
 
-등록한 음식점을 데이터베이스에 저장해 놓아야 다음에 다시 등록하는 일 없이 사용할 수 있기 때문에, `sqlalchemy`와 `sqlite`를 이용해서 간단하게 데이터베이스를 구현해 보자.
+등록한 음식점을 데이터베이스에 저장해 놓아야 다음에 다시 등록하는 일 없이 사용할 수 있기 때문에, SQLAlchemy와 SQLite를 이용해서 간단하게 데이터베이스를 구현해 보자.
 
-`sqlalchemy`에 대한 기본적인 소개와 튜토리얼은 [Haruair님의 SQLAlchemy 시작하기](http://haruair.com/blog/1682)에 잘 정리되어 있으니 참고바란다.
+SQLAlchemy에 대한 기본적인 소개와 튜토리얼은 [Haruair님의 SQLAlchemy 시작하기](http://haruair.com/blog/1682)에 잘 정리되어 있으니 참고바란다.
 
 다음 명령어로 설치한다.
 
@@ -62,7 +62,7 @@ pip install sqlalchemy
 
 ### Scheme 생성
 
-다음은 데이터베이스 연결을 수행하고, 식당의 테이블 정보를 담고있는 `sqlalchemy` 모델 정보가 담겨있는 `db.py` 파일이다.
+다음은 데이터베이스 연결을 수행하고, 식당의 테이블 정보를 담고있는 SQLAlchemy 모델 정보가 담겨있는 `db.py` 파일이다.
 
 ``` python
 from datetime import datetime
@@ -93,17 +93,17 @@ class Restaurant(Base):
 
 ### Migration
 
-이제 저 python class를 이용해  실제 데이터베이스의 테이블로 만들어줘야 하는데, 여러가지 방법이 있다.
+이제 저 Python class를 이용해 실제 데이터베이스의 테이블로 만들어줘야 하는데, 여러가지 방법이 있다.
 
 1. 직접 데이터베이스에 접속해서 `create table` 쿼리를 날린다.
 2. sqlalchemy의 `Base.metadata.create_all(engine)`를 이용해서 자동으로 테이블을 생성한다.
-3. `alembic`을 이용해서 마이그레이션 한다.
+3. Alembic을 이용해서 마이그레이션 한다.
 
-1번은 너무 귀찮고, 2번의 경우 테이블 생성은 되지만 테이블 변경은 자동으로 되지 않는 문제가 있어서(프로젝트가 단순해서 변경할 일이 없다면 문제 없겠지만) 3번을 선택했다. `alembic`은 `sqlalchemy`를 위한 마이그레이션 툴이고, 이전에 작성했던 [Alembic 퀵 가이드](http://qodot.github.io/Alembic-%ED%80%B5-%EA%B0%80%EC%9D%B4%EB%93%9C.html)에서 간단하게 소개한 적이 있다. 참고하길 바란다.
+1번은 너무 귀찮고, 2번의 경우 테이블 생성은 되지만 테이블 변경은 자동으로 되지 않는 문제가 있어서(프로젝트가 단순해서 변경할 일이 없다면 문제 없겠지만) 3번을 선택했다. Alembic은 SQLAlchemy를 위한 마이그레이션 툴이고, 이전에 작성했던 [Alembic 퀵 가이드](http://qodot.github.io/Alembic-%ED%80%B5-%EA%B0%80%EC%9D%B4%EB%93%9C.html)에서 간단하게 소개한 적이 있다. 참고하길 바란다.
 
 ### 사용
 
-1, 2, 3번 중 하나를 선택해서 테이블 스키마를 생성했다면, 이제 데이터베이스에 접속해서 쿼리를 날려볼 차례인데, 여기서는 이 프로젝트에서 사용한 기본적인 `select`, `insert`, `delete` 동작의 예시를 소개해 본다.
+1, 2, 3번 중 하나를 선택해서 테이블 스키마를 생성했다면, 이제 데이터베이스에 접속해서 쿼리를 날려볼 차례인데, 여기서는 이 프로젝트에서 사용한 기본적인 select, insert, delete 동작의 예시를 소개해 본다.
 
 ``` python
 # 식당 테이블의 모든 row 조회
@@ -126,4 +126,4 @@ session.commit()
 <br>
 ## 개선점
 
-`telepot`과 `sqlalchemy`를 이용해서 텔레그램 봇을 만들 수 있다. 그런데 실제로 봇을 운영하려면 python 스크립트를 리눅스 데몬이나 서비스로 띄우는 방법에 대한 고려가 되어야 한다. 그리고 이벤트 listen을 담당하는 부분이 busy waiting 방식으로 구현되어 있는데 `asyncio`를 이용한 비동기 방식으로 구현하는 것이 더 좋을 것이다. 특히 두 번 째 부분은 공부가 많이 필요한 부분이라... 따로 포스트를 작성하면서 정리해야 겠다.
+Telepot과 SQLAlchemy를 이용해서 텔레그램 봇을 만들 수 있다. 그런데 실제로 봇을 운영하려면 Python 스크립트를 리눅스 데몬이나 서비스로 띄우는 방법에 대한 고려가 되어야 한다. 그리고 이벤트 listen을 담당하는 부분이 busy waiting 방식으로 구현되어 있는데 `asyncio`를 이용한 비동기 방식으로 구현하는 것이 더 좋을 것이다. 특히 두 번 째 부분은 공부가 많이 필요한 부분이라... 따로 포스트를 작성하면서 정리해야 겠다.
