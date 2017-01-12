@@ -5,7 +5,7 @@ Tags: python, sqlalchemy
 
 ## 개요
 
-기본적으로 `SQLAlchemy`에서는 (`autocommit=True` 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다.
+기본적으로 SQLAlchemy에서는 (`autocommit=True` 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다.
 
 ```python
 session = Session()
@@ -68,7 +68,7 @@ with gettx() as session:
 
 위 방법을 이용해서 트랜잭션 관리를 편하게 할 수 있었다. 그런데 `with`을 쓰기도 귀찮다면? 큰 코드 단위를 하나의 트랜잭션으로 관리하려면 어쩔 수 없이 `with` 등을 이용해 트랜잭션을 관리해야 하겠지만, 매 쿼리마다 트랜잭션이 열리고 닫혀도 상관없는 경우도 많을 것이다.
 
-`SQLAlchemy` 코드가 있는 부분을 service layer로 분리해서 사용할 때, `Python decorator`를 이용하면 자동으로 트랜잭션 관리도 가능하게 할 수 있다. 먼저 데코레이터 부분을 보자.
+SQLAlchemy 코드가 있는 부분을 service layer로 분리해서 사용할 때, Python decorator를 이용하면 자동으로 트랜잭션 관리도 가능하게 할 수 있다. 먼저 데코레이터 부분을 보자.
 
 ```python
 def opentx(f):
