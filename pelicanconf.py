@@ -10,6 +10,11 @@ TIMEZONE = 'Asia/Seoul'
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+CATEGORY_FEED_ATOM = 'category/%s/feeds/atom.xml'
+CATEGORY_FEED_RSS = 'category/%s/feeds/rss.xml'
+
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -48,3 +53,8 @@ CATEGORIES = [
     ('@ py', 'category/py.html'),
     ('@ env', 'category/env.html'),
 ]
+
+DISQUS_SITENAME = 'qodot'
+GOOGLE_ANALYTICS = 'UA-83522208-2'
+
+DELETE_OUTPUT_DIRECTORY = True
