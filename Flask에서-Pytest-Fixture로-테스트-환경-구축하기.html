@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>waiting for qodot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+        <meta http-equiv="content-style-type" content="text/css">
+        <link rel="dns-prefetch" href="https://qodot.github.io"/>
+        <link rel="dns-prefetch" href="//www.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+        <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/screen.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/custom.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/twemoji-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <link rel="publisher" href="">
+        <link rel="apple-touch-startup-image" href="https://qodot.github.io/theme/images/logo.png">
+        <link type="text/plain" rel="socialmedia" href="https://qodot.github.io/socialmedia.txt">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="application-name" content="waiting for qodot"/>
+        <meta name="msapplication-starturl" content="http:https://qodot.github.io"/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-window" content="width=1024;height=768"/>
+        <meta name="msapplication-task" content="name=waiting for qodot;action-uri=http:https://qodot.github.io;icon-uri=https://qodot.github.io/theme/images/favicon.ico"/>
+        <meta name="msapplication-TileImage" content="https://qodot.github.io/theme/images/apple-touch-icon-144x144.png"/>
+        <meta name="msapplication-TileColor" content="#1F1F21"/>
+        <meta name="application-name" content="waiting for qodot">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="">
+        <meta name="alexaVerifyID" content=""/>
+        <meta name="wot-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="medium" content="mult">
+        <meta name="adblock" content="disable">
+        <meta name="rating" content="General">
+        <meta name="resource-type" content="document">
+        <meta name="revisit-after" content="1 days">
+        <meta name="revisit" content="1">
+        <meta name="robots" content="index,follow">
+        <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta property="og:site_name" content="waiting for qodot">
+        <meta property="og:locale" content="en">
+        <link rel="canonical" href="https://qodot.github.io/Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Flask에서 Pytest Fixture로 테스트 환경 구축하기">
+        <meta property="og:url" content="Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html">
+        <meta property="og:description" content="Flask, SQLAlchemy, Alembic을 이용하는 프로젝트에서 Pytest를 이용해 테스트 환경을 구축할 수 있다. pip을 이용해서 간단하게 설치가 가능하다. 원활한 테스트를 위해서, 아마도 다음과 같은 개념들이 필요할 것이다. Flask Application Context Flask Test Client 테스트 전용 데이터베이스 테스트 케이스마다 필요한 데이터를 Insert 하고, 테스트가 완료되면 트랜잭션을 롤백하는 세션 Pytest로 이 …">
+        <meta property="article:published_time" content="목요일, 1월 12, 2017">
+        <meta name="twitter:title" content="Flask에서 Pytest Fixture로 테스트 환경 구축하기">
+        <meta name="twitter:description" content="Flask, SQLAlchemy, Alembic을 이용하는 프로젝트에서 Pytest를 이용해 테스트 환경을 구축할 수 있다. pip을 이용해서 간단하게 설치가 가능하다. 원활한 테스트를 위해서, 아마도 다음과 같은 개념들이 필요할 것이다. Flask Application Context Flask Test Client 테스트 전용 데이터베이스 테스트 케이스마다 필요한 데이터를 Insert 하고, 테스트가 완료되면 트랜잭션을 롤백하는 세션 Pytest로 이 …">
+        <meta name="description" content="Flask, SQLAlchemy, Alembic을 이용하는 프로젝트에서 Pytest를 이용해 테스트 환경을 구축할 수 있다. pip을 이용해서 간단하게 설치가 가능하다. 원활한 테스트를 위해서, 아마도 다음과 같은 개념들이 필요할 것이다. Flask Application Context Flask Test Client 테스트 전용 데이터베이스 테스트 케이스마다 필요한 데이터를 Insert 하고, 테스트가 완료되면 트랜잭션을 롤백하는 세션 Pytest로 이 …">
+        <meta name="twitter:creator" content="@">
+        <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="article:section" content="py">
+        <meta property="article:tag" content="python">
+        <meta property="article:tag" content="pyrest">
+        <meta property="article:tag" content="flask">
+        <meta property="article:tag" content="sqlalchemy">
+        <meta property="article:tag" content="alembic">
+        <meta property="article:author" content="qodot">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-83522208-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+        <meta itemprop="name" content="waiting for qodot">
+        <meta itemprop="url" content="https://qodot.github.io">
+        <meta itemprop="headline" content="waiting for qodot || ">
+        <meta itemprop="description about" content="">
+        <meta itemprop="keywords" content="">
+        <meta itemprop="inLanguage" content="en">
+<nav class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul role="menubar">
+        <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
+            <li role="presentation"><a  href="https://github.com/qodot" title="* github" itemprop="name" itemprop="significantLink">* github</a></li>
+            <li role="presentation"><a  href="https://www.facebook.com/daewon.seo.5" title="* facebook" itemprop="name" itemprop="significantLink">* facebook</a></li>
+            <li role="presentation"><a  href="https://rateyourmusic.com/~qodot" title="* rateyourmusic" itemprop="name" itemprop="significantLink">* rateyourmusic</a></li>
+            <li role="presentation"><a  href="http://www.last.fm/user/qodot" title="* lastfm" itemprop="name" itemprop="significantLink">* lastfm</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/archives.html" title="waiting for qodot | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
+    </ul>
+</nav>
+<span class="nav-cover"></span>        <div class="site-wrapper">
+            <header class="main-header post-head" style="background-image: url('/images/default_header.png');" itemscope itemtype="http://schema.org/WPHeader">
+                <nav class="main-nav overlay clearfix">
+                    <a class="menu-button" href="#">
+                        <span class="burger">&#9776;</span>
+                        <span class="word">Menu</span>
+                    </a>
+                </nav>
+                <div class="vertical">
+                    <div class="main-header-content inner">
+                    </div>
+                </div>
+            </header>
+<main id="content" class="content" role="main">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <header class="post-header">
+            <h1 class="post-title" itemprop="headline">Flask에서 Pytest Fixture로 테스트 환경 구축하기</h1>
+            <section class="post-meta">
+                <time class="post-date" itemprop="datePublished" datetime="2017YYY-00M-%DD">목요일, 1월 12, 2017</time>
+                on <a href="tag/python.html">Python, </a><a href="tag/pyrest.html">Pyrest, </a><a href="tag/flask.html">Flask, </a><a href="tag/sqlalchemy.html">Sqlalchemy, </a><a href="tag/alembic.html">Alembic</a>            </section>
+        </header>
+        <section class="post-content">
+            <p>Flask, SQLAlchemy, Alembic을 이용하는 프로젝트에서 <a href="http://doc.pytest.org/en/latest/">Pytest</a>를 이용해 테스트 환경을 구축할 수 있다. <code>pip</code>을 이용해서 간단하게 설치가 가능하다.</p>
+<p>원활한 테스트를 위해서, 아마도 다음과 같은 개념들이 필요할 것이다.</p>
+<ol>
+<li>Flask Application Context</li>
+<li>Flask Test Client</li>
+<li>테스트 전용 데이터베이스</li>
+<li>테스트 케이스마다 필요한 데이터를 Insert 하고, 테스트가 완료되면 트랜잭션을 롤백하는 세션</li>
+</ol>
+<p>Pytest로 이 요구사항을 만족하는 테스트 환경을 구축하고, 이 환경을 이용한 테스트 케이스를 하나 작성해 볼 것이다.</p>
+<p><br></p>
+<h2>Fixture 개요</h2>
+<p>위 항목들을 Pytest의 fixture를 이용해서 구현해보자. Pytest 문서에서는 fixture를 다음과 같이 설명하고 있다.</p>
+<blockquote>
+<p>The purpose of test fixtures is to provide a fixed baseline upon which tests can reliably and repeatedly execute</p>
+</blockquote>
+<p>유닛 테스트의 <code>setup</code>, <code>teardown</code> 같은 역할을, scope 설정이나 의존성 주입 등을 이용해서 좀 더 세련되게 해준다고 생각해도 좋을 듯 하다.</p>
+<h3>Scope</h3>
+<p>Pytest의 fixture에는 다음과 같은 4가지 scope이 있고, 각각의 scope마다 한 번 씩 실행된다.</p>
+<ol>
+<li>session: Pytest를 한 번 실행할 때마다 한 번</li>
+<li>module: 테스트 스크립트의 모듈마다 한 번</li>
+<li>class: 테스트 클래스마다 한 번</li>
+<li>function: 테스트 케이스마다 한 번</li>
+</ol>
+<p><br></p>
+<h2>Fixture 작성</h2>
+<p>Pytest 코드를 <code>~/project_root/tests</code>라는 패키지에 작성한다고 가정할 때, fixture는 <code>~/project_root/tests</code> 패키지 혹은 그 하위 패키지에 <code>conftest.py</code>라는 모듈을 만들고 그 안에 작성하면 Pytest가 자동으로 인식한다. <code>conftest.py</code> 모듈은 어디에든 여러개 만들 수 있지만, 하위 패키지에 있는 <code>conftest.py</code> 모듈을 상위 패키지에서 인식할 수는 없다. (반대는 가능)</p>
+<h3>요구사항 1</h3>
+<p>우리가 만들 fixture를 다시 생각해보자. 테스트를 한 번 실행할 때마다 하나의 애플리케이션을 실행하면 될 것이므로 flask application context는 session scope이다. 따라서 다음과 같이 만들 수 있을 것이다.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">wsgi</span> <span class="kn">import</span> <span class="n">create_app</span>
+
+<span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;session&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">flask_app</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">()</span>
+    <span class="n">app_context</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">()</span>
+    <span class="n">app_context</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="k">yield</span> <span class="n">app</span>
+    <span class="n">app_context</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</pre></div>
+
+
+<p>보다시피 fixture는 <code>yield</code> 문법을 지원한다. <code>yield</code> 다음에 오는 코드는 fixture의 scope이 끝난 다음 fixture가 사라질 때 실행된다. (<code>teardown</code> 같은 개념이라고 보면 된다)</p>
+<h3>요구사항 2</h3>
+<p>테스트용 클라이언트 역시 애플리케이션 컨텍스트처럼 전체 실행 세션에 하나만 있으면 된다. 그런데 flask의 테스트용 클라이언트는 flask app에 의존성이 있다. Pytest에서 fixture는 다른 픽스쳐의 함수 이름으로 의존성을 간단하게 해결한다.</p>
+<div class="highlight"><pre><span></span><span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;session&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">flask_client</span><span class="p">(</span><span class="n">flask_app</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">flask_app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span>
+</pre></div>
+
+
+<p>먼저 만들었던 애플리케이션 fixture의 함수 이름이 <code>flask_app</code>이므로, 파라메터에 <code>flask_app</code>을 넣어주면 자동으로 바인딩 된다. 참고로 현재 fixture 보다 같거나 상위의 scope을 가진 fixture만 의존성 주입이 가능하다(session scope의 fixture에 module scope의 fixture 주입 불가능). 또, 동시에 여러개의 fixture에서 하나의 fixture에 대한 의존성을 가지고 있어도 상위 fixture는 한 번만 생성되고 인스턴스가 공유된다.</p>
+<h3>요구사항 3</h3>
+<p>안전한 테스트를 위해서는 테스트용 데이터베이스가 따로 있는 것이 좋다. 그리고 이 테스트용 데이터베이스는 실제로 사용하는 데이터베이스와 스키마가 동기화 되어 있으면서 데이터(row)는 하나도 없어야 한다. 또, 데이터베이스 인스턴스 역시 전체 테스트에서 하나만 있으면 되므로 session scope을 이용한다. 완성된 데이터베이스 인스턴스 fixture는 다음과 같다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">sessionmaker</span>
+<span class="kn">from</span> <span class="nn">alembic.command</span> <span class="kn">import</span> <span class="n">upgrade</span> <span class="k">as</span> <span class="n">alembic_upgrade</span>
+<span class="kn">from</span> <span class="nn">alembic.config</span> <span class="kn">import</span> <span class="n">Config</span> <span class="k">as</span> <span class="n">AlembicConfig</span>
+
+<span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;session&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">db</span><span class="p">():</span>
+    <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;TEST_DB_URL&#39;</span><span class="p">],</span> <span class="n">echo</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+    <span class="n">_db</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="n">engine</span><span class="p">,</span>
+           <span class="s1">&#39;session&#39;</span><span class="p">:</span> <span class="n">session</span><span class="p">}</span>
+
+    <span class="n">alembic_config</span> <span class="o">=</span> <span class="n">AlembicConfig</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;ALEMBIC_INI&#39;</span><span class="p">])</span>
+    <span class="n">alembic_config</span><span class="o">.</span><span class="n">set_main_option</span><span class="p">(</span><span class="s1">&#39;sqlalchemy.url&#39;</span><span class="p">,</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;TEST_DB_URL&#39;</span><span class="p">])</span>
+    <span class="n">alembic_upgrade</span><span class="p">(</span><span class="n">alembic_config</span><span class="p">,</span> <span class="s1">&#39;head&#39;</span><span class="p">)</span>
+
+    <span class="k">yield</span> <span class="n">_db</span>
+    <span class="n">engine</span><span class="o">.</span><span class="n">dispose</span><span class="p">()</span>
+</pre></div>
+
+
+<p>먼저 SQLAlchemy의 엔진 인스턴스와 세션 팩토리를 만든다. 그리고 Alembic API를 활용하여 실제 데이터베이스와 스키마를 동기화 시켜준다(자세한 내용은 <a href="http://alembic.zzzcomputing.com/en/latest/api/index.html">Alembic API 공식 문서</a> 참조). <code>config['TEST_DB_URL']</code>은 테스트용 데이터베이스의 full URL이고, <code>config['ALEMBIC_INI']</code>는 <code>alembic.ini</code> 파일의 경로이다.</p>
+<h3>요구사항 4</h3>
+<p>마지막으로 실제로 테스트에서 사용할 데이터베이스 세션을 작성해보자. 각 테스트를 데이터로부터 독립적으로 작성하기 위해서는 테스트 케이스가 끝날 때 마다 세션 롤백이 필요하고, 그러기 위해서는 function scope을 이용해야 한다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">g</span>
+
+<span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">session</span><span class="p">(</span><span class="n">db</span><span class="p">):</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s1">&#39;session&#39;</span><span class="p">]()</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">session</span>
+    <span class="k">yield</span> <span class="n">session</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<p>먼저 <code>db</code> fixture를 의존성 주입 받았다. 세션을 생성하려면 세션 팩토리가 있어야 하기 때문이다. 세션을 생성하고 반환한 후, 테스트 케이스에서 사용이 끝나면 <code>rollback</code>과 <code>close</code>를 통해 데이터를 관리해준다. <code>g.db</code>에 세션을 넣어준 이유는, 실제 테스트할 Flask API 코드에서는 <code>g.db</code> 인스턴스에 SQLAlchemy 세션을 담아 사용하고 있기 때문이다. 따라서 Flask API에서 입력된 쿼리들도 테스트 케이스가 끝나면 같이 롤백된다.</p>
+<p><br></p>
+<h2>테스트 케이스 작성</h2>
+<p>fixture를 이용한 테스트 환경 설정이 끝났다. 이제 진짜 테스트 케이스를 작성해 보자. json을 받고 json을 응답하는 로그인 API가 있다고 가정하고 이것의 테스트를 작성해 보겠다.</p>
+<p>먼저 로그인을 하려면 이미 유저 데이터가 있어야 한다.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">db.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+<span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;qodot&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;1111&#39;</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">user</span>
+</pre></div>
+
+
+<p>위에서 만들었던 session을 주입 받아서 User 객체를 만들고 Insert 하면 이제 이 유저로 로그인 할 수 있다. 다음은 테스트 케이스이다. Pytest는 이름에 <code>test</code>라는 prefix/postfix가 있는 패키지, 모듈, 클래스, 함수(메소드)를 자동으로 테스트 대상으로 인식하고 실행한다.</p>
+<div class="highlight"><pre><span></span><span class="c1"># test_users.py</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">class</span> <span class="nc">TestUser</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">test_signin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flask_client</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;qodot&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;1111&#39;</span><span class="p">})</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">flask_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/users/signin&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                          <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+        <span class="k">assert</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+        <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>다음과 같이 <code>flask_client</code> fixture와 <code>user</code> fixture를 의존성으로 주입 받은 상태에서 테스트 케이스를 실행할 수 있다. 이 때, <code>user</code> fixture는 직접 테스트 케이스 안에서 사용하지는 않지만, 데이터가 테스트 데이터베이스에 미리 들어가있게 하기 위해서 의존성으로 주입하였다.</p>
+<p><br></p>
+<h4>참고</h4>
+<ul>
+<li><a href="http://alexmic.net/flask-sqlalchemy-pytest/">http://alexmic.net/flask-sqlalchemy-pytest/</a></li>
+<li><a href="http://pythontesting.net/framework/pytest/pytest-session-scoped-fixtures/">http://pythontesting.net/framework/pytest/pytest-session-scoped-fixtures/</a></li>
+</ul>
+        </section>
+        <footer class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
+            </figure>
+            <section class="author">
+                <h4>
+                    <a href="author/qodot.html">qodot</a>
+                </h4>
+                <p>Python Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+            </section>
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Flask%EC%97%90%EC%84%9C%20Pytest%20Fixture%EB%A1%9C%20%ED...%20via%20%40&amp;url=https://qodot.github.io/Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+ <section>
+<h2>Comments !</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">var disqus_identifier = "Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+</section>         </footer>
+    </article>
+</main>
+<aside class="read-next">
+</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+                <section class="copyright">
+                    <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a itemprop="url" href="https://getpelican.org" target="_blank">Pelican</a>
+                </section>
+            </footer>
+        </div>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/index.min.js"></script>
+    </body>
+</html>
