@@ -3,7 +3,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프(scope)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프와 클로저&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;유효 범위 (Scope)&lt;/h2&gt;
 &lt;h3&gt;실행 컨텍스트 (Execution Context)&lt;/h3&gt;
@@ -11,7 +11,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프(scope)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프와 클로저&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;함수 호출과 &lt;code&gt;this&lt;/code&gt;&lt;/h2&gt;
 &lt;h3&gt;실행 컨텍스트 (Execution Context)&lt;/h3&gt;
@@ -19,7 +19,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프(scope)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프와 클로저&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;함수&lt;/h2&gt;
 &lt;p&gt;자바스크립트의 함수는 일급 객체로, 코드 재용, 정보의 구성 및 은닉 등에 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">qodot</dc:creator><pubDate>Fri, 17 Feb 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:qodot.github.io,2017-02-17:/Javascript-Function-1-기초.html</guid><category>javascript</category><category>function</category></item></channel></rss>
