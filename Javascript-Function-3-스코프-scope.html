@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>waiting for qodot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+        <meta http-equiv="content-style-type" content="text/css">
+        <link rel="dns-prefetch" href="https://qodot.github.io"/>
+        <link rel="dns-prefetch" href="//www.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+        <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/screen.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/custom.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/twemoji-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <link rel="publisher" href="">
+        <link rel="apple-touch-startup-image" href="https://qodot.github.io/theme/images/logo.png">
+        <link type="text/plain" rel="socialmedia" href="https://qodot.github.io/socialmedia.txt">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="application-name" content="waiting for qodot"/>
+        <meta name="msapplication-starturl" content="http:https://qodot.github.io"/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-window" content="width=1024;height=768"/>
+        <meta name="msapplication-task" content="name=waiting for qodot;action-uri=http:https://qodot.github.io;icon-uri=https://qodot.github.io/theme/images/favicon.ico"/>
+        <meta name="msapplication-TileImage" content="https://qodot.github.io/theme/images/apple-touch-icon-144x144.png"/>
+        <meta name="msapplication-TileColor" content="#1F1F21"/>
+        <meta name="application-name" content="waiting for qodot">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="">
+        <meta name="alexaVerifyID" content=""/>
+        <meta name="wot-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="medium" content="mult">
+        <meta name="adblock" content="disable">
+        <meta name="rating" content="General">
+        <meta name="resource-type" content="document">
+        <meta name="revisit-after" content="1 days">
+        <meta name="revisit" content="1">
+        <meta name="robots" content="index,follow">
+        <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta property="og:site_name" content="waiting for qodot">
+        <meta property="og:locale" content="en">
+        <link rel="canonical" href="https://qodot.github.io/Javascript-Function-3-스코프-scope.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Javascript Function: 3 스코프(scope)">
+        <meta property="og:url" content="Javascript-Function-3-스코프-scope.html">
+        <meta property="og:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 유효 범위 (Scope) 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta property="article:published_time" content="금요일, 2월 19, 2016">
+        <meta name="twitter:title" content="Javascript Function: 3 스코프(scope)">
+        <meta name="twitter:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 유효 범위 (Scope) 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta name="description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 유효 범위 (Scope) 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta name="twitter:creator" content="@">
+        <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="article:section" content="js">
+        <meta property="article:tag" content="javascript">
+        <meta property="article:tag" content="function">
+        <meta property="article:author" content="qodot">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-83522208-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+        <meta itemprop="name" content="waiting for qodot">
+        <meta itemprop="url" content="https://qodot.github.io">
+        <meta itemprop="headline" content="waiting for qodot || ">
+        <meta itemprop="description about" content="">
+        <meta itemprop="keywords" content="">
+        <meta itemprop="inLanguage" content="en">
+<nav class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul role="menubar">
+        <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
+            <li role="presentation"><a  href="https://github.com/qodot" title="* github" itemprop="name" itemprop="significantLink">* github</a></li>
+            <li role="presentation"><a  href="https://www.facebook.com/daewon.seo.5" title="* facebook" itemprop="name" itemprop="significantLink">* facebook</a></li>
+            <li role="presentation"><a  href="https://rateyourmusic.com/~qodot" title="* rateyourmusic" itemprop="name" itemprop="significantLink">* rateyourmusic</a></li>
+            <li role="presentation"><a  href="http://www.last.fm/user/qodot" title="* lastfm" itemprop="name" itemprop="significantLink">* lastfm</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/archives.html" title="waiting for qodot | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
+    </ul>
+</nav>
+<span class="nav-cover"></span>        <div class="site-wrapper">
+            <header class="main-header post-head" style="background-image: url('/images/default_header.png');" itemscope itemtype="http://schema.org/WPHeader">
+                <nav class="main-nav overlay clearfix">
+                    <a class="menu-button" href="#">
+                        <span class="burger">&#9776;</span>
+                        <span class="word">Menu</span>
+                    </a>
+                </nav>
+                <div class="vertical">
+                    <div class="main-header-content inner">
+                    </div>
+                </div>
+            </header>
+<main id="content" class="content" role="main">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <header class="post-header">
+            <h1 class="post-title" itemprop="headline">Javascript Function: 3 스코프(scope)</h1>
+            <section class="post-meta">
+                <time class="post-date" itemprop="datePublished" datetime="2016YYY-00M-%DD">금요일, 2월 19, 2016</time>
+                on <a href="tag/javascript.html">Javascript, </a><a href="tag/function.html">Function</a>            </section>
+        </header>
+        <section class="post-content">
+            <p>이 포스트는 <a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820">더글라스 크락포드의 자바스크립트 핵심 가이드</a>의 <code>4장 함수</code>에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.</p>
+<ul>
+<li><a href="http://qodot.github.io/Javascript-Function-1-기초.html">Javascript Function: 1 기초</a></li>
+<li><a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html">Javascript Function: 2 호출과 this</a></li>
+<li><a href="http://qodot.github.io/Javascript-Function-3-스코프-scope.html">Javascript Function: 3 스코프(scope)</a></li>
+</ul>
+<h2>유효 범위 (Scope)</h2>
+<h3>실행 컨텍스트 (Execution Context)</h3>
+<p>실행 컨텍스트는 흔히 이야기하는 콜 스택(Call Stack)과 같은 말이다. 함수가 호출될 때 같이 생성되고, 다음과 같은 것들을 포함한다.</p>
+<ul>
+<li>변수 생성</li>
+<li><code>this</code>, <code>arguments</code> 생성</li>
+<li><strong>스코프 생성 !!</strong></li>
+</ul>
+<h3>함수 스코프</h3>
+<p>자바스크립트는 <strong>오로지 함수 스코프만 존재하고 블록 스코프가 없다</strong>. 이는 프로그래머에게 충분히 혼란을 줄 수 있다. 따라서 보통의 언어에서 변수는 사용하기 직전에 선언되는 것을 선호하는 반면, 자바스크립트에서는 함수의 시작 부분의 변수를 모두 선언하는 것을 선호하는 편이다. (호이스팅에 의한 혼란 방지 차원)</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+        <span class="c1">// 2) a === 3, b === 7, c === 11</span>
+        <span class="nx">a</span> <span class="o">+=</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+        <span class="c1">// 3) a === 21, b === 7, c === 11</span>
+    <span class="p">};</span>
+
+    <span class="c1">// 1) a === 3, b === 5</span>
+    <span class="nx">bar</span><span class="p">();</span>
+    <span class="c1">// 4) a === 21, b === 5</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<blockquote>
+<p>ES6의 <code>let</code>, <code>const</code>는 블록 스코프를 가진다.</p>
+</blockquote>
+<h3>렉시컬 스코프 (Lexical Scope)</h3>
+<p>자바스크립트는 렉시컬 스코프의 규칙을 따른다. 렉시컬 스코프 규칙은 <strong>콜 스택과 관련 없이</strong> 소스코드가 작성된 컨텍스트를 기준으로 스코프를 정의하고, 런타임에 이것을 변경하지 않는 것을 말한다. 예를 들어,</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span><span class="p">;</span>
+    <span class="nx">bar</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">();</span>  <span class="c1">// global</span>
+<span class="nx">bar</span><span class="p">();</span>  <span class="c1">// global</span>
+</pre></div>
+
+
+<p>와 같은 결과가 나온다. 만약 자바스크립트가 렉시컬 스코프가 아닌 동적 스코프(콜 스택에 따라 스코프 체인이 변경됨)의 규칙을 따랐다면, 결과는 다음과 같을 것이다.</p>
+<div class="highlight"><pre><span></span><span class="nx">foo</span><span class="p">();</span>  <span class="c1">// local</span>
+<span class="nx">bar</span><span class="p">();</span>  <span class="c1">// global</span>
+</pre></div>
+
+
+<h3>스코프 체인 (Scope Chain)</h3>
+<p>방금 본 두 가지 규칙에 따라 알 수 있듯이, 함수가 실행될 때마다 함수 범위를 가지는 렉시컬 스코프가 생성된다. 그리고 생성된 스코프는 자기 바로 상위 스코프를 참조하는데, 이것이 스코프 체인이다.</p>
+<p>방금 위의 예제에서 <code>bar</code> 함수가 전역 변수 <code>x</code>를 참조할 수 있는 이유는 무엇일까? 바로 <code>bar</code>가 실행되면서 생성된 스코프가 바로 상위 스코프인 전역 스코프를 참조하고 있기 때문이다.</p>
+<p><img alt="javascript-lexical-scope-chain" src="images/js/Javascript-Function-3-스코프-scope-scope-chain.png"></p>
+<blockquote>
+<p>이미지 출처: <a href="http://techslides.com/understanding-javascript-closures-and-scope">http://techslides.com/understanding-javascript-closures-and-scope</a></p>
+</blockquote>
+<h3>호이스팅 (Hoisting)</h3>
+<p>실행 컨텍스트를 설명할 때, 함수가 실행되면서 변수를 생성한다고 했었다. 즉, 함수가 실행 될 때, <code>var</code>로 선언된 변수와 함수 선언문으로 선언된 함수는 <strong>위로 끌어올려진다.</strong> 다음 코드를 보자.</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">();</span>  <span class="c1">// 2</span>
+</pre></div>
+
+
+<p>이 코드는 사실 다음과 같다.</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">();</span>  <span class="c1">// 2</span>
+</pre></div>
+
+
+<p>어렵지 않다. 그럼 다음을 보자.</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">();</span>  <span class="c1">// undefined</span>
+</pre></div>
+
+
+<p>음? <code>ReferenceError</code>가 발생한 것도 아니고, 2가 출력된 것도 아니다. 왜? 다음을 보면 이해 된다.</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">();</span>  <span class="c1">// undefined</span>
+</pre></div>
+
+
+<p>함수 선언문은 호이스팅이 된다.</p>
+<div class="highlight"><pre><span></span><span class="nx">fn</span><span class="p">();</span>  <span class="c1">// CALL</span>
+
+<span class="kd">function</span> <span class="nx">fn</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;CALL&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>그러나 함수 리터럴은 생각한대로 동작하지 않는다.</p>
+<div class="highlight"><pre><span></span><span class="nx">fn</span><span class="p">();</span>  <span class="c1">// fn of object is not a function</span>
+
+<span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;CALL&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>왜냐하면 사실 저 코드는 다음과 같기 때문이다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">fn</span><span class="p">;</span>
+
+<span class="nx">fn</span><span class="p">();</span>  <span class="c1">// fn of object is not a function</span>
+
+<span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;CALL&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p><code>fn</code>을 호출하려고 할 때 <code>fn</code>은 함수가 아니라 단순히 선언된 변수일 뿐이니 <code>fn</code>은 함수가 아니라는 메세지를 보게된다.</p>
+<h2>클로저 (Closure)</h2>
+<p>클로저는 보통 이렇게 설명되곤 한다.</p>
+<blockquote>
+<p>자신이 선언된 스코프를 캡쳐(기억, 참조 등등...)하는 함수</p>
+</blockquote>
+<p>밑도 끝도 없이 이 설명만 들으면 의미가 잘 와닿지 않을수도 있다. 그런데 사실 위에서 렉시컬 스코프와 스코프 체인을 설명할 때 이미 똑같은 말을 했다. <strong>"함수가 실행될 때 스코프를 생성하고, 그 스코프는 소스코드 상에서 바로 상위 스코프를 참조한다."</strong></p>
+<p>그러니까, 저 설명에 따르면 사실 모든 함수는 클로저이다. 왜냐하면 모든 함수의 스코프는 자기가 선언된 바로 상위 함수의 렉시컬 스코프를 참조하고 있기 때문이다. 그러나 보통은, 우리는 모든 함수를 클로저라고 부르지 않는다.</p>
+<p>보통은 다음과 같을 때, 이 함수를 클로저라고 부른다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">bar</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">baz</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">();</span>
+<span class="nx">baz</span><span class="p">();</span>  <span class="c1">// blue</span>
+</pre></div>
+
+
+<p>함수 <code>foo</code>가 콜 스택에서 pop 되었는데도 'blue' 값이 사라지지 않고 남아있는 이상한(?) 동작처럼 보인다. 콜 스택과 연관지어서 생각하기 때문에 그렇다. 다음 그림을 보자.</p>
+<p><img alt="javascript-closure" src="images/js/Javascript-Function-3-스코프-scope-scope-chain.png"></p>
+<blockquote>
+<p>이미지 출처: <a href="http://meetup.toast.com/posts/86">http://meetup.toast.com/posts/86</a></p>
+</blockquote>
+<p>위의 렉시컬 스코프와 스코프 체인의 정의에 따라, 함수가 항상 선언된 곳을 기준으로 바로 상위의 스코프를 참조하고 있다는 것만 알면 너무나 당연한 결과이다. 이를 잘못 이해하면 다음과 같은 오동작을 야기할 수 있다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">addHandlers</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">nodes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>아마 핸들러마다 1부터 10까지의 숫자를 띄워주려는 의도였으나, 실은 어떤 노드를 클릭해봐도 모두 10이 출력된다. 왜냐하면 <code>onclick</code> 속성에 연결된 함수들이 참조하는 변수는 모두 같은 상위 스코프의 <code>var i</code>이기 때문이다. (즉, 모두 같은 상위 스코프를 공유하고 있다.)</p>
+<p>의도대로 동작하게 하고 싶다면 다음과 같이 하면 된다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">addHandlers</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">nodes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">nodes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+            <span class="p">};</span>
+        <span class="p">}(</span><span class="nx">i</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>즉시 실행 함수를 추가해서 상위 스코프를 공유하지 않도록 했다.</p>
+<blockquote>
+<p>클로저를 사용하면, 사라졌어야 할 상위 렉시컬 스코프를 계속해서 유지하게 되므로 자칫 메모리 누수의 원인이 되기도 한다.</p>
+<p>참고: <a href="http://heichwald.github.io/2016/01/10/memory-leak-closure-javascript.html">Beware of the closure memory leak in Javascript</a></p>
+</blockquote>
+<h3>은닉화</h3>
+<p>클로저는 보통 은닉화(private 변수)에 자주 쓰인다. 다음을 보자.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">Quo</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_status</span> <span class="o">=</span> <span class="nx">status</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Quo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getStatus</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_status</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quo</span><span class="p">(</span><span class="s1">&#39;my status&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nx">_status</span><span class="p">);</span>  <span class="c1">// my status</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">());</span>  <span class="c1">// my status</span>
+</pre></div>
+
+
+<p><code>new</code> 문을 쓰는 방법으로는 은닉화가 불가능하다. 하지만 클로저를 사용하면 은닉화가 가능하다.</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">quo</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">_status</span> <span class="o">=</span> <span class="nx">status</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">getStatus</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">_status</span><span class="p">;</span>
+        <span class="p">};</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">q</span> <span class="o">=</span> <span class="nx">quo</span><span class="p">(</span><span class="s1">&#39;my status&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nx">_status</span><span class="p">);</span>  <span class="c1">// undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">());</span>  <span class="c1">// my status</span>
+</pre></div>
+
+
+<p>클로저를 이용한 은닉화는 모듈 개념과 같다. 따라서 이를 적극적으로 활용하면 자바스크립트의 최대 단점 중 하나인 전역 변수 사용을 최소화할 수 있다.</p>
+<h3>커링</h3>
+<p>클로저를 이용하면 함수형 프로그래밍 기법 중 하나인 커링을 구현할 수 있다. 커링이란 n개의 매개변수를 받는 함수를 1개의 매개변수를 받는 함수 n개로 쪼개어 함수의 호출 체인으로 처리하는 방법이다.</p>
+<div class="highlight"><pre><span></span><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">curry</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span>
+        <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">arguments</span><span class="p">));</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// arguments의 합</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">add1</span> <span class="o">=</span> <span class="nx">add</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add1</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>  <span class="c1">// 7</span>
+</pre></div>
+
+
+<h2>참고한 페이지</h2>
+<ul>
+<li><a href="http://meetup.toast.com/posts/86">자바스크립트의 스코프와 클로저</a></li>
+<li><a href="http://www.nextree.co.kr/p7363">JavaScript : Scope 이해</a></li>
+<li><a href="https://hyunseob.github.io/2016/08/30/javascript-closure">JavaScript 클로저(Closure)</a></li>
+<li><a href="http://www.haruair.com/blog/2993">JavaScript에서 커링 currying 함수 작성하기</a></li>
+<li><a href="http://www.haruair.com/blog/2986">JavaScript 모나드</a></li>
+</ul>
+        </section>
+        <footer class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
+            </figure>
+            <section class="author">
+                <h4>
+                    <a href="author/qodot.html">qodot</a>
+                </h4>
+                <p>Python Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+            </section>
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Javascript%20Function%3A%203%20%EC%8A%A4%EC%BD%94%ED%94%8...%20via%20%40&amp;url=https://qodot.github.io/Javascript-Function-3-스코프-scope.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Javascript-Function-3-스코프-scope.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/Javascript-Function-3-스코프-scope.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+ <section>
+<h2>Comments !</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">var disqus_identifier = "Javascript-Function-3-스코프-scope.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+</section>         </footer>
+    </article>
+</main>
+<aside class="read-next">
+</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+                <section class="copyright">
+                    <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a itemprop="url" href="https://getpelican.org" target="_blank">Pelican</a>
+                </section>
+            </footer>
+        </div>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/index.min.js"></script>
+    </body>
+</html>

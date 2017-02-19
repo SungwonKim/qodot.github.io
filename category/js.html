@@ -56,25 +56,16 @@
         <meta name="twitter:site" content="@">
         <meta property="og:site_name" content="waiting for qodot">
         <meta property="og:locale" content="en">
-        <link rel="canonical" href="https://qodot.github.io/Sumblime-Text를-OSX-Command-Line에서-실행.html">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="Sumblime Text를 OSX Command Line에서 실행">
-        <meta property="og:url" content="Sumblime-Text를-OSX-Command-Line에서-실행.html">
-        <meta property="og:description" content="Sublime Text 설치 확인 아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다. /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl . 해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!1 Symbolic Link 생성 아래 커맨드를 통해 Symbolic link를 생성한다. ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl …">
-        <meta property="article:published_time" content="수요일, 4월 15, 2015">
-        <meta name="twitter:title" content="Sumblime Text를 OSX Command Line에서 실행">
-        <meta name="twitter:description" content="Sublime Text 설치 확인 아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다. /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl . 해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!1 Symbolic Link 생성 아래 커맨드를 통해 Symbolic link를 생성한다. ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl …">
-        <meta name="description" content="Sublime Text 설치 확인 아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다. /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl . 해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!1 Symbolic Link 생성 아래 커맨드를 통해 Symbolic link를 생성한다. ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl …">
-        <meta name="twitter:creator" content="@">
+        <link rel="canonical" href="https://qodot.github.io">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="waiting for qodot">
+        <meta property="og:url" content="https://qodot.github.io">
+        <meta property="og:description" content="">
         <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
         <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="300">
         <meta property="og:image:height" content="300">
-        <meta property="article:section" content="env">
-        <meta property="article:tag" content="env">
-        <meta property="article:tag" content="sublimetext">
-        <meta property="article:author" content="qodot">
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -85,7 +76,7 @@
             ga('send', 'pageview');
         </script>
     </head>
-    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+    <body class="tag-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="waiting for qodot">
         <meta itemprop="url" content="https://qodot.github.io">
         <meta itemprop="headline" content="waiting for qodot || ">
@@ -119,95 +110,63 @@
                 </nav>
                 <div class="vertical">
                     <div class="main-header-content inner">
+<h1 class="page-title" itemprop="headline">js</h1>
                     </div>
                 </div>
             </header>
-<main id="content" class="content" role="main">
-    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <header class="post-header">
-            <h1 class="post-title" itemprop="headline">Sumblime Text를 OSX Command Line에서 실행</h1>
-            <section class="post-meta">
-                <time class="post-date" itemprop="datePublished" datetime="2015YYY-00M-%DD">수요일, 4월 15, 2015</time>
-                on <a href="tag/env.html">Env, </a><a href="tag/sublimetext.html">Sublimetext</a>            </section>
-        </header>
-        <section class="post-content">
-            <h3>Sublime Text 설치 확인</h3>
-<p>아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다.</p>
-<div class="highlight"><pre><span></span>/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl .
-</pre></div>
-
-
-<p>해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup></p>
-<p><br></p>
-<h3>Symbolic Link 생성</h3>
-<p>아래 커맨드를 통해 Symbolic link를 생성한다.</p>
-<div class="highlight"><pre><span></span>ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-</pre></div>
-
-
-<p>실행하면 <code>/usr/local/bin/</code> 에 심볼릭 링크가 만들어진다. 본인은 그냥 유저 홈에 bin 디렉토리를 생성해서 거기에 심볼릭 링크를 만들었음.</p>
-<p><br></p>
-<h3>환경 변수 설정</h3>
-<p>환경 변수를 설정한다. <code>echo $PATH</code> 를 실행해서 본인이 심볼릭 링크를 생성한 디렉토리가 등록되어 있는지 확인한다. 없으면 <code>.bash_profile</code>이나 <code>.zshrc</code>를 열어서 다음과 같이 추가해준다.</p>
-<div class="highlight"><pre><span></span><span class="x">export PATH=본인의 심볼릭 링크가 있는 디렉토리 경로:</span><span class="p">$</span><span class="nv">PATH</span><span class="x"></span>
-<span class="x">export EDITOR=‘subl -w’</span>
-</pre></div>
-
-
-<p>본인은 <code>PATH</code> 에 <code>~/bin</code> 을 추가했다. 아마 <code>/usr/local/bin</code> 은 이미 등록되어 있을 것 같다.</p>
-<p><br></p>
-<h3>마무리</h3>
-<p>터미널을 재실행하거나 <code>source .zshrc</code>(혹은 <code>.bash_profile</code>)을 실행하고 <code>subl</code>을 입력해서 서브라임 텍스트가 열리면 성공!</p>
-<p><br></p>
-<h5>참고한 페이지</h5>
-<ul>
-<li><a href="http://stackoverflow.com/questions/16199581/opening-sublime-text-on-command-line-as-subl-on-mac-os">http://stackoverflow.com/questions/16199581/opening-sublime-text-on-command-line-as-subl-on-mac-os</a></li>
-<li><a href="https://www.sublimetext.com/docs/2/osx_command_line.html">https://www.sublimetext.com/docs/2/osx_command_line.html</a></li>
-<li><a href="http://egloos.zum.com/sunnmoon/v/1858692">심볼릭 링크와 하드 링크</a></li>
-</ul>
-<p><br></p>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Sublime Text 3를 쓰는 사람은 <code>/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl .</code>를 실행한다.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
-        </section>
-        <footer class="post-footer">
-            <figure class="author-image">
-                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
-            </figure>
-            <section class="author">
-                <h4>
-                    <a href="author/qodot.html">qodot</a>
-                </h4>
-                <p>Python Developer</p>
-                <div class="author-meta">
-                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+<main id="content" class="content" role="main" itemprop="mainContentOfPage" itemscope="" itemtype="http://schema.org/Blog">
+    <div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+            <span class="page-number">Page 1 of 1</span>
+    </nav>
+    </div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header" itemprop="headline">
+                <h2 class="post-title">
+                    <a href="https://qodot.github.io/Javascript-Function-1-기초.html" itemprop="url" rel="bookmark">
+                        Javascript Function: 1 기초
+                    </a>
+                </h2>
+            </header>
+            <section class="post-excerpt">이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 함수 자바스크립트의 함수는 일급 객체로, 코드 재용, 정보의 구성 및 은닉 등에 …<a class="read-more" itemprop="url" href="https://qodot.github.io/Javascript-Function-1-기초.html" title="Read this article" rel="bookmark"> &raquo;</a>
             </section>
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=Sumblime%20Text%EB%A5%BC%20OSX%20Command%20Line%EC%97%90%...%20via%20%40&amp;url=https://qodot.github.io/Sumblime-Text를-OSX-Command-Line에서-실행.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Sumblime-Text를-OSX-Command-Line에서-실행.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/Sumblime-Text를-OSX-Command-Line에서-실행.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
+            <footer class="post-meta">
+                <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
+                <a href="https://qodot.github.io/author/qodot.html">qodot</a> on <a href="https://qodot.github.io/tag/javascript.html">Javascript, </a><a href="https://qodot.github.io/tag/function.html">Function</a>                <time class="post-date" itemprop="datePublished" datetime="2016-02-19T00:00:00+09:00">금 19 2월 2016</time>
+            </footer>
+        </article>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header" itemprop="headline">
+                <h2 class="post-title">
+                    <a href="https://qodot.github.io/Javascript-Function-2-호출과-this.html" itemprop="url" rel="bookmark">
+                        Javascript Function: 2 호출과 this
+                    </a>
+                </h2>
+            </header>
+            <section class="post-excerpt">이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …<a class="read-more" itemprop="url" href="https://qodot.github.io/Javascript-Function-2-호출과-this.html" title="Read this article" rel="bookmark"> &raquo;</a>
             </section>
- <section>
-<h2>Comments !</h2>
-<div id="disqus_thread"></div>
-<script type="text/javascript">var disqus_identifier = "Sumblime-Text를-OSX-Command-Line에서-실행.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
-</section>         </footer>
-    </article>
+            <footer class="post-meta">
+                <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
+                <a href="https://qodot.github.io/author/qodot.html">qodot</a> on <a href="https://qodot.github.io/tag/javascript.html">Javascript, </a><a href="https://qodot.github.io/tag/function.html">Function</a>                <time class="post-date" itemprop="datePublished" datetime="2016-02-19T00:00:00+09:00">금 19 2월 2016</time>
+            </footer>
+        </article>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header" itemprop="headline">
+                <h2 class="post-title">
+                    <a href="https://qodot.github.io/Javascript-Function-3-스코프-scope.html" itemprop="url" rel="bookmark">
+                        Javascript Function: 3 스코프(scope)
+                    </a>
+                </h2>
+            </header>
+            <section class="post-excerpt">이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 유효 범위 (Scope) 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …<a class="read-more" itemprop="url" href="https://qodot.github.io/Javascript-Function-3-스코프-scope.html" title="Read this article" rel="bookmark"> &raquo;</a>
+            </section>
+            <footer class="post-meta">
+                <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
+                <a href="https://qodot.github.io/author/qodot.html">qodot</a> on <a href="https://qodot.github.io/tag/javascript.html">Javascript, </a><a href="https://qodot.github.io/tag/function.html">Function</a>                <time class="post-date" itemprop="datePublished" datetime="2016-02-19T00:00:00+09:00">금 19 2월 2016</time>
+            </footer>
+        </article>
 </main>
-<aside class="read-next">
-</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+            <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
                 <section class="copyright">
                     <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
                         CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

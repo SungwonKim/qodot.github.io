@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>waiting for qodot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+        <meta http-equiv="content-style-type" content="text/css">
+        <link rel="dns-prefetch" href="https://qodot.github.io"/>
+        <link rel="dns-prefetch" href="//www.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+        <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/screen.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/custom.min.css">
+        <link rel="stylesheet" type="text/css" href="https://qodot.github.io/theme/css/twemoji-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <link rel="publisher" href="">
+        <link rel="apple-touch-startup-image" href="https://qodot.github.io/theme/images/logo.png">
+        <link type="text/plain" rel="socialmedia" href="https://qodot.github.io/socialmedia.txt">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="application-name" content="waiting for qodot"/>
+        <meta name="msapplication-starturl" content="http:https://qodot.github.io"/>
+        <meta name="msapplication-tooltip" content=""/>
+        <meta name="msapplication-window" content="width=1024;height=768"/>
+        <meta name="msapplication-task" content="name=waiting for qodot;action-uri=http:https://qodot.github.io;icon-uri=https://qodot.github.io/theme/images/favicon.ico"/>
+        <meta name="msapplication-TileImage" content="https://qodot.github.io/theme/images/apple-touch-icon-144x144.png"/>
+        <meta name="msapplication-TileColor" content="#1F1F21"/>
+        <meta name="application-name" content="waiting for qodot">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="">
+        <meta name="alexaVerifyID" content=""/>
+        <meta name="wot-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="medium" content="mult">
+        <meta name="adblock" content="disable">
+        <meta name="rating" content="General">
+        <meta name="resource-type" content="document">
+        <meta name="revisit-after" content="1 days">
+        <meta name="revisit" content="1">
+        <meta name="robots" content="index,follow">
+        <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta property="og:site_name" content="waiting for qodot">
+        <meta property="og:locale" content="en">
+        <link rel="canonical" href="https://qodot.github.io/Javascript-Function-2-호출과-this.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Javascript Function: 2 호출과 this">
+        <meta property="og:url" content="Javascript-Function-2-호출과-this.html">
+        <meta property="og:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta property="article:published_time" content="금요일, 2월 19, 2016">
+        <meta name="twitter:title" content="Javascript Function: 2 호출과 this">
+        <meta name="twitter:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta name="description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프(scope) 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta name="twitter:creator" content="@">
+        <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="article:section" content="js">
+        <meta property="article:tag" content="javascript">
+        <meta property="article:tag" content="function">
+        <meta property="article:author" content="qodot">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-83522208-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
+        <meta itemprop="name" content="waiting for qodot">
+        <meta itemprop="url" content="https://qodot.github.io">
+        <meta itemprop="headline" content="waiting for qodot || ">
+        <meta itemprop="description about" content="">
+        <meta itemprop="keywords" content="">
+        <meta itemprop="inLanguage" content="en">
+<nav class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul role="menubar">
+        <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
+            <li role="presentation"><a  href="https://github.com/qodot" title="* github" itemprop="name" itemprop="significantLink">* github</a></li>
+            <li role="presentation"><a  href="https://www.facebook.com/daewon.seo.5" title="* facebook" itemprop="name" itemprop="significantLink">* facebook</a></li>
+            <li role="presentation"><a  href="https://rateyourmusic.com/~qodot" title="* rateyourmusic" itemprop="name" itemprop="significantLink">* rateyourmusic</a></li>
+            <li role="presentation"><a  href="http://www.last.fm/user/qodot" title="* lastfm" itemprop="name" itemprop="significantLink">* lastfm</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/archives.html" title="waiting for qodot | Archives" itemprop="name" itemprop="significantLink">Archives</a></li>
+    </ul>
+</nav>
+<span class="nav-cover"></span>        <div class="site-wrapper">
+            <header class="main-header post-head" style="background-image: url('/images/default_header.png');" itemscope itemtype="http://schema.org/WPHeader">
+                <nav class="main-nav overlay clearfix">
+                    <a class="menu-button" href="#">
+                        <span class="burger">&#9776;</span>
+                        <span class="word">Menu</span>
+                    </a>
+                </nav>
+                <div class="vertical">
+                    <div class="main-header-content inner">
+                    </div>
+                </div>
+            </header>
+<main id="content" class="content" role="main">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <header class="post-header">
+            <h1 class="post-title" itemprop="headline">Javascript Function: 2 호출과 this</h1>
+            <section class="post-meta">
+                <time class="post-date" itemprop="datePublished" datetime="2016YYY-00M-%DD">금요일, 2월 19, 2016</time>
+                on <a href="tag/javascript.html">Javascript, </a><a href="tag/function.html">Function</a>            </section>
+        </header>
+        <section class="post-content">
+            <p>이 포스트는 <a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820">더글라스 크락포드의 자바스크립트 핵심 가이드</a>의 <code>4장 함수</code>에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.</p>
+<ul>
+<li><a href="http://qodot.github.io/Javascript-Function-1-기초.html">Javascript Function: 1 기초</a></li>
+<li><a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html">Javascript Function: 2 호출과 this</a></li>
+<li><a href="http://qodot.github.io/Javascript-Function-3-스코프-scope.html">Javascript Function: 3 스코프(scope)</a></li>
+</ul>
+<h2>함수 호출과 <code>this</code></h2>
+<h3>실행 컨텍스트 (Execution Context)</h3>
+<p>실행 컨텍스트는 흔히 이야기하는 콜 스택(Call Stack)과 같은 말이다. 함수가 호출될 때 같이 생성되고, 다음과 같은 것들을 포함한다.</p>
+<ul>
+<li>변수 생성</li>
+<li><strong><code>this</code>, <code>arguments</code> 생성 !!</strong></li>
+<li>스코프 생성</li>
+</ul>
+<p>위에서 보듯, 함수가 호출될 때마다 실행 컨텍스트가 생성되고 이 때 넘겨주는 매개변수에 더해서, <code>this</code>와 <code>arguments</code>가 추가적으로 생성된다. 특히 <code>this</code>의 경우, 함수가 호출되는 방식에 따라서 다르게 바인딩 되는데, 존재하는 함수 호출 방식은 다음과 같다.</p>
+<ul>
+<li>메소드 호출 패턴</li>
+<li>함수 호출 패턴</li>
+<li>생성자 호출 패턴</li>
+<li><code>apply</code>, <code>call</code> 호출 패턴</li>
+</ul>
+<h3>메소드 호출 패턴</h3>
+<p>함수를 객체의 속성으로 저장하는 경우, 이 함수를 메소드라고 부른다. 메소드를 호출할 때, <code>this</code>는 메소드를 포함하고 있는 객체에 바인딩, 즉, 객체 자체가 된다. 이렇게 객체 자체를 <code>this</code>에 바인딩하는 메소드를 퍼블릭 메소드라고 한다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">increment</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">inc</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="k">typeof</span> <span class="nx">inc</span> <span class="o">===</span> <span class="s1">&#39;number&#39;</span> <span class="o">?</span> <span class="nx">inc</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObject</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>  <span class="c1">// 1</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">increment</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObject</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>  <span class="c1">// 3</span>
+</pre></div>
+
+
+<p>객체가 메소드 안의 <code>this</code>에 바인딩 되는 것은 메소드 호출시 일어나므로, <code>this</code>는 동적으로 다양하게 응용될 수 있다.</p>
+<h3>함수 호출 패턴</h3>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</pre></div>
+
+
+<p>함수가 객체의 속성이 아닌 경우는 함수로서 호출되고, 이 경우 <code>this</code>는 전역 객체에 바인딩 된다. 이는 명백한 설계 오류로, 만약 바르게 설계되었다면 내부 함수의 <code>this</code>는 외부 함수의 <code>this</code>에 바인딩되었어야 할 것이다.</p>
+<p>따라서 다음과 같이 사용할 경우 의도하지 않은 동작이 나타난다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// this가 myObject를 참조할 것이라고 기대</span>
+    <span class="kd">var</span> <span class="nx">innerFn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="nx">innerFn</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>  <span class="c1">// Window {speechSynthesis: SpeechSynthesis, ...</span>
+</pre></div>
+
+
+<p>이를 해결하고 싶을 경우 보통 다음과 같은 패턴을 사용한다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">innerFn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">self</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="nx">innerFn</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>  <span class="c1">// Object { fn: ....</span>
+</pre></div>
+
+
+<h3>생성자 호출 패턴</h3>
+<p>함수를 <code>new</code> 문과 함께 호출하는 방법이다. 이 경우 함수의 프로토타입 객체의 <code>constructor</code> 속성을 이용해 호출한다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">Quo</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Quo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getStatus</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">myQuo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quo</span><span class="p">(</span><span class="s1">&#39;confused&#39;</span><span class="p">);</span>
+<span class="nx">myQuo</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">();</span>  <span class="c1">// confused</span>
+</pre></div>
+
+
+<p><code>new</code> 문은 클래스 기반 언어를 떠올리게 만들어서 프로그래머에게 혼란을 준다. 자바스크립트는 프로토타입 기반 언어이고, <code>new</code> 문은 프로토타입 기반의 언어를 사용하는데 적절한 방법이 아니다.</p>
+<h3><code>apply</code>, <code>call</code> 호출 패턴</h3>
+<p>함수도 객체이기 때문에 메소드를 가질 수 있다. <code>apply</code>, <code>call</code> 메소드는 자바스크립트의 모든 함수에 포함되어 있는 메소드이다. 첫 번 째 매개변수로 함수 안에서 <code>this</code>에 묶이게 될 값을 넘길 수 있다. <code>apply</code>, <code>call</code>의 차이점은 다음과 같다.</p>
+<ul>
+<li><code>apply</code>: 호출하려고 하는 함수의 매개변수들의 배열을 두 번 째 매개변수로 넘긴다. (<code>arguments</code>)</li>
+<li><code>call</code>: 호출하려고 하는 함수의 매개변수들을 두 번 째, 세 번 째 ... 매개변수로 넘긴다.</li>
+</ul>
+<p>아래 세가지 호출은 같다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>  <span class="c1">// 7</span>
+<span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>  <span class="c1">// 7</span>
+<span class="nx">add</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>  <span class="c1">// 7</span>
+</pre></div>
+
+
+<p>첫 번 째 매개변우에 <code>null</code> 혹은 <code>undefined</code>를 넣을 경우 자동으로 전역 객체에 바인딩 된다. (non-strict mode의 경우)</p>
+<p>객체의 컨텍스트(<code>this</code>)를 마음대로 설정할 수 있으므로, 다른 객체의 메소드를 훔쳐(?) 쓰는 것도 가능하다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myStatus</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s1">&#39;WOW&#39;</span>
+<span class="p">};</span>
+
+<span class="nx">Quo</span><span class="p">.</span><span class="nx">protoype</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">myStatus</span><span class="p">);</span>  <span class="c1">// WOW</span>
+</pre></div>
+
+
+<p>객체 구조만 맞다면 얼마든지 동적으로 메소드를 재사용할 수 있다.</p>
+<h2>기본 타입에 기능 추가 (프로토타입 확장)</h2>
+<p>프로토타입을 이용해서 기본 타입을 확장할 수 있다. 모든 숫자(<code>Number</code>) 타입에 음수면 올림, 양수면 버림을 하는 메소드를 추가해보자.</p>
+<div class="highlight"><pre><span></span><span class="nb">Number</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">integer</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">methodName</span> <span class="o">=</span> <span class="k">this</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="s1">&#39;ceil&#39;</span> <span class="o">:</span> <span class="s1">&#39;floor&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">[</span><span class="nx">methodName</span><span class="p">](</span><span class="k">this</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span><span class="p">).</span><span class="nx">integer</span><span class="p">());</span>  <span class="c1">// -3</span>
+</pre></div>
+
+
+<p>다음과 같은 메소드를 함수(<code>Function</code>) 타입에 추가하면 기능 확장시 <code>.prototype</code>을 반복해서 써줄 필요가 없다.</p>
+<div class="highlight"><pre><span></span><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addMethod</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;method already exists&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nb">Number</span><span class="p">.</span><span class="nx">addMethod</span><span class="p">(</span><span class="s1">&#39;integer&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">methodName</span> <span class="o">=</span> <span class="k">this</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="s1">&#39;ceil&#39;</span> <span class="o">:</span> <span class="s1">&#39;floor&#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">[</span><span class="nx">methodName</span><span class="p">](</span><span class="k">this</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>이미 같은 이름의 속성이 있는 경우 덮어쓰지 않도록 조치했다.</p>
+<h2>매개변수 배열</h2>
+<p>함수 호출시 추가적인 매개변수로 <code>this</code>와 함께 <code>arguments</code> 배열을 사용할 수 있다. 이 배열은 함수를 호출 할 때 전달된 모든 매개변수를 담고 있는 배열이다.</p>
+<p>이 배열을 이용하면, 호출시 넘어오는 매개변수의 개수가 정해지지 않은 동적인 함수를 만들 수 있다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">));</span>  <span class="c1">// 108</span>
+</pre></div>
+
+
+<blockquote>
+<p><code>arguments</code>는 사실 배열이 아니고 배열 같은 객체이다. <code>length</code>라는 속성은 있지만 일반적인 배열이 가지는 메소드들은 없다.</p>
+</blockquote>
+        </section>
+        <footer class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="author/qodot.html" style="background-image: url('/images/profile.png')"><span class="hidden">qodot's Picture</span></a>
+            </figure>
+            <section class="author">
+                <h4>
+                    <a href="author/qodot.html">qodot</a>
+                </h4>
+                <p>Python Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Seoul, South Korea</span>                 </div>
+            </section>
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Javascript%20Function%3A%202%20%ED%98%B8%EC%B6%9C%EA%B3%BC%20this%20via%20%40&amp;url=https://qodot.github.io/Javascript-Function-2-호출과-this.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Javascript-Function-2-호출과-this.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://qodot.github.io/Javascript-Function-2-호출과-this.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+ <section>
+<h2>Comments !</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">var disqus_identifier = "Javascript-Function-2-호출과-this.html";(function(){var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//qodot.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+</section>         </footer>
+    </article>
+</main>
+<aside class="read-next">
+</aside>             <footer class="site-footer clearfix" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+                <section class="copyright">
+                    <a itemprop="url" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        CC Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </section>
+                <section class="poweredby">
+                    Proudly published with
+                    <a itemprop="url" href="https://getpelican.org" target="_blank">Pelican</a>
+                </section>
+            </footer>
+        </div>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="https://qodot.github.io/theme/js/index.min.js"></script>
+    </body>
+</html>
