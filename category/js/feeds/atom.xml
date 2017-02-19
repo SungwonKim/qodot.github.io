@@ -70,7 +70,7 @@
 &lt;h3&gt;스코프 체인 (Scope Chain)&lt;/h3&gt;
 &lt;p&gt;방금 본 두 가지 규칙에 따라 알 수 있듯이, 함수가 실행될 때마다 함수 범위를 가지는 렉시컬 스코프가 생성된다. 그리고 생성된 스코프는 자기 바로 상위 스코프를 참조하는데, 이것이 스코프 체인이다.&lt;/p&gt;
 &lt;p&gt;방금 위의 예제에서 &lt;code&gt;bar&lt;/code&gt; 함수가 전역 변수 &lt;code&gt;x&lt;/code&gt;를 참조할 수 있는 이유는 무엇일까? 바로 &lt;code&gt;bar&lt;/code&gt;가 실행되면서 생성된 스코프가 바로 상위 스코프인 전역 스코프를 참조하고 있기 때문이다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="javascript-lexical-scope-chain" src="images/js/Javascript-Function-3-스코프-scope-scope-chain.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="javascript-lexical-scope-chain" src="images/js/Javascript-Function-3-scope-closure-scope-chain.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;이미지 출처: &lt;a href="http://techslides.com/understanding-javascript-closures-and-scope"&gt;http://techslides.com/understanding-javascript-closures-and-scope&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -174,7 +174,7 @@
 
 
 &lt;p&gt;함수 &lt;code&gt;foo&lt;/code&gt;가 콜 스택에서 pop 되었는데도 'blue' 값이 사라지지 않고 남아있는 이상한(?) 동작처럼 보인다. 콜 스택과 연관지어서 생각하기 때문에 그렇다. 다음 그림을 보자.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="javascript-closure" src="images/js/Javascript-Function-3-스코프-scope-scope-chain.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="javascript-closure" src="images/js/Javascript-Function-3-scope-closure-closure.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;이미지 출처: &lt;a href="http://meetup.toast.com/posts/86"&gt;http://meetup.toast.com/posts/86&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;

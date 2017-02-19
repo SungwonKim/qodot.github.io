@@ -194,7 +194,7 @@
 <h3>스코프 체인 (Scope Chain)</h3>
 <p>방금 본 두 가지 규칙에 따라 알 수 있듯이, 함수가 실행될 때마다 함수 범위를 가지는 렉시컬 스코프가 생성된다. 그리고 생성된 스코프는 자기 바로 상위 스코프를 참조하는데, 이것이 스코프 체인이다.</p>
 <p>방금 위의 예제에서 <code>bar</code> 함수가 전역 변수 <code>x</code>를 참조할 수 있는 이유는 무엇일까? 바로 <code>bar</code>가 실행되면서 생성된 스코프가 바로 상위 스코프인 전역 스코프를 참조하고 있기 때문이다.</p>
-<p><img alt="javascript-lexical-scope-chain" src="images/js/Javascript-Function-3-스코프-scope-scope-chain.png"></p>
+<p><img alt="javascript-lexical-scope-chain" src="images/js/Javascript-Function-3-scope-closure-scope-chain.png"></p>
 <blockquote>
 <p>이미지 출처: <a href="http://techslides.com/understanding-javascript-closures-and-scope">http://techslides.com/understanding-javascript-closures-and-scope</a></p>
 </blockquote>
@@ -298,7 +298,7 @@
 
 
 <p>함수 <code>foo</code>가 콜 스택에서 pop 되었는데도 'blue' 값이 사라지지 않고 남아있는 이상한(?) 동작처럼 보인다. 콜 스택과 연관지어서 생각하기 때문에 그렇다. 다음 그림을 보자.</p>
-<p><img alt="javascript-closure" src="images/js/Javascript-Function-3-스코프-scope-scope-chain.png"></p>
+<p><img alt="javascript-closure" src="images/js/Javascript-Function-3-scope-closure-closure.png"></p>
 <blockquote>
 <p>이미지 출처: <a href="http://meetup.toast.com/posts/86">http://meetup.toast.com/posts/86</a></p>
 </blockquote>
