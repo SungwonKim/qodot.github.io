@@ -60,11 +60,11 @@
         <meta property="og:type" content="article">
         <meta property="og:title" content="Javascript Function: 2 호출과 this">
         <meta property="og:url" content="Javascript-Function-2-호출과-this.html">
-        <meta property="og:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프와 클로저 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta property="og:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프와 클로저 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 ...">
         <meta property="article:published_time" content="토요일, 2월 18, 2017">
         <meta name="twitter:title" content="Javascript Function: 2 호출과 this">
-        <meta name="twitter:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프와 클로저 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
-        <meta name="description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프와 클로저 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 …">
+        <meta name="twitter:description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프와 클로저 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 ...">
+        <meta name="description" content="이 포스트는 더글라스 크락포드의 자바스크립트 핵심 가이드의 4장 함수에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다. Javascript Function: 1 기초 Javascript Function: 2 호출과 this Javascript Function: 3 스코프와 클로저 함수 호출과 this 실행 컨텍스트 (Execution Context) 실행 컨텍스트는 흔히 이야기하는 콜 ...">
         <meta name="twitter:creator" content="@">
         <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
         <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
@@ -75,15 +75,6 @@
         <meta property="article:tag" content="javascript">
         <meta property="article:tag" content="function">
         <meta property="article:author" content="qodot">
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-83522208-2', 'auto');
-            ga('send', 'pageview');
-        </script>
     </head>
     <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="waiting for qodot">
@@ -99,6 +90,7 @@
     </a>
     <ul role="menubar">
         <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/pages/about.html" title="waiting for qodot |About" itemprop="name" itemprop="significantLink">About</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
@@ -191,7 +183,7 @@
 </pre></div>
 
 
-<p>이를 해결하고 싶을 경우 보통 다음과 같은 패턴을 사용한다.</p>
+<p>이를 해결하고 싶을 경우 다음과 같은 패턴을 많이 사용하곤 한다.</p>
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{};</span>
 
 <span class="nx">myObject</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -200,6 +192,21 @@
     <span class="kd">var</span> <span class="nx">innerFn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">self</span><span class="p">);</span>
     <span class="p">};</span>
+
+    <span class="nx">innerFn</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>  <span class="c1">// Object { fn: ....</span>
+</pre></div>
+
+
+<p>자바스크립트의 모든 함수에 포함되어 있는 <code>bind</code> 메소드를 이용해서 해결할 수도 있다. <code>bind</code> 메소드는 함수 리터럴로 선언한 함수에 원하는 <code>this</code>를 바인딩한 함수를 다시 반환한다. 개인적으로는 이게 더 깔끔한 방법이라고 생각한다.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">myObject</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">innerFn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">self</span><span class="p">);</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 
     <span class="nx">innerFn</span><span class="p">();</span>
 <span class="p">};</span>
@@ -315,7 +322,7 @@
             </section>
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=Javascript%20Function%3A%202%20%ED%98%B8%EC%B6%9C%EA%B3%BC%20this%20via%20%40&amp;url=https://qodot.github.io/Javascript-Function-2-호출과-this.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/share?text=Javascript%20Function%3A%202%20%ED%98%B8%EC%B6%9C%EA%B3%B ...%20via%20%40&amp;url=https://qodot.github.io/Javascript-Function-2-호출과-this.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
                 <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Javascript-Function-2-호출과-this.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">

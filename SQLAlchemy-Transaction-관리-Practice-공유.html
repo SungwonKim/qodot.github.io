@@ -60,11 +60,11 @@
         <meta property="og:type" content="article">
         <meta property="og:title" content="SQLAlchemy Transaction 관리 Practice 공유">
         <meta property="og:url" content="SQLAlchemy-Transaction-관리-Practice-공유.html">
-        <meta property="og:description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 …">
+        <meta property="og:description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 ...">
         <meta property="article:published_time" content="토요일, 8월 27, 2016">
         <meta name="twitter:title" content="SQLAlchemy Transaction 관리 Practice 공유">
-        <meta name="twitter:description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 …">
-        <meta name="description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 …">
+        <meta name="twitter:description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 ...">
+        <meta name="description" content="개요 기본적으로 SQLAlchemy에서는 (autocommit=True 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다. session = Session() new_user = User(**data) session.add(new_user) session.commit() 이렇게 항상, session.commit() 혹은 session.rollback()을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 ...">
         <meta name="twitter:creator" content="@">
         <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
         <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
@@ -75,15 +75,6 @@
         <meta property="article:tag" content="python">
         <meta property="article:tag" content="sqlalchemy">
         <meta property="article:author" content="qodot">
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-83522208-2', 'auto');
-            ga('send', 'pageview');
-        </script>
     </head>
     <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="waiting for qodot">
@@ -99,6 +90,7 @@
     </a>
     <ul role="menubar">
         <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/pages/about.html" title="waiting for qodot |About" itemprop="name" itemprop="significantLink">About</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
@@ -236,7 +228,7 @@
             </section>
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=SQLAlchemy%20Transaction%20%EA%B4%80%EB%A6%AC%20Practice%...%20via%20%40&amp;url=https://qodot.github.io/SQLAlchemy-Transaction-관리-Practice-공유.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/share?text=SQLAlchemy%20Transaction%20%EA%B4%80%EB%A6%AC%20Practice% ...%20via%20%40&amp;url=https://qodot.github.io/SQLAlchemy-Transaction-관리-Practice-공유.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
                 <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/SQLAlchemy-Transaction-관리-Practice-공유.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">

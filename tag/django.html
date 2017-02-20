@@ -66,15 +66,6 @@
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="300">
         <meta property="og:image:height" content="300">
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-83522208-2', 'auto');
-            ga('send', 'pageview');
-        </script>
     </head>
     <body class="tag-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="waiting for qodot">
@@ -90,6 +81,7 @@
     </a>
     <ul role="menubar">
         <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/pages/about.html" title="waiting for qodot |About" itemprop="name" itemprop="significantLink">About</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
@@ -128,7 +120,7 @@
                     </a>
                 </h2>
             </header>
-            <section class="post-excerpt">개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 …<a class="read-more" itemprop="url" href="https://qodot.github.io/Django에서-Celery로-Task-Queue-구축.html" title="Read this article" rel="bookmark"> &raquo;</a>
+            <section class="post-excerpt">개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Django에서-Celery로-Task-Queue-구축.html" title="Read this article" rel="bookmark"> &raquo;</a>
             </section>
             <footer class="post-meta">
                 <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
@@ -143,7 +135,7 @@
                     </a>
                 </h2>
             </header>
-            <section class="post-excerpt">개요 설정 정보를 다루다 보면 코드에 그대로 적어서는 안되는 정보들이 있다. 예를 들어 Github의 public 계정을 사용할 경우, 불특정 다수가 서비스의 상용 데이터베이스의 접속 정보를 알아서는 안될 것이다. 그래서, 간단하게 django 설정 정보를 환경 변수로 등록해서 repository에 노출되지 않도록 해보자. (SECRET_KEY를 예로 들겠음) 만약 virtualenv를 쓰고 있지 않다면 상당히 간단하다 …<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-설정을-환경-변수로-관리하기.html" title="Read this article" rel="bookmark"> &raquo;</a>
+            <section class="post-excerpt">개요 설정 정보를 다루다 보면 코드에 그대로 적어서는 안되는 정보들이 있다. 예를 들어 Github의 public 계정을 사용할 경우, 불특정 다수가 서비스의 상용 데이터베이스의 접속 정보를 알아서는 안될 것이다. 그래서, 간단하게 django 설정 정보를 환경 변수로 등록해서 repository에 노출되지 않도록 해보자. (SECRET_KEY를 예로 들겠음) 만약 virtualenv를 쓰고 있지 않다면 상당히 간단하다 ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-설정을-환경-변수로-관리하기.html" title="Read this article" rel="bookmark"> &raquo;</a>
             </section>
             <footer class="post-meta">
                 <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
@@ -158,7 +150,7 @@
                     </a>
                 </h2>
             </header>
-            <section class="post-excerpt">개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-settings.py-환경-분리.html" title="Read this article" rel="bookmark"> &raquo;</a>
+            <section class="post-excerpt">개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-settings.py-환경-분리.html" title="Read this article" rel="bookmark"> &raquo;</a>
             </section>
             <footer class="post-meta">
                 <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">

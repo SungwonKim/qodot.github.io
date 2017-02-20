@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>waiting for qodot - py</title><link href="https://qodot.github.io/" rel="alternate"></link><link href="https://qodot.github.io/category/py/feeds/atom.xml" rel="self"></link><id>https://qodot.github.io/</id><updated>2017-01-12T00:00:00+09:00</updated><entry><title>Flask에서 Pytest Fixture로 테스트 환경 구축하기</title><link href="https://qodot.github.io/Flask%EC%97%90%EC%84%9C-Pytest-Fixture%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0.html" rel="alternate"></link><published>2017-01-12T00:00:00+09:00</published><updated>2017-01-12T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2017-01-12:/Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html</id><summary type="html">&lt;p&gt;Flask, SQLAlchemy, Alembic을 이용하는 프로젝트에서 &lt;a href="http://doc.pytest.org/en/latest/"&gt;Pytest&lt;/a&gt;를 이용해 테스트 환경을 구축할 수 있다. &lt;code&gt;pip&lt;/code&gt;을 이용해서 간단하게 설치가 가능하다.&lt;/p&gt;
-&lt;p&gt;원활한 테스트를 위해서, 아마도 다음과 같은 개념들이 필요할 것이다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Flask Application Context&lt;/li&gt;
-&lt;li&gt;Flask Test Client&lt;/li&gt;
-&lt;li&gt;테스트 전용 데이터베이스&lt;/li&gt;
-&lt;li&gt;테스트 케이스마다 필요한 데이터를 Insert 하고, 테스트가 완료되면 트랜잭션을 롤백하는 세션&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Pytest로 이 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Flask, SQLAlchemy, Alembic을 이용하는 프로젝트에서 &lt;a href="http://doc.pytest.org/en/latest/"&gt;Pytest&lt;/a&gt;를 이용해 테스트 환경을 구축할 수 있다. &lt;code&gt;pip&lt;/code&gt;을 이용해서 간단하게 설치가 가능하다.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>waiting for qodot</title><link href="https://qodot.github.io/" rel="alternate"></link><link href="https://qodot.github.io/category/py/feeds/atom.xml" rel="self"></link><id>https://qodot.github.io/</id><updated>2017-01-12T00:00:00+09:00</updated><entry><title>Flask에서 Pytest Fixture로 테스트 환경 구축하기</title><link href="https://qodot.github.io/Flask%EC%97%90%EC%84%9C-Pytest-Fixture%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0.html" rel="alternate"></link><published>2017-01-12T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2017-01-12:Flask에서-Pytest-Fixture로-테스트-환경-구축하기.html</id><summary type="html">&lt;p&gt;Flask, SQLAlchemy, Alembic을 이용하는 프로젝트에서 &lt;a href="http://doc.pytest.org/en/latest/"&gt;Pytest&lt;/a&gt;를 이용해 테스트 환경을 구축할 수 있다. &lt;code&gt;pip&lt;/code&gt;을 이용해서 간단하게 설치가 가능하다.&lt;/p&gt;
 &lt;p&gt;원활한 테스트를 위해서, 아마도 다음과 같은 개념들이 필요할 것이다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Flask Application Context&lt;/li&gt;
@@ -135,16 +127,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://alexmic.net/flask-sqlalchemy-pytest/"&gt;http://alexmic.net/flask-sqlalchemy-pytest/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pythontesting.net/framework/pytest/pytest-session-scoped-fixtures/"&gt;http://pythontesting.net/framework/pytest/pytest-session-scoped-fixtures/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="python"></category><category term="pyrest"></category><category term="flask"></category><category term="sqlalchemy"></category><category term="alembic"></category></entry><entry><title>SQLAlchemy Transaction 관리 Practice 공유</title><link href="https://qodot.github.io/SQLAlchemy-Transaction-%EA%B4%80%EB%A6%AC-Practice-%EA%B3%B5%EC%9C%A0.html" rel="alternate"></link><published>2016-08-27T00:00:00+09:00</published><updated>2016-08-27T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2016-08-27:/SQLAlchemy-Transaction-관리-Practice-공유.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
-&lt;p&gt;기본적으로 SQLAlchemy에서는 (&lt;code&gt;autocommit=True&lt;/code&gt; 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;new_user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new_user&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;commit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;이렇게 항상, &lt;code&gt;session.commit()&lt;/code&gt; 혹은 &lt;code&gt;session.rollback()&lt;/code&gt;을 붙여주어야 트랜잭션이 끝나면서 변경 내용이 반영된다. 이렇게 간단한 수준의 코드라면 별 문제 없겠지만, 만약 큰 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;개요&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="pyrest"></category><category term="flask"></category><category term="sqlalchemy"></category><category term="alembic"></category></entry><entry><title>SQLAlchemy Transaction 관리 Practice 공유</title><link href="https://qodot.github.io/SQLAlchemy-Transaction-%EA%B4%80%EB%A6%AC-Practice-%EA%B3%B5%EC%9C%A0.html" rel="alternate"></link><published>2016-08-27T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2016-08-27:SQLAlchemy-Transaction-관리-Practice-공유.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;기본적으로 SQLAlchemy에서는 (&lt;code&gt;autocommit=True&lt;/code&gt; 옵션을 주지 않는 이상) 수동으로 트랜잭션을 관리해야 한다. 예를 들면 이런 거다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;new_user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -233,12 +216,7 @@
 
 
 &lt;p&gt;이런식으로 하나의 메소드를 원하는 트랜잭션 안에서 자유롭게 사용할 수 있다.&lt;/p&gt;
-&lt;p&gt;더 좋은 방법을 아시는 분은 공유해주시면 감사하겠습니다!&lt;/p&gt;</content><category term="python"></category><category term="sqlalchemy"></category></entry><entry><title>SQLAlchemy-PostgreSQL에서의 JSON 타입 업데이트</title><link href="https://qodot.github.io/SQLAlchemy-PostgreSQL%EC%97%90%EC%84%9C%EC%9D%98-JSON-%ED%83%80%EC%9E%85-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8.html" rel="alternate"></link><published>2016-08-26T00:00:00+09:00</published><updated>2016-08-26T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2016-08-26:/SQLAlchemy-PostgreSQL에서의-JSON-타입-업데이트.html</id><summary type="html">&lt;p&gt;PostgreSQL 9.3 과 SQLAlchemy를 이용해서 JSON 타입의 컬럼을 업데이트 하려고 했는데 되질 않았다. 찾다보니 한 아티클&lt;a href="https://bashelton.com/2014/03/updating-postgresql-json-fields-via-sqlalchemy/"&gt;Updating PostgreSQL JSON fields via SQLAlchemy&lt;/a&gt;을 찾게 되어 내용을 정리해본다.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;기본적인 업데이트 방법&lt;/h2&gt;
-&lt;p&gt;아마 다들 알다시피, SQLAlchemy에서는 다음과 같은 방법으로 간단하게 update 쿼리를 날릴 수 있다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;User …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;PostgreSQL 9.3 과 SQLAlchemy를 이용해서 JSON 타입의 컬럼을 업데이트 하려고 했는데 되질 않았다. 찾다보니 한 아티클&lt;a href="https://bashelton.com/2014/03/updating-postgresql-json-fields-via-sqlalchemy/"&gt;Updating PostgreSQL JSON fields via SQLAlchemy&lt;/a&gt;을 찾게 되어 내용을 정리해본다.&lt;/p&gt;
+&lt;p&gt;더 좋은 방법을 아시는 분은 공유해주시면 감사하겠습니다!&lt;/p&gt;</summary><category term="python"></category><category term="sqlalchemy"></category></entry><entry><title>SQLAlchemy-PostgreSQL에서의 JSON 타입 업데이트</title><link href="https://qodot.github.io/SQLAlchemy-PostgreSQL%EC%97%90%EC%84%9C%EC%9D%98-JSON-%ED%83%80%EC%9E%85-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8.html" rel="alternate"></link><published>2016-08-26T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2016-08-26:SQLAlchemy-PostgreSQL에서의-JSON-타입-업데이트.html</id><summary type="html">&lt;p&gt;PostgreSQL 9.3 과 SQLAlchemy를 이용해서 JSON 타입의 컬럼을 업데이트 하려고 했는데 되질 않았다. 찾다보니 한 아티클&lt;a href="https://bashelton.com/2014/03/updating-postgresql-json-fields-via-sqlalchemy/"&gt;Updating PostgreSQL JSON fields via SQLAlchemy&lt;/a&gt;을 찾게 되어 내용을 정리해본다.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;기본적인 업데이트 방법&lt;/h2&gt;
 &lt;p&gt;아마 다들 알다시피, SQLAlchemy에서는 다음과 같은 방법으로 간단하게 update 쿼리를 날릴 수 있다.&lt;/p&gt;
@@ -275,9 +253,7 @@
 &lt;p&gt;직접적으로 세션을 이용하는 방법도 있다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;json_field&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;value&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}})&lt;/span&gt;
 &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;commit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="sqlalchemy"></category><category term="postgresql"></category></entry><entry><title>Django에서 Celery로 Task Queue 구축</title><link href="https://qodot.github.io/Django%EC%97%90%EC%84%9C-Celery%EB%A1%9C-Task-Queue-%EA%B5%AC%EC%B6%95.html" rel="alternate"></link><published>2016-04-05T00:00:00+09:00</published><updated>2016-04-05T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2016-04-05:/Django에서-Celery로-Task-Queue-구축.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
-&lt;p&gt;서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지?&lt;/p&gt;
-&lt;p&gt;일단 유저에게는 요청이 완료되었다는 응답을 보내고 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;개요&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="sqlalchemy"></category><category term="postgresql"></category></entry><entry><title>Django에서 Celery로 Task Queue 구축</title><link href="https://qodot.github.io/Django%EC%97%90%EC%84%9C-Celery%EB%A1%9C-Task-Queue-%EA%B5%AC%EC%B6%95.html" rel="alternate"></link><published>2016-04-05T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2016-04-05:Django에서-Celery로-Task-Queue-구축.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지?&lt;/p&gt;
 &lt;p&gt;일단 유저에게는 요청이 완료되었다는 응답을 보내고, 이메일을 보내는 과정은 서버가 알아서 기다리고 알아서 처리하게 하는 방법이 있다. 실제로 우리도 어떤 서비스를 가입하면 가입 환영 메일을 받는데, 가입하자마자 오는 경우도 있지만 시간이 꽤 지난 후에 메일을 받는 경우도 많다.&lt;/p&gt;
 &lt;p&gt;태스크 큐&lt;code&gt;task queue&lt;/code&gt;를 이용하면 이런 비동기 작업을 수월하게 할 수 있다. 이메일을 보내라는 요청이 들어오면 일단 큐에 이메일을 보내는 작업&lt;code&gt;task&lt;/code&gt;을 넣어놓고, 결과에 상관없이 유저에게는 응답을 보낸다. python에서는 &lt;a href="http://www.celeryproject.org/"&gt;&lt;code&gt;celery&lt;/code&gt;&lt;/a&gt;라는 아주 인기 높은 분산 태스크 큐가 있다. &lt;code&gt;celery&lt;/code&gt;와 함께라면 당신도 억울하게 유저를 잃지 않을 수 있다. 추가로 &lt;code&gt;celery&lt;/code&gt;의 작업들을 모니터링 할 수 있는 &lt;code&gt;flower&lt;/code&gt;까지 알아보자.&lt;/p&gt;
@@ -314,7 +290,7 @@ rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
 &lt;p&gt;브로커가 떴다!&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;Celery Worker&lt;/h2&gt;
-&lt;p&gt;실제로 워커를 띄우기 위해 &lt;code&gt;celery&lt;/code&gt;를 적용해보자. 본 포스트에서는 &lt;code&gt;django&lt;/code&gt;와 연동하는 예제(&lt;a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html"&gt;공식 문서&lt;/a&gt;도 같이 참조하면 좋다)을 보여주겠다.&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;실제로 워커를 띄우기 위해 &lt;code&gt;celery&lt;/code&gt;를 적용해보자. 본 포스트에서는 &lt;code&gt;django&lt;/code&gt;와 연동하는 예제(&lt;a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html"&gt;공식 문서&lt;/a&gt;도 같이 참조하면 좋다)을 보여주겠다.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3&gt;Celery 설치&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install celery
 &lt;/pre&gt;&lt;/div&gt;
@@ -364,7 +340,7 @@ rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
 
 &lt;p&gt;WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.&lt;/p&gt;
 &lt;h3&gt;Django View 작성&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;@shared_task&lt;/code&gt;로 선언된 함수를 실행할 때, &lt;code&gt;delay()&lt;/code&gt;를 통해 실행하면&lt;sup id="fnref-2"&gt;&lt;a class="footnote-ref" href="#fn-2"&gt;2&lt;/a&gt;&lt;/sup&gt; 자동으로 메세지 브로커를 통해 작업이 워커로 날아간다! 너무 편하다!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;@shared_task&lt;/code&gt;로 선언된 함수를 실행할 때, &lt;code&gt;delay()&lt;/code&gt;를 통해 실행하면&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; 자동으로 메세지 브로커를 통해 작업이 워커로 날아간다! 너무 편하다!&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;your_tasks_path&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;send_email&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;some_controller_method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="o"&gt;...&lt;/span&gt;
@@ -398,35 +374,29 @@ flower -A your_django_app_name
 &lt;p&gt;&lt;code&gt;rabbitmq&lt;/code&gt;와 &lt;code&gt;celery&lt;/code&gt; 워커가 실행되어 있다면 정상적으로 인스턴스가 구동된다. &lt;code&gt;localhost:5555&lt;/code&gt;로 접속하면 &lt;a href="http://flower.readthedocs.org/en/latest/screenshots.html"&gt;멋진 화면&lt;/a&gt;을 볼 수 있다. 이렇게 간단하게 괜찮은 모니터링 툴을 이용할 수 있다니 ㅜㅜ&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
-&lt;hr&gt;
+&lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn-1"&gt;
-&lt;p&gt;&lt;code&gt;django&lt;/code&gt;와 상관없이 python에서는 모두 사용 가능하다.&amp;#160;&lt;a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;&lt;code&gt;django&lt;/code&gt;와 상관없이 python에서는 모두 사용 가능하다.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id="fn-2"&gt;
-&lt;p&gt;&lt;code&gt;delay()&lt;/code&gt;를 안 붙이면 그냥 평범한 함수처럼 실행된다.&amp;#160;&lt;a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;&lt;code&gt;delay()&lt;/code&gt;를 안 붙이면 그냥 평범한 함수처럼 실행된다.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="python"></category><category term="django"></category><category term="celery"></category></entry><entry><title>Python Asyncio</title><link href="https://qodot.github.io/Python-Asyncio.html" rel="alternate"></link><published>2016-03-27T00:00:00+09:00</published><updated>2016-03-27T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2016-03-27:/Python-Asyncio.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
-&lt;p&gt;파이썬 3.3에 추가된 &lt;code&gt;asyncio&lt;/code&gt;는, 동시성 문제를 코루틴&lt;code&gt;coroutine&lt;/code&gt; 기반으로 처리하는 비동기 IO 라이브러리다. 동시성 문제를 처리하는 방법은 대표적으로 쓰레드와 콜백 패턴이 있다.&lt;/p&gt;
-&lt;h3&gt;Thread&lt;/h3&gt;
-&lt;p&gt;가장 대표적인 방법이다. 대중적인 방법이므로 이해도 쉽고 적용도 쉽다. 그런데 쓰레드에는 다음과 같은 문제가 있다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;쓰레드를 생성하는데 드는 오버헤드&lt;/li&gt;
-&lt;li&gt;쓰레드를 만들 때마다 추가되는 메모리 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;개요&lt;/h2&gt;
+&lt;/div&gt;</summary><category term="python"></category><category term="django"></category><category term="celery"></category></entry><entry><title>Python Asyncio</title><link href="https://qodot.github.io/Python-Asyncio.html" rel="alternate"></link><published>2016-03-27T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2016-03-27:Python-Asyncio.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;파이썬 3.3에 추가된 &lt;code&gt;asyncio&lt;/code&gt;는, 동시성 문제를 코루틴&lt;code&gt;coroutine&lt;/code&gt; 기반으로 처리하는 비동기 IO 라이브러리다. 동시성 문제를 처리하는 방법은 대표적으로 쓰레드와 콜백 패턴이 있다.&lt;/p&gt;
 &lt;h3&gt;Thread&lt;/h3&gt;
 &lt;p&gt;가장 대표적인 방법이다. 대중적인 방법이므로 이해도 쉽고 적용도 쉽다. 그런데 쓰레드에는 다음과 같은 문제가 있다.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;쓰레드를 생성하는데 드는 오버헤드&lt;/li&gt;
 &lt;li&gt;쓰레드를 만들 때마다 추가되는 메모리&lt;/li&gt;
-&lt;li&gt;이것은 python만의 문제인데, &lt;code&gt;GIL(global interpreter lock)&lt;/code&gt;이라는 개념 때문에 python의 쓰레드는 일반적인 쓰레드 처럼 동작하지 않는 문제가 있다.&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;이것은 python만의 문제인데, &lt;code&gt;GIL(global interpreter lock)&lt;/code&gt;이라는 개념 때문에 python의 쓰레드는 일반적인 쓰레드 처럼 동작하지 않는 문제가 있다.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;쓰레드가 문제라면 프로세스를 쓰면 되긴 하지만, 프로세스는 쓰레드보다 오버헤드가 훨씬 크기 때문에 멀티코어를 이용한 CPU 연산 작업이 아닌, 일반적인 상황에서는 크게 얻는 이득은 없다.&lt;/p&gt;
 &lt;h3&gt;Callback&lt;/h3&gt;
 &lt;p&gt;그럼 쓰레드를 사용하지 않는다면? 대안은 event-driven이다. Node.js등에서 많이 사용하는 콜백 패턴 등이 대표적이다. 그런데 콜백 패턴은,&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;조금만 복잡해지면 가독성이 심하게 저하되어 개발자가 코드의 흐름을 읽기가 힘들어진다는 단점(&lt;a href="https://www.google.co.kr/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;es_th=1&amp;amp;ie=UTF-8#q=%EC%BD%9C%EB%B0%B1%20%EC%A7%80%EC%98%A5"&gt;콜백 지옥&lt;/a&gt;으로 검색하면 수많은 포스트를 볼 수 있다.)이 있다.&lt;sup id="fnref-2"&gt;&lt;a class="footnote-ref" href="#fn-2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;조금만 복잡해지면 가독성이 심하게 저하되어 개발자가 코드의 흐름을 읽기가 힘들어진다는 단점(&lt;a href="https://www.google.co.kr/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;es_th=1&amp;amp;ie=UTF-8#q=%EC%BD%9C%EB%B0%B1%20%EC%A7%80%EC%98%A5"&gt;콜백 지옥&lt;/a&gt;으로 검색하면 수많은 포스트를 볼 수 있다.)이 있다.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://yisangwook.tumblr.com/post/90919749574/farewell-node-js-tj-holowaychuk"&gt;아무튼 콜백에 존재하는 수많은 단점들…&lt;/a&gt;도 있다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;그럼 코루틴은 어떨까? 코루틴도 event-driven으로 동시성 문제를 해결한다. 단순하게 말하자면, 일반적인 절차적인 모양새로 코드를 짜면서(가독성 상승) 비동기를 구현할 수 있다. '코루틴'이라는 단어 자체의 의미는 '상호작용하는 루틴'이라는 뜻인데, 일반적인 함수가 서브루틴&lt;code&gt;subroutine&lt;/code&gt; 개념인 것과 대조적이다. 이런 코루틴을 이해하려면 먼저 제네레이터&lt;code&gt;generator&lt;/code&gt; 개념에 대해서 알아야 한다. 다음을 참조한다.&lt;/p&gt;
@@ -487,16 +457,16 @@ flower -A your_django_app_name
 &lt;li&gt;http://stackoverflow.com/questions/29819151/what-should-i-decorate-with-asyncio-coroutine-for-async-operations&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="footnote"&gt;
-&lt;hr&gt;
+&lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn-1"&gt;
-&lt;p&gt;&lt;code&gt;GIL&lt;/code&gt;까지 설명하기에는 너무 일이 커지는 느낌이 들어서 링크로 대체한다. 1) &lt;a href="https://yinjae.wordpress.com/2012/04/02/python-thread/"&gt;Python에서 thread를 사용하지 마세요?&lt;/a&gt; 2) &lt;a href="highthroughput.org/wp/cb-1136/"&gt;파이썬 GIL 깊숙히! (上)&lt;/a&gt; 3) &lt;a href="http://highthroughput.org/wp/cb-1146/"&gt;파이썬 GIL 깊숙히! (상) 에 대한 몇 가지 변명&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;&lt;code&gt;GIL&lt;/code&gt;까지 설명하기에는 너무 일이 커지는 느낌이 들어서 링크로 대체한다. 1) &lt;a href="https://yinjae.wordpress.com/2012/04/02/python-thread/"&gt;Python에서 thread를 사용하지 마세요?&lt;/a&gt; 2) &lt;a href="highthroughput.org/wp/cb-1136/"&gt;파이썬 GIL 깊숙히! (上)&lt;/a&gt; 3) &lt;a href="http://highthroughput.org/wp/cb-1146/"&gt;파이썬 GIL 깊숙히! (상) 에 대한 몇 가지 변명&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id="fn-2"&gt;
-&lt;p&gt;&lt;code&gt;promise&lt;/code&gt;패턴을 이용해 극복한 부분도 많다.&amp;#160;&lt;a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;&lt;code&gt;promise&lt;/code&gt;패턴을 이용해 극복한 부분도 많다.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="python"></category></entry><entry><title>Python Generator</title><link href="https://qodot.github.io/Python-Generator.html" rel="alternate"></link><published>2016-03-06T00:00:00+09:00</published><updated>2016-03-06T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2016-03-06:/Python-Generator.html</id><summary type="html">&lt;p&gt;파이썬에서 제네레이터는 이터레이터&lt;code&gt;iterator&lt;/code&gt;의 확장 개념이라고 볼 수 있다. 이터레이터는 '순회 가능한&lt;code&gt;iterable&lt;/code&gt;' 객체로서, 실제로는 &lt;code&gt;__next__&lt;/code&gt; 함수가 구현되어 있는 객체라고 보면 된다. 예를 들면, &lt;code&gt;for&lt;/code&gt;문을 수행할 때, 내부적으로 &lt;code&gt;__next__&lt;/code&gt; 함수를 호출해서 동작한다. 제네레이터는 이터레이터의 확장 개념으로, &lt;code&gt;__next__&lt;/code&gt; 함수의 리턴값은 &lt;code&gt;yield&lt;/code&gt; 구문값으로 대신한다. 즉, &lt;code&gt;yield&lt;/code&gt; 구문이 포함된 함수를 제네레이터라고 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;파이썬에서 제네레이터는 이터레이터&lt;code&gt;iterator&lt;/code&gt;의 확장 개념이라고 볼 수 있다. 이터레이터는 '순회 가능한&lt;code&gt;iterable&lt;/code&gt;' 객체로서, 실제로는 &lt;code&gt;__next__&lt;/code&gt; 함수가 구현되어 있는 객체라고 보면 된다. 예를 들면, &lt;code&gt;for&lt;/code&gt;문을 수행할 때, 내부적으로 &lt;code&gt;__next__&lt;/code&gt; 함수를 호출해서 동작한다. 제네레이터는 이터레이터의 확장 개념으로, &lt;code&gt;__next__&lt;/code&gt; 함수의 리턴값은 &lt;code&gt;yield&lt;/code&gt; 구문값으로 대신한다. 즉, &lt;code&gt;yield&lt;/code&gt; 구문이 포함된 함수를 제네레이터라고 한다.&lt;/p&gt;
+&lt;/div&gt;</summary><category term="python"></category></entry><entry><title>Python Generator</title><link href="https://qodot.github.io/Python-Generator.html" rel="alternate"></link><published>2016-03-06T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2016-03-06:Python-Generator.html</id><summary type="html">&lt;p&gt;파이썬에서 제네레이터는 이터레이터&lt;code&gt;iterator&lt;/code&gt;의 확장 개념이라고 볼 수 있다. 이터레이터는 '순회 가능한&lt;code&gt;iterable&lt;/code&gt;' 객체로서, 실제로는 &lt;code&gt;__next__&lt;/code&gt; 함수가 구현되어 있는 객체라고 보면 된다. 예를 들면, &lt;code&gt;for&lt;/code&gt;문을 수행할 때, 내부적으로 &lt;code&gt;__next__&lt;/code&gt; 함수를 호출해서 동작한다. 제네레이터는 이터레이터의 확장 개념으로, &lt;code&gt;__next__&lt;/code&gt; 함수의 리턴값은 &lt;code&gt;yield&lt;/code&gt; 구문값으로 대신한다. 즉, &lt;code&gt;yield&lt;/code&gt; 구문이 포함된 함수를 제네레이터라고 한다.&lt;/p&gt;
 &lt;p&gt;다음은 파이썬의 &lt;code&gt;range(n)&lt;/code&gt; 함수를 제네레이터를 이용해 구현해 본 것이다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;custom_range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
@@ -544,9 +514,7 @@ flower -A your_django_app_name
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;이렇게 &lt;code&gt;yield&lt;/code&gt; 구문을 기준으로 메인 루틴과 제네레이터 루틴이 서로 메세지를 주고 받으며 상호작용할 수 있다. 이렇게 프로그래머가 직접 제어권을 수동으로 설정할 수 있기 때문에, 직접 루틴을 제어할 수 없는 쓰레드 프로그래밍을 대체할 수 있는 비동기 프로그래밍에 매우 중요하게 사용되기도 한다.&lt;/p&gt;</content><category term="python"></category></entry><entry><title>Python으로 텔레그램 봇 만들기</title><link href="https://qodot.github.io/Python%EC%9C%BC%EB%A1%9C-%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8-%EB%B4%87-%EB%A7%8C%EB%93%A4%EA%B8%B0.html" rel="alternate"></link><published>2016-03-06T00:00:00+09:00</published><updated>2016-03-06T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2016-03-06:/Python으로-텔레그램-봇-만들기.html</id><summary type="html">&lt;h2&gt;개요 및 기획&lt;/h2&gt;
-&lt;p&gt;회사에 있는 하루 중 가장 힘든 시간은 바로 점심을 뭘 먹을지 결정하는 순간이다. 사실 누구든 아무거나 먹어도 상관 없는데 아무도 결정하지 못하는 상황을 자주 마주치게 된다. 그래서 나는 우리 대신 빠른 결정을 내려줄 무언가가 필요하다고 생각했다.&lt;/p&gt;
-&lt;p&gt;식당을 등록/제거하고, 등록된 식당을 조회하고, 등록된 식당 중에 하나를 랜덤으로 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;개요 및 기획&lt;/h2&gt;
+&lt;p&gt;이렇게 &lt;code&gt;yield&lt;/code&gt; 구문을 기준으로 메인 루틴과 제네레이터 루틴이 서로 메세지를 주고 받으며 상호작용할 수 있다. 이렇게 프로그래머가 직접 제어권을 수동으로 설정할 수 있기 때문에, 직접 루틴을 제어할 수 없는 쓰레드 프로그래밍을 대체할 수 있는 비동기 프로그래밍에 매우 중요하게 사용되기도 한다.&lt;/p&gt;</summary><category term="python"></category></entry><entry><title>Python으로 텔레그램 봇 만들기</title><link href="https://qodot.github.io/Python%EC%9C%BC%EB%A1%9C-%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8-%EB%B4%87-%EB%A7%8C%EB%93%A4%EA%B8%B0.html" rel="alternate"></link><published>2016-03-06T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2016-03-06:Python으로-텔레그램-봇-만들기.html</id><summary type="html">&lt;h2&gt;개요 및 기획&lt;/h2&gt;
 &lt;p&gt;회사에 있는 하루 중 가장 힘든 시간은 바로 점심을 뭘 먹을지 결정하는 순간이다. 사실 누구든 아무거나 먹어도 상관 없는데 아무도 결정하지 못하는 상황을 자주 마주치게 된다. 그래서 나는 우리 대신 빠른 결정을 내려줄 무언가가 필요하다고 생각했다.&lt;/p&gt;
 &lt;p&gt;식당을 등록/제거하고, 등록된 식당을 조회하고, 등록된 식당 중에 하나를 랜덤으로 뽑아줄 기능이 필요했다. 그런데 이렇게 간단한 기능을 웹서비스로 구현하는 것은 불필요하게 큰 작업이라는 생각이 들었고, 마침 평소에 궁금해 했던 텔레그램 봇 API를 이용해서 만들면 적절하겠다라는 생각을 했다.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -645,8 +613,7 @@ flower -A your_django_app_name
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;개선점&lt;/h2&gt;
-&lt;p&gt;Telepot과 SQLAlchemy를 이용해서 텔레그램 봇을 만들 수 있다. 그런데 실제로 봇을 운영하려면 Python 스크립트를 리눅스 데몬이나 서비스로 띄우는 방법에 대한 고려가 되어야 한다. 그리고 이벤트 listen을 담당하는 부분이 busy waiting 방식으로 구현되어 있는데 &lt;code&gt;asyncio&lt;/code&gt;를 이용한 비동기 방식으로 구현하는 것이 더 좋을 것이다. 특히 두 번 째 부분은 공부가 많이 필요한 부분이라... 따로 포스트를 작성하면서 정리해야 겠다.&lt;/p&gt;</content><category term="python"></category><category term="telegram"></category></entry><entry><title>Pyenv, Virtualenv, Autoenv로 Python 환경 설정하기</title><link href="https://qodot.github.io/Pyenv-Virtualenv-Autoenv%EB%A1%9C-Python-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0.html" rel="alternate"></link><published>2016-01-30T00:00:00+09:00</published><updated>2016-01-30T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2016-01-30:/Pyenv-Virtualenv-Autoenv로-Python-환경-설정하기.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
-&lt;p&gt;이전의 파이썬의 가상환경은 &lt;code&gt;virtualenv&lt;/code&gt;를 이용해서 관리했었다. 그러나 그것만으로는 다양한 파이썬 버전을 관리할 수가 없었기 때문에, (Ruby의 &lt;code&gt;rbenv&lt;/code&gt;처럼)이 문제를 해결하기 위한 도구가 필요했고 그게 바로 &lt;code&gt;pyenv&lt;/code&gt;이다. &lt;code&gt;virtualenv&lt;/code&gt;의 기능도 &lt;code&gt;pyenv&lt;/code&gt;의 플러그인(&lt;code&gt;pyenv-virtualenv&lt;/code&gt;)을 이용하면 동일하게 사용할 수 있기 때문에 &lt;code&gt;pyenv&lt;/code&gt;를 안 쓸 이유가 없다 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;개요&lt;/h2&gt;
+&lt;p&gt;Telepot과 SQLAlchemy를 이용해서 텔레그램 봇을 만들 수 있다. 그런데 실제로 봇을 운영하려면 Python 스크립트를 리눅스 데몬이나 서비스로 띄우는 방법에 대한 고려가 되어야 한다. 그리고 이벤트 listen을 담당하는 부분이 busy waiting 방식으로 구현되어 있는데 &lt;code&gt;asyncio&lt;/code&gt;를 이용한 비동기 방식으로 구현하는 것이 더 좋을 것이다. 특히 두 번 째 부분은 공부가 많이 필요한 부분이라... 따로 포스트를 작성하면서 정리해야 겠다.&lt;/p&gt;</summary><category term="python"></category><category term="telegram"></category></entry><entry><title>Pyenv, Virtualenv, Autoenv로 Python 환경 설정하기</title><link href="https://qodot.github.io/Pyenv-Virtualenv-Autoenv%EB%A1%9C-Python-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0.html" rel="alternate"></link><published>2016-01-30T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2016-01-30:Pyenv-Virtualenv-Autoenv로-Python-환경-설정하기.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;이전의 파이썬의 가상환경은 &lt;code&gt;virtualenv&lt;/code&gt;를 이용해서 관리했었다. 그러나 그것만으로는 다양한 파이썬 버전을 관리할 수가 없었기 때문에, (Ruby의 &lt;code&gt;rbenv&lt;/code&gt;처럼)이 문제를 해결하기 위한 도구가 필요했고 그게 바로 &lt;code&gt;pyenv&lt;/code&gt;이다. &lt;code&gt;virtualenv&lt;/code&gt;의 기능도 &lt;code&gt;pyenv&lt;/code&gt;의 플러그인(&lt;code&gt;pyenv-virtualenv&lt;/code&gt;)을 이용하면 동일하게 사용할 수 있기 때문에 &lt;code&gt;pyenv&lt;/code&gt;를 안 쓸 이유가 없다.&lt;/p&gt;
 &lt;p&gt;마지막에는 파이썬과는 관련이 없지만, 환경 설정을 더 편하게 해주는 &lt;code&gt;autoenv&lt;/code&gt;도 소개하겠다.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -686,7 +653,7 @@ flower -A your_django_app_name
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;shim 바이너리 리빌드 (바이너리 설치 후에 반드시 해줘야 함)&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;shim 바이너리 리빌드 (바이너리 설치 후에 반드시 해줘야 함)&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python rehash
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -771,18 +738,13 @@ pyenv activate &amp;lt;virtualenv_name&amp;gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
-&lt;hr&gt;
+&lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn-1"&gt;
-&lt;p&gt;rehash를 자동화하고 싶다면 다음 플러그인을 참조한다. https://github.com/yyuu/pyenv-pip-rehash&amp;#160;&lt;a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;rehash를 자동화하고 싶다면 다음 플러그인을 참조한다. https://github.com/yyuu/pyenv-pip-rehash&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="python"></category></entry><entry><title>Alembic Quickstart</title><link href="https://qodot.github.io/Alembic-Quickstart.html" rel="alternate"></link><published>2015-11-25T00:00:00+09:00</published><updated>2015-11-25T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2015-11-25:/Alembic-Quickstart.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
-&lt;p&gt;Rails나 Django 같은 모던 웹 프레임워크의 ORM에서는, 반복되는 DB 스키마 변경을 수월하게 진행 할 수 있도록 전용 마이그레이션 툴이 ORM에 내장되어 있다. 그러나 SQLAlchemy에서는 기본적으로 테이블의 생성은 가능하나, 생성된 테이블의 스키마 변경은 지원하지 않는데, 이를 수월하게 만들어 주는 툴이 바로 Alembic이다.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;설치&lt;/h2&gt;
-&lt;p&gt;그냥 &lt;code&gt;pip&lt;/code&gt;으로 설치한다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install alembic …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;개요&lt;/h2&gt;
+&lt;/div&gt;</summary><category term="python"></category></entry><entry><title>Alembic Quickstart</title><link href="https://qodot.github.io/Alembic-Quickstart.html" rel="alternate"></link><published>2015-11-25T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2015-11-25:Alembic-Quickstart.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;Rails나 Django 같은 모던 웹 프레임워크의 ORM에서는, 반복되는 DB 스키마 변경을 수월하게 진행 할 수 있도록 전용 마이그레이션 툴이 ORM에 내장되어 있다. 그러나 SQLAlchemy에서는 기본적으로 테이블의 생성은 가능하나, 생성된 테이블의 스키마 변경은 지원하지 않는데, 이를 수월하게 만들어 주는 툴이 바로 Alembic이다.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
@@ -814,7 +776,7 @@ pyenv activate &amp;lt;virtualenv_name&amp;gt;
 &lt;ul&gt;
 &lt;li&gt;yourproject: root 디렉토리&lt;/li&gt;
 &lt;li&gt;env.py: Alembic이 실행될 때 환경을 설정하기 위해 먼저 실행되는 설정용 스크립트&lt;/li&gt;
-&lt;li&gt;versions: 실제 &lt;code&gt;revision&lt;/code&gt;&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;가 순차적으로 쌓이는 디렉토리&lt;/li&gt;
+&lt;li&gt;versions: 실제 &lt;code&gt;revision&lt;/code&gt;&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;가 순차적으로 쌓이는 디렉토리&lt;/li&gt;
 &lt;li&gt;alembic.ini: 설정 변수들이 저장되는 파일. &lt;code&gt;env.py&lt;/code&gt;에서 이 파일을 읽어서 설정값을 채움&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -842,7 +804,7 @@ alembic --name development upgrade head
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;versions&lt;/code&gt; 디렉토리에 생성된 스크립트를 보면 &lt;code&gt;upgrade&lt;/code&gt;와 &lt;code&gt;downgrade&lt;/code&gt; 메소드가 있는데, 이곳에 원하는 로직을 채워 넣으면 된다.&lt;sup id="fnref-2"&gt;&lt;a class="footnote-ref" href="#fn-2"&gt;2&lt;/a&gt;&lt;/sup&gt; 로직은 SQLAlchemy의 객체와 메소드를 이용한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;versions&lt;/code&gt; 디렉토리에 생성된 스크립트를 보면 &lt;code&gt;upgrade&lt;/code&gt;와 &lt;code&gt;downgrade&lt;/code&gt; 메소드가 있는데, 이곳에 원하는 로직을 채워 넣으면 된다.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; 로직은 SQLAlchemy의 객체와 메소드를 이용한다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;upgrade&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;op&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="s1"&gt;&amp;#39;account&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -918,34 +880,16 @@ alembic --name development upgrade head
 &lt;p&gt;&lt;code&gt;--autogenerate&lt;/code&gt; 옵션이 모든 변화를 전부 감지 할 수 있는 것은 아니다. 따라서 자동으로 &lt;code&gt;revision&lt;/code&gt;을 생성했다면, 꼭 한 번 파일을 열어서 의도한대로 스크립트가 생성되었는지 점검하는 것이 좋다. 이와 관련해서 자세한 내용은 공식 문서&lt;a href="http://alembic.zzzcomputing.com/en/latest/autogenerate.html#what-does-autogenerate-detect-and-what-does-it-not-detect"&gt;What Does Autogenerate Detec&lt;/a&gt;를 참조하길 바란다.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
-&lt;hr&gt;
+&lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn-1"&gt;
-&lt;p&gt;각각의 Migration Script를 의미한다.&amp;#160;&lt;a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;각각의 Migration Script를 의미한다.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id="fn-2"&gt;
-&lt;p&gt;&lt;code&gt;upgrade&lt;/code&gt;에는 현재 변화를 원하는 로직을, &lt;code&gt;downgrade&lt;/code&gt;에는 롤백용 로직을 넣으면 된다.&amp;#160;&lt;a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;&lt;code&gt;upgrade&lt;/code&gt;에는 현재 변화를 원하는 로직을, &lt;code&gt;downgrade&lt;/code&gt;에는 롤백용 로직을 넣으면 된다.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="python"></category><category term="alembic"></category><category term="sqlalchemy"></category></entry><entry><title>SQLAlchemy Quickstart</title><link href="https://qodot.github.io/SQLAlchemy-Quickstart.html" rel="alternate"></link><published>2015-11-20T00:00:00+09:00</published><updated>2015-11-20T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2015-11-20:/SQLAlchemy-Quickstart.html</id><summary type="html">&lt;p&gt;SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;설치&lt;/h2&gt;
-&lt;p&gt;그냥 &lt;code&gt;pip&lt;/code&gt;으로 설치하면 된다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;sqlalchemy&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;설정&lt;/h2&gt;
-&lt;h3&gt;접속 설정&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sqlalchemy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;create_engine&lt;/span&gt;
-
-&lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;postgresql://&amp;lt;username&amp;gt;:&amp;lt;password@&amp;lt;host&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;dbname&amp;gt;&amp;#39;&lt;/span&gt;
-&lt;span class="n"&gt;engine&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;create_engine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;URL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;간단하게 &lt;code&gt;engine.execute('SELECT 1').scalar()&lt;/code&gt; 같은 코드를 실행해보면 접속을 테스트해 볼 수 있다 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다.&lt;/p&gt;
+&lt;/div&gt;</summary><category term="python"></category><category term="alembic"></category><category term="sqlalchemy"></category></entry><entry><title>SQLAlchemy Quickstart</title><link href="https://qodot.github.io/SQLAlchemy-Quickstart.html" rel="alternate"></link><published>2015-11-20T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2015-11-20:SQLAlchemy-Quickstart.html</id><summary type="html">&lt;p&gt;SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
 &lt;p&gt;그냥 &lt;code&gt;pip&lt;/code&gt;으로 설치하면 된다.&lt;/p&gt;
@@ -1024,9 +968,7 @@ alembic --name development upgrade head
 &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;table1_object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;commit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="sqlalchemy"></category></entry><entry><title>Django 설정을 환경 변수로 관리하기</title><link href="https://qodot.github.io/Django-%EC%84%A4%EC%A0%95%EC%9D%84-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98%EB%A1%9C-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0.html" rel="alternate"></link><published>2015-07-30T00:00:00+09:00</published><updated>2015-07-30T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2015-07-30:/Django-설정을-환경-변수로-관리하기.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
-&lt;p&gt;설정 정보를 다루다 보면 코드에 그대로 적어서는 안되는 정보들이 있다. 예를 들어 Github의 public 계정을 사용할 경우, 불특정 다수가 서비스의 상용 데이터베이스의 접속 정보를 알아서는 안될 것이다.&lt;/p&gt;
-&lt;p&gt;그래서, 간단하게 django 설정 정보를 환경 변수로 등록해서 repository에 노출되지 않도록 해보자. (SECRET_KEY를 예로 들겠음) 만약 virtualenv를 쓰고 있지 않다면 상당히 간단하다 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;개요&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="python"></category><category term="sqlalchemy"></category></entry><entry><title>Django 설정을 환경 변수로 관리하기</title><link href="https://qodot.github.io/Django-%EC%84%A4%EC%A0%95%EC%9D%84-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98%EB%A1%9C-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0.html" rel="alternate"></link><published>2015-07-30T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2015-07-30:Django-설정을-환경-변수로-관리하기.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;설정 정보를 다루다 보면 코드에 그대로 적어서는 안되는 정보들이 있다. 예를 들어 Github의 public 계정을 사용할 경우, 불특정 다수가 서비스의 상용 데이터베이스의 접속 정보를 알아서는 안될 것이다.&lt;/p&gt;
 &lt;p&gt;그래서, 간단하게 django 설정 정보를 환경 변수로 등록해서 repository에 노출되지 않도록 해보자. (SECRET_KEY를 예로 들겠음) 만약 virtualenv를 쓰고 있지 않다면 상당히 간단하다.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -1085,21 +1027,7 @@ vi postactivate
 &lt;h4&gt;참고한 페이지&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/15209978/where-to-store-secret-keys-django"&gt;Where to store secret keys DJANGO&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="python"></category><category term="django"></category></entry><entry><title>Django settings.py 환경 분리</title><link href="https://qodot.github.io/Django-settings.py-%ED%99%98%EA%B2%BD-%EB%B6%84%EB%A6%AC.html" rel="alternate"></link><published>2015-07-29T00:00:00+09:00</published><updated>2015-07-29T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2015-07-29:/Django-settings.py-환경-분리.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
-&lt;p&gt;애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 &lt;code&gt;settings.py&lt;/code&gt;가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다.&lt;/p&gt;
-&lt;p&gt;그래서! 기존의 패키지 구조&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;myproject/
-    myproject/
-        settings.py
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;를&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;myproject/
-    myproject/
-        settings/
-            __init__.py
-            base.py …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;개요&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="django"></category></entry><entry><title>Django settings.py 환경 분리</title><link href="https://qodot.github.io/Django-settings.py-%ED%99%98%EA%B2%BD-%EB%B6%84%EB%A6%AC.html" rel="alternate"></link><published>2015-07-29T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2015-07-29:Django-settings.py-환경-분리.html</id><summary type="html">&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 &lt;code&gt;settings.py&lt;/code&gt;가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다.&lt;/p&gt;
 &lt;p&gt;그래서! 기존의 패키지 구조&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;myproject/
@@ -1178,4 +1106,4 @@ vi postactivate
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://morion4000.com/django-settings-for-multiple-environments/"&gt;Django settings for multiple enviroments&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/1626326/how-to-manage-local-vs-production-settings-in-django"&gt;How to manage local vs production settings in Django?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="python"></category><category term="django"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="python"></category><category term="django"></category></entry></feed>

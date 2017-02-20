@@ -66,15 +66,6 @@
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="300">
         <meta property="og:image:height" content="300">
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-83522208-2', 'auto');
-            ga('send', 'pageview');
-        </script>
     </head>
     <body class="author-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="waiting for qodot">
@@ -90,6 +81,7 @@
     </a>
     <ul role="menubar">
         <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/pages/about.html" title="waiting for qodot |About" itemprop="name" itemprop="significantLink">About</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
@@ -149,7 +141,7 @@
                 </a>
             </h2>
         </header>
-        <section class="post-excerpt">개요 이전의 파이썬의 가상환경은 virtualenv를 이용해서 관리했었다. 그러나 그것만으로는 다양한 파이썬 버전을 관리할 수가 없었기 때문에, (Ruby의 rbenv처럼)이 문제를 해결하기 위한 도구가 필요했고 그게 바로 pyenv이다. virtualenv의 기능도 pyenv의 플러그인(pyenv-virtualenv)을 이용하면 동일하게 사용할 수 있기 때문에 pyenv를 안 쓸 이유가 없다 …<a class="read-more" itemprop="url" href="https://qodot.github.io/Pyenv-Virtualenv-Autoenv로-Python-환경-설정하기.html" title="Read this article" rel="bookmark"> &raquo;</a>
+        <section class="post-excerpt">개요 이전의 파이썬의 가상환경은 virtualenv를 이용해서 관리했었다. 그러나 그것만으로는 다양한 파이썬 버전을 관리할 수가 없었기 때문에, (Ruby의 rbenv처럼)이 문제를 해결하기 위한 도구가 필요했고 그게 바로 pyenv이다. virtualenv의 기능도 pyenv의 플러그인(pyenv-virtualenv)을 이용하면 동일하게 사용할 수 있기 때문에 pyenv를 안 쓸 이유가 없다 ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Pyenv-Virtualenv-Autoenv로-Python-환경-설정하기.html" title="Read this article" rel="bookmark"> &raquo;</a>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
@@ -164,7 +156,7 @@
                 </a>
             </h2>
         </header>
-        <section class="post-excerpt">개요 Rails나 Django 같은 모던 웹 프레임워크의 ORM에서는, 반복되는 DB 스키마 변경을 수월하게 진행 할 수 있도록 전용 마이그레이션 툴이 ORM에 내장되어 있다. 그러나 SQLAlchemy에서는 기본적으로 테이블의 생성은 가능하나, 생성된 테이블의 스키마 변경은 지원하지 않는데, 이를 수월하게 만들어 주는 툴이 바로 Alembic이다. 설치 그냥 pip으로 설치한다. pip install alembic …<a class="read-more" itemprop="url" href="https://qodot.github.io/Alembic-Quickstart.html" title="Read this article" rel="bookmark"> &raquo;</a>
+        <section class="post-excerpt">개요 Rails나 Django 같은 모던 웹 프레임워크의 ORM에서는, 반복되는 DB 스키마 변경을 수월하게 진행 할 수 있도록 전용 마이그레이션 툴이 ORM에 내장되어 있다. 그러나 SQLAlchemy에서는 기본적으로 테이블의 생성은 가능하나, 생성된 테이블의 스키마 변경은 지원하지 않는데, 이를 수월하게 만들어 주는 툴이 바로 Alembic이다. 설치 그냥 pip으로 설치한다. pip install alembic ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Alembic-Quickstart.html" title="Read this article" rel="bookmark"> &raquo;</a>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
@@ -179,7 +171,7 @@
                 </a>
             </h2>
         </header>
-        <section class="post-excerpt">SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다. 설치 그냥 pip으로 설치하면 된다. pip install sqlalchemy 설정 접속 설정 from sqlalchemy import create_engine URL = 'postgresql://<username>:<password@<host>:<port>/<dbname>' engine = create_engine(URL, echo=True) 간단하게 engine.execute('SELECT 1').scalar() 같은 코드를 실행해보면 접속을 테스트해 볼 수 있다 …<a class="read-more" itemprop="url" href="https://qodot.github.io/SQLAlchemy-Quickstart.html" title="Read this article" rel="bookmark"> &raquo;</a>
+        <section class="post-excerpt">SQLAlchemy를 사용하기 위한 기본적인 설정을 하는 방법을 요약해본다. 설치 그냥 pip으로 설치하면 된다. pip install sqlalchemy 설정 접속 설정 from sqlalchemy import create_engine URL = 'postgresql://<username>:<password@<host>:<port>/<dbname>' engine = create_engine(URL, echo=True) 간단하게 engine.execute('SELECT 1').scalar() 같은 코드를 실행해보면 접속을 테스트해 볼 수 있다 ...<a class="read-more" itemprop="url" href="https://qodot.github.io/SQLAlchemy-Quickstart.html" title="Read this article" rel="bookmark"> &raquo;</a>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
@@ -194,7 +186,7 @@
                 </a>
             </h2>
         </header>
-        <section class="post-excerpt">개요 설정 정보를 다루다 보면 코드에 그대로 적어서는 안되는 정보들이 있다. 예를 들어 Github의 public 계정을 사용할 경우, 불특정 다수가 서비스의 상용 데이터베이스의 접속 정보를 알아서는 안될 것이다. 그래서, 간단하게 django 설정 정보를 환경 변수로 등록해서 repository에 노출되지 않도록 해보자. (SECRET_KEY를 예로 들겠음) 만약 virtualenv를 쓰고 있지 않다면 상당히 간단하다 …<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-설정을-환경-변수로-관리하기.html" title="Read this article" rel="bookmark"> &raquo;</a>
+        <section class="post-excerpt">개요 설정 정보를 다루다 보면 코드에 그대로 적어서는 안되는 정보들이 있다. 예를 들어 Github의 public 계정을 사용할 경우, 불특정 다수가 서비스의 상용 데이터베이스의 접속 정보를 알아서는 안될 것이다. 그래서, 간단하게 django 설정 정보를 환경 변수로 등록해서 repository에 노출되지 않도록 해보자. (SECRET_KEY를 예로 들겠음) 만약 virtualenv를 쓰고 있지 않다면 상당히 간단하다 ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-설정을-환경-변수로-관리하기.html" title="Read this article" rel="bookmark"> &raquo;</a>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
@@ -209,7 +201,7 @@
                 </a>
             </h2>
         </header>
-        <section class="post-excerpt">개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-settings.py-환경-분리.html" title="Read this article" rel="bookmark"> &raquo;</a>
+        <section class="post-excerpt">개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Django-settings.py-환경-분리.html" title="Read this article" rel="bookmark"> &raquo;</a>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">
@@ -224,7 +216,7 @@
                 </a>
             </h2>
         </header>
-        <section class="post-excerpt">Sublime Text 설치 확인 아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다. /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl . 해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!1 Symbolic Link 생성 아래 커맨드를 통해 Symbolic link를 생성한다. ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl …<a class="read-more" itemprop="url" href="https://qodot.github.io/Sumblime-Text를-OSX-Command-Line에서-실행.html" title="Read this article" rel="bookmark"> &raquo;</a>
+        <section class="post-excerpt">Sublime Text 설치 확인 아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다. /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl . 해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!1 Symbolic Link 생성 아래 커맨드를 통해 Symbolic link를 생성한다. ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl ...<a class="read-more" itemprop="url" href="https://qodot.github.io/Sumblime-Text를-OSX-Command-Line에서-실행.html" title="Read this article" rel="bookmark"> &raquo;</a>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/images/profile.png" alt="qodot" nopin="nopin">

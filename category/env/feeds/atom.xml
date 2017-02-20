@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>waiting for qodot - env</title><link href="https://qodot.github.io/" rel="alternate"></link><link href="https://qodot.github.io/category/env/feeds/atom.xml" rel="self"></link><id>https://qodot.github.io/</id><updated>2015-04-15T00:00:00+09:00</updated><entry><title>Sumblime Text를 OSX Command Line에서 실행</title><link href="https://qodot.github.io/Sumblime-Text%EB%A5%BC-OSX-Command-Line%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89.html" rel="alternate"></link><published>2015-04-15T00:00:00+09:00</published><updated>2015-04-15T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2015-04-15:/Sumblime-Text를-OSX-Command-Line에서-실행.html</id><summary type="html">&lt;h3&gt;Sublime Text 설치 확인&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>waiting for qodot</title><link href="https://qodot.github.io/" rel="alternate"></link><link href="https://qodot.github.io/category/env/feeds/atom.xml" rel="self"></link><id>https://qodot.github.io/</id><updated>2015-04-15T00:00:00+09:00</updated><entry><title>Sumblime Text를 OSX Command Line에서 실행</title><link href="https://qodot.github.io/Sumblime-Text%EB%A5%BC-OSX-Command-Line%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89.html" rel="alternate"></link><published>2015-04-15T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2015-04-15:Sumblime-Text를-OSX-Command-Line에서-실행.html</id><summary type="html">&lt;h3&gt;Sublime Text 설치 확인&lt;/h3&gt;
 &lt;p&gt;아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl .
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h3&gt;Symbolic Link 생성&lt;/h3&gt;
-&lt;p&gt;아래 커맨드를 통해 Symbolic link를 생성한다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;Sublime Text 설치 확인&lt;/h3&gt;
-&lt;p&gt;아래의 커맨드를 통해 서브라임 텍스트가 잘 설치되었나 확인해야 한다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl .
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;해당 디렉토리를 기준으로 서브라임 텍스트가 열린다면 성공!&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h3&gt;Symbolic Link 생성&lt;/h3&gt;
 &lt;p&gt;아래 커맨드를 통해 Symbolic link를 생성한다.&lt;/p&gt;
@@ -45,10 +35,10 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
-&lt;hr&gt;
+&lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn-1"&gt;
-&lt;p&gt;Sublime Text 3를 쓰는 사람은 &lt;code&gt;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl .&lt;/code&gt;를 실행한다.&amp;#160;&lt;a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;Sublime Text 3를 쓰는 사람은 &lt;code&gt;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl .&lt;/code&gt;를 실행한다.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="env"></category><category term="sublimetext"></category></entry></feed>
+&lt;/div&gt;</summary><category term="env"></category><category term="sublimetext"></category></entry></feed>

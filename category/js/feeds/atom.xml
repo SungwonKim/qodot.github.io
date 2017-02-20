@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>waiting for qodot - js</title><link href="https://qodot.github.io/" rel="alternate"></link><link href="https://qodot.github.io/category/js/feeds/atom.xml" rel="self"></link><id>https://qodot.github.io/</id><updated>2017-02-19T00:00:00+09:00</updated><entry><title>Javascript Function: 3 스코프(scope)와 클로저(closure)</title><link href="https://qodot.github.io/Javascript-Function-3-%EC%8A%A4%EC%BD%94%ED%94%84%EC%99%80-%ED%81%B4%EB%A1%9C%EC%A0%80.html" rel="alternate"></link><published>2017-02-19T00:00:00+09:00</published><updated>2017-02-19T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2017-02-19:/Javascript-Function-3-스코프와-클로저.html</id><summary type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프와 클로저&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;유효 범위 (Scope)&lt;/h2&gt;
-&lt;h3&gt;실행 컨텍스트 (Execution Context)&lt;/h3&gt;
-&lt;p&gt;실행 컨텍스트는 흔히 이야기하는 콜 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>waiting for qodot</title><link href="https://qodot.github.io/" rel="alternate"></link><link href="https://qodot.github.io/category/js/feeds/atom.xml" rel="self"></link><id>https://qodot.github.io/</id><updated>2017-02-19T00:00:00+09:00</updated><entry><title>Javascript Function: 3 스코프와 클로저</title><link href="https://qodot.github.io/Javascript-Function-3-%EC%8A%A4%EC%BD%94%ED%94%84%EC%99%80-%ED%81%B4%EB%A1%9C%EC%A0%80.html" rel="alternate"></link><published>2017-02-19T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2017-02-19:Javascript-Function-3-스코프와-클로저.html</id><summary type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
@@ -70,7 +62,7 @@
 &lt;h3&gt;스코프 체인 (Scope Chain)&lt;/h3&gt;
 &lt;p&gt;방금 본 두 가지 규칙에 따라 알 수 있듯이, 함수가 실행될 때마다 함수 범위를 가지는 렉시컬 스코프가 생성된다. 그리고 생성된 스코프는 자기 바로 상위 스코프를 참조하는데, 이것이 스코프 체인이다.&lt;/p&gt;
 &lt;p&gt;방금 위의 예제에서 &lt;code&gt;bar&lt;/code&gt; 함수가 전역 변수 &lt;code&gt;x&lt;/code&gt;를 참조할 수 있는 이유는 무엇일까? 바로 &lt;code&gt;bar&lt;/code&gt;가 실행되면서 생성된 스코프가 바로 상위 스코프인 전역 스코프를 참조하고 있기 때문이다.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="javascript-lexical-scope-chain" src="images/js/Javascript-Function-3-scope-closure-scope-chain.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="javascript-lexical-scope-chain" src="images/js/Javascript-Function-3-scope-closure-scope-chain.png" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;이미지 출처: &lt;a href="http://techslides.com/understanding-javascript-closures-and-scope"&gt;http://techslides.com/understanding-javascript-closures-and-scope&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -174,7 +166,7 @@
 
 
 &lt;p&gt;함수 &lt;code&gt;foo&lt;/code&gt;가 콜 스택에서 pop 되었는데도 'blue' 값이 사라지지 않고 남아있는 이상한(?) 동작처럼 보인다. 콜 스택과 연관지어서 생각하기 때문에 그렇다. 다음 그림을 보자.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="javascript-closure" src="images/js/Javascript-Function-3-scope-closure-closure.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="javascript-closure" src="images/js/Javascript-Function-3-scope-closure-closure.png" /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;이미지 출처: &lt;a href="http://meetup.toast.com/posts/86"&gt;http://meetup.toast.com/posts/86&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -272,15 +264,7 @@
 &lt;li&gt;&lt;a href="https://hyunseob.github.io/2016/08/30/javascript-closure"&gt;JavaScript 클로저(Closure)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.haruair.com/blog/2993"&gt;JavaScript에서 커링 currying 함수 작성하기&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.haruair.com/blog/2986"&gt;JavaScript 모나드&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="javascript"></category><category term="function"></category></entry><entry><title>Javascript Function: 2 호출과 this</title><link href="https://qodot.github.io/Javascript-Function-2-%ED%98%B8%EC%B6%9C%EA%B3%BC-this.html" rel="alternate"></link><published>2017-02-18T00:00:00+09:00</published><updated>2017-02-18T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2017-02-18:/Javascript-Function-2-호출과-this.html</id><summary type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프와 클로저&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;함수 호출과 &lt;code&gt;this&lt;/code&gt;&lt;/h2&gt;
-&lt;h3&gt;실행 컨텍스트 (Execution Context)&lt;/h3&gt;
-&lt;p&gt;실행 컨텍스트는 흔히 이야기하는 콜 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="javascript"></category><category term="function"></category></entry><entry><title>Javascript Function: 2 호출과 this</title><link href="https://qodot.github.io/Javascript-Function-2-%ED%98%B8%EC%B6%9C%EA%B3%BC-this.html" rel="alternate"></link><published>2017-02-18T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2017-02-18:Javascript-Function-2-호출과-this.html</id><summary type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
@@ -340,7 +324,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;이를 해결하고 싶을 경우 보통 다음과 같은 패턴을 사용한다.&lt;/p&gt;
+&lt;p&gt;이를 해결하고 싶을 경우 다음과 같은 패턴을 많이 사용하곤 한다.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myObject&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{};&lt;/span&gt;
 
 &lt;span class="nx"&gt;myObject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -349,6 +333,21 @@
     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;innerFn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
     &lt;span class="p"&gt;};&lt;/span&gt;
+
+    &lt;span class="nx"&gt;innerFn&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="nx"&gt;myObject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;  &lt;span class="c1"&gt;// Object { fn: ....&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;자바스크립트의 모든 함수에 포함되어 있는 &lt;code&gt;bind&lt;/code&gt; 메소드를 이용해서 해결할 수도 있다. &lt;code&gt;bind&lt;/code&gt; 메소드는 함수 리터럴로 선언한 함수에 원하는 &lt;code&gt;this&lt;/code&gt;를 바인딩한 함수를 다시 반환한다. 개인적으로는 이게 더 깔끔한 방법이라고 생각한다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;myObject&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{};&lt;/span&gt;
+
+&lt;span class="nx"&gt;myObject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;innerFn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}.&lt;/span&gt;&lt;span class="nx"&gt;bind&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 
     &lt;span class="nx"&gt;innerFn&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;span class="p"&gt;};&lt;/span&gt;
@@ -448,14 +447,7 @@
 
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;arguments&lt;/code&gt;는 사실 배열이 아니고 배열 같은 객체이다. &lt;code&gt;length&lt;/code&gt;라는 속성은 있지만 일반적인 배열이 가지는 메소드들은 없다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="javascript"></category><category term="function"></category></entry><entry><title>Javascript Function: 1 기초</title><link href="https://qodot.github.io/Javascript-Function-1-%EA%B8%B0%EC%B4%88.html" rel="alternate"></link><published>2017-02-17T00:00:00+09:00</published><updated>2017-02-17T00:00:00+09:00</updated><author><name>qodot</name></author><id>tag:qodot.github.io,2017-02-17:/Javascript-Function-1-기초.html</id><summary type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-3-스코프와-클로저.html"&gt;Javascript Function: 3 스코프와 클로저&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;함수&lt;/h2&gt;
-&lt;p&gt;자바스크립트의 함수는 일급 객체로, 코드 재용, 정보의 구성 및 은닉 등에 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term="javascript"></category><category term="function"></category></entry><entry><title>Javascript Function: 1 기초</title><link href="https://qodot.github.io/Javascript-Function-1-%EA%B8%B0%EC%B4%88.html" rel="alternate"></link><published>2017-02-17T00:00:00+09:00</published><author><name>qodot</name></author><id>tag:qodot.github.io,2017-02-17:Javascript-Function-1-기초.html</id><summary type="html">&lt;p&gt;이 포스트는 &lt;a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=2608820"&gt;더글라스 크락포드의 자바스크립트 핵심 가이드&lt;/a&gt;의 &lt;code&gt;4장 함수&lt;/code&gt;에 개인적으로 공부한 것을 추가하거나 빼서 정리한 내용입니다. 소챕터의 순서도 임의로 변경되었으니 참고 바랍니다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-1-기초.html"&gt;Javascript Function: 1 기초&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://qodot.github.io/Javascript-Function-2-호출과-this.html"&gt;Javascript Function: 2 호출과 this&lt;/a&gt;&lt;/li&gt;
@@ -554,4 +546,4 @@
 &lt;p&gt;자바스크립트에서는 꼬리 재귀 최적화를 제공하지 않는다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;재귀호출을 바로 반환하는 방법으로 진행되는 재귀 호출을 꼬리 재귀라고 한다. 몇몇 언어에서는 이런 꼬리 재귀를 속도를 개선하는 방법으로 자동 대체한다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="javascript"></category><category term="function"></category></entry></feed>
+&lt;/blockquote&gt;</summary><category term="javascript"></category><category term="function"></category></entry></feed>

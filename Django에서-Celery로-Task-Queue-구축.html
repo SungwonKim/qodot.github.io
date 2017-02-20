@@ -60,11 +60,11 @@
         <meta property="og:type" content="article">
         <meta property="og:title" content="Django에서 Celery로 Task Queue 구축">
         <meta property="og:url" content="Django에서-Celery로-Task-Queue-구축.html">
-        <meta property="og:description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 …">
+        <meta property="og:description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 ...">
         <meta property="article:published_time" content="화요일, 4월 05, 2016">
         <meta name="twitter:title" content="Django에서 Celery로 Task Queue 구축">
-        <meta name="twitter:description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 …">
-        <meta name="description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 …">
+        <meta name="twitter:description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 ...">
+        <meta name="description" content="개요 서비스를 만들다보면 유저에게 특정 요청이 들어오면 이메일을 보내야 할 때가 있다. 그런데 이 때, 메일 서버의 상태가 좀 이상하다면? 혹은 서버에 이미 보내야 할 메일이 산더미처럼 쌓여있다면? 이메일 전송이 지연되면 유저의 요청도 지연되고, 유저는 기다리다 지쳐 서비스 이용을 관두게 된다 ㅜㅜ 그럼 어떡하지? 일단 유저에게는 요청이 완료되었다는 응답을 보내고 ...">
         <meta name="twitter:creator" content="@">
         <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
         <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
@@ -76,15 +76,6 @@
         <meta property="article:tag" content="django">
         <meta property="article:tag" content="celery">
         <meta property="article:author" content="qodot">
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-83522208-2', 'auto');
-            ga('send', 'pageview');
-        </script>
     </head>
     <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="waiting for qodot">
@@ -100,6 +91,7 @@
     </a>
     <ul role="menubar">
         <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/pages/about.html" title="waiting for qodot |About" itemprop="name" itemprop="significantLink">About</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
@@ -169,7 +161,7 @@ rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
 <p>브로커가 떴다!</p>
 <p><br></p>
 <h2>Celery Worker</h2>
-<p>실제로 워커를 띄우기 위해 <code>celery</code>를 적용해보자. 본 포스트에서는 <code>django</code>와 연동하는 예제(<a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html">공식 문서</a>도 같이 참조하면 좋다)을 보여주겠다.<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup></p>
+<p>실제로 워커를 띄우기 위해 <code>celery</code>를 적용해보자. 본 포스트에서는 <code>django</code>와 연동하는 예제(<a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html">공식 문서</a>도 같이 참조하면 좋다)을 보여주겠다.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
 <h3>Celery 설치</h3>
 <div class="highlight"><pre><span></span>pip install celery
 </pre></div>
@@ -219,7 +211,7 @@ rpm -Uvh rabbitmq-server-3.6.0-1.noarch.rpm
 
 <p>WOW! 엄청 간단하다. 그럼 이제 실제로 이 작업을 사용해보자.</p>
 <h3>Django View 작성</h3>
-<p><code>@shared_task</code>로 선언된 함수를 실행할 때, <code>delay()</code>를 통해 실행하면<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup> 자동으로 메세지 브로커를 통해 작업이 워커로 날아간다! 너무 편하다!</p>
+<p><code>@shared_task</code>로 선언된 함수를 실행할 때, <code>delay()</code>를 통해 실행하면<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> 자동으로 메세지 브로커를 통해 작업이 워커로 날아간다! 너무 편하다!</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">your_tasks_path</span> <span class="kn">import</span> <span class="n">send_email</span>
 <span class="k">def</span> <span class="nf">some_controller_method</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="o">...</span>
@@ -253,13 +245,13 @@ flower -A your_django_app_name
 <p><code>rabbitmq</code>와 <code>celery</code> 워커가 실행되어 있다면 정상적으로 인스턴스가 구동된다. <code>localhost:5555</code>로 접속하면 <a href="http://flower.readthedocs.org/en/latest/screenshots.html">멋진 화면</a>을 볼 수 있다. 이렇게 간단하게 괜찮은 모니터링 툴을 이용할 수 있다니 ㅜㅜ</p>
 <p><br></p>
 <div class="footnote">
-<hr>
+<hr />
 <ol>
-<li id="fn-1">
-<p><code>django</code>와 상관없이 python에서는 모두 사용 가능하다.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:1">
+<p><code>django</code>와 상관없이 python에서는 모두 사용 가능하다.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn-2">
-<p><code>delay()</code>를 안 붙이면 그냥 평범한 함수처럼 실행된다.&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:2">
+<p><code>delay()</code>를 안 붙이면 그냥 평범한 함수처럼 실행된다.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -278,7 +270,7 @@ flower -A your_django_app_name
             </section>
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=Django%EC%97%90%EC%84%9C%20Celery%EB%A1%9C%20Task%20Queue...%20via%20%40&amp;url=https://qodot.github.io/Django에서-Celery로-Task-Queue-구축.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/share?text=Django%EC%97%90%EC%84%9C%20Celery%EB%A1%9C%20Task%20Queue ...%20via%20%40&amp;url=https://qodot.github.io/Django에서-Celery로-Task-Queue-구축.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
                 <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Django에서-Celery로-Task-Queue-구축.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">

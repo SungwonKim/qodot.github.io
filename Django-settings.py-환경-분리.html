@@ -60,11 +60,11 @@
         <meta property="og:type" content="article">
         <meta property="og:title" content="Django settings.py 환경 분리">
         <meta property="og:url" content="Django-settings.py-환경-분리.html">
-        <meta property="og:description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …">
+        <meta property="og:description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py ...">
         <meta property="article:published_time" content="수요일, 7월 29, 2015">
         <meta name="twitter:title" content="Django settings.py 환경 분리">
-        <meta name="twitter:description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …">
-        <meta name="description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py …">
+        <meta name="twitter:description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py ...">
+        <meta name="description" content="개요 애플리케이션을 배포하게 되면, 장비에 따라 필요한 라이브러리, 데이터베이스 정보 등 설정 정보를 다르게 가져가야 한다. Django 프로젝트를 생성하면 기본적으로 1개의 settings.py가 있는데, 설정 정보를 따로 가져가기 위해서는 파일을 분리할 필요가 있다. 그래서! 기존의 패키지 구조 myproject/ myproject/ settings.py 를 myproject/ myproject/ settings/ __init__.py base.py ...">
         <meta name="twitter:creator" content="@">
         <meta property="og:image" content="https://qodot.github.io/theme/images/logo.png">
         <meta name="twitter:image" content="https://qodot.github.io/theme/images/logo.png">
@@ -75,15 +75,6 @@
         <meta property="article:tag" content="python">
         <meta property="article:tag" content="django">
         <meta property="article:author" content="qodot">
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-83522208-2', 'auto');
-            ga('send', 'pageview');
-        </script>
     </head>
     <body class="post-template nav-closed" itemscope itemtype="http://schema.org/WebPage">
         <meta itemprop="name" content="waiting for qodot">
@@ -99,6 +90,7 @@
     </a>
     <ul role="menubar">
         <li class="" role="presentation"><a  href="https://qodot.github.io/index.html" title="waiting for qodot" itemprop="name" itemprop="significantLink">Home</a></li>
+            <li class="" role="presentation"><a  href="https://qodot.github.io/pages/about.html" title="waiting for qodot |About" itemprop="name" itemprop="significantLink">About</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/py.html" title="waiting for qodot |@ py" itemprop="name" itemprop="significantLink">@ py</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/js.html" title="waiting for qodot |@ js" itemprop="name" itemprop="significantLink">@ js</a></li>
             <li class="" role="presentation"><a  href="https://qodot.github.io/category/env.html" title="waiting for qodot |@ env" itemprop="name" itemprop="significantLink">@ env</a></li>
@@ -226,7 +218,7 @@
             </section>
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=Django%20settings.py%20%ED%99%98%EA%B2%BD%20%EB%B6%84%EB%A6%AC%20via%20%40&amp;url=https://qodot.github.io/Django-settings.py-환경-분리.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/share?text=Django%20settings.py%20%ED%99%98%EA%B2%BD%20%EB%B6%84%EB% ...%20via%20%40&amp;url=https://qodot.github.io/Django-settings.py-환경-분리.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
                 <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://qodot.github.io/Django-settings.py-환경-분리.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
